@@ -40,10 +40,14 @@
          color: #1d1d1f; font-weight: 700; font-size: 1.25rem; }
   .card h3 { font-size: 1.05rem; margin: 0 0 6px; }
   .card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
-  .shots { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); align-items: start; }
+  .shots { display: grid; gap: 24px; align-items: start; }
+  @media (min-width: 640px) {
+    .shots { grid-template-columns: 1fr 200px; }
+    .shots .tall { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  }
   figure { margin: 0; }
   figure img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); background: var(--card); }
-  figure img.phone { max-width: 170px; margin: 0 auto; border: 0; background: none; border-radius: 0; }
+  figure img.phone { max-width: 200px; margin: 0 auto; border: 0; background: none; border-radius: 0; }
   figcaption { margin-top: 8px; font-size: 0.9rem; color: var(--muted); text-align: center; }
   .note { margin: 16px 0 0; font-size: 0.9rem; color: var(--muted); text-align: center; }
   .privacy ul { padding-left: 1.2em; margin: 0; }
@@ -97,17 +101,17 @@
     <div class="shots">
       <figure>
         <img src="/stories/images/opening.png" width="1200" height="630" loading="lazy" decoding="async"
-             alt="Sample story site opening page: a portrait drawing beside the name Margaret Ellis, a fictional storyteller, with a list of chapters such as Growing up on the farm and Meeting Walter">
+             alt="Sample story site opening page: a framed sepia drawing above the name Margaret Ellis, a fictional storyteller, the words In her own words, a short summary of her story, and a Begin Listening button">
         <figcaption>The opening page</figcaption>
       </figure>
       <figure>
-        <img src="/stories/images/story.png" width="1200" height="900" loading="lazy" decoding="async"
-             alt="Sample chapter page, Meeting Walter: an audio player, the transcript of the interviewer's question and Margaret's answer, and a drawing of a wedding day">
-        <figcaption>A chapter, with transcript and photos</figcaption>
+        <img src="/stories/images/story.png" width="1200" height="800" loading="lazy" decoding="async"
+             alt="Sample story site playing the story Meeting Walter: a sepia drawing of a wedding day, the transcript of the question and Margaret's answer with the current words highlighted, an audio player, and a list of chapters down the side">
+        <figcaption>Listening, with the transcript and photos</figcaption>
       </figure>
-      <figure>
-        <img class="phone" src="/stories/images/phone.png" width="600" height="1200" loading="lazy" decoding="async"
-             alt="Sample story site on an iPhone: the chapter Growing up on the farm playing, with a drawing of a farmhouse and a line of transcript">
+      <figure class="tall">
+        <img class="phone" src="/stories/images/phone.png" width="680" height="1400" loading="lazy" decoding="async"
+             alt="Sample story site on an iPhone: the story Growing Up on the Farm playing, with a sepia drawing of a farmhouse, an audio player, and the chapter list below">
         <figcaption>On any phone</figcaption>
       </figure>
     </div>
