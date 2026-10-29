@@ -14,7 +14,7 @@
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--fg);
          font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-  main { max-width: 680px; margin: 0 auto; padding: 48px 16px 80px; }
+  main { max-width: 680px; margin: 0 auto; padding: 32px 16px 80px; }
   h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 6px; }
   h2 { font-size: 1.2rem; margin: 36px 0 8px; }
   p, li { color: var(--fg); }
@@ -24,14 +24,23 @@
   a { color: var(--accent); }
   ul { padding-left: 1.2em; }
   h3 { font-size: 1.02rem; margin: 22px 0 6px; }
+  .site-header { max-width: 680px; margin: 0 auto; padding: 8px 8px 0; }
+  .site-header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 4px; }
+  .site-header a { display: block; padding: 10px 8px; border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 0.95rem; }
+  .site-header a:hover { color: var(--accent); }
+  .site-header a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
   footer { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; }
 </style>
 </head>
 <body>
+<header class="site-header">
+  <nav aria-label="Site"><ul><li><a href="/">Firsthand Stories</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/" aria-current="page">Privacy</a></li></ul></nav>
+</header>
 <main>
-  <p><a href="/">← Firsthand</a></p>
   <h1>Privacy Policy</h1>
   <p class="muted">Firsthand · Effective October 11, 2026 · Updated October 29, 2026</p>
+  <p>This policy covers the Firsthand app. Story sites made for Firsthand Stories clients are covered in <a href="#story-sites">Story sites</a>, below.</p>
 
   <div class="summary">
     <p><strong>In short (the app):</strong> Firsthand keeps your interviews on your devices and, if you use iCloud Sync, in your own iCloud. We don't collect, see or sell any of your information, there's no account to create, and the app has no ads, analytics or tracking.</p>
@@ -45,7 +54,7 @@
     <li>Names, photos, places and other interview details you enter</li>
     <li>Your question templates</li>
   </ul>
-  <p>We don't run servers that receive this information, and Firsthand never uploads your interviews anywhere but your own iCloud. Transcription, speaker detection and the drafting of job interview questions from a resume all happen on your device.</p>
+  <p>For the Firsthand app, we don't run servers that receive this information, and Firsthand never uploads your interviews anywhere but your own iCloud. Transcription, speaker detection and the drafting of job interview questions from a resume all happen on your device.</p>
 
   <h2>Permissions the app asks for</h2>
   <ul>
@@ -89,7 +98,7 @@
   <p>If this policy changes, we'll update it here and change the date at the top. If a change ever affected how your information is handled, we'd say so in the app first.</p>
 
   <h2 id="story-sites">Story sites (Firsthand Stories service)</h2>
-  <p>This section covers <a href="/stories/">Firsthand Stories</a>, a separate service in which Dallas Petersen records and edits a person's life story in person and gives their family a private website to keep it. The rest of this policy covers the Firsthand app.</p>
+  <p>This section covers <a href="/">Firsthand Stories</a>, a separate service in which we record and edit a person's life story in person and give their family a private website to keep it. The rest of this policy covers the Firsthand app.</p>
   <ul>
     <li><strong>Consent:</strong> the person telling their story agrees before anything is recorded, and can stop at any time.</li>
     <li><strong>Who receives it:</strong> only the family members the storyteller names receive the story.</li>
@@ -98,20 +107,26 @@
   </ul>
 
   <h3>What we keep</h3>
-  <p>Each story site holds the edited audio, the transcript (including the PDF version), the family photos chosen for it, and the email addresses of the family members who can sign in.</p>
+  <p>Each story site holds the edited audio, the transcript (including the PDF version), the family photos chosen for it, and any corrections family members make to the transcript's wording on the site. Corrections are saved with the story and included in the transcript and downloads.</p>
   <p>We keep the original recordings and files on our own iPhone, iPad and computer, in our own iCloud, and on a backup drive we keep. We keep these copies until we're asked to delete the story (see below).</p>
 
   <h3>Where story sites are hosted</h3>
   <p>Story sites are hosted by Cloudflare, which handles the files under <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a>.</p>
 
   <h3>Signing in</h3>
-  <p>Family members sign in with their email address and a one-time code sent by Cloudflare Access. The code expires after about 10 minutes, and after a while they'll need a new code to sign in again. Cloudflare keeps a record of each sign-in (the email address, the time and the IP address), which we use for security and to see whether family members have been able to sign in.</p>
+  <p>Family members sign in with their email address and a one-time code sent by Cloudflare Access. The code expires after about 10 minutes, and after a while they'll need a new code to sign in again. Cloudflare Access sets a cookie in the browser to keep them signed in. Cloudflare keeps a record of each sign-in (the email address, the time and the IP address), which we use for security and to see whether family members have been able to sign in.</p>
+  <p>The family's email addresses are kept in Cloudflare Access's list of people who can sign in. We use them to let family members sign in and to contact the family about their story, and we remove them when the story site is deleted.</p>
+
+  <h3>Analytics, cookies and other companies</h3>
+  <p>Cloudflare Web Analytics counts visits to story sites, such as how often pages are viewed; Cloudflare says it doesn't use cookies for this. Apart from Cloudflare Access's sign-in cookie, story sites set no cookies. The page remembers two display settings in your browser: whether the transcript is shown beneath the photo, and whether a community's name is shown at the top. Story sites show no ads, and apart from Cloudflare we don't share story sites or their visitors' information with other companies.</p>
+  <p>A story site made for a community's residents may show the community's name and links to its website at the top. Those links lead to the community's own site, which has its own privacy policy.</p>
 
   <h3>How long a story site stays online</h3>
   <p>A story site stays online while its hosting is paid for. When the story is delivered, the family also receives their own copy of everything: the audio, a PDF transcript with photos, and all of it in one file. The site is a convenient way to share and listen, not the only copy.</p>
+  <p>If hosting is no longer paid for, we email the family 30 days before the site comes down. Then we delete the story site and every copy we keep, including backups, and remove the family's email addresses.</p>
 
   <h3>Deleting a story</h3>
-  <p>The storyteller can ask us to delete their story by emailing <a href="mailto:privacy@firsthandstories.app">privacy@firsthandstories.app</a>. If the storyteller has died or can no longer decide, the family members they named can ask instead. Within 48 hours we take the story site down and delete the recordings, transcript, photos and email addresses from it. Within 30 days we delete every copy we keep, including backups. Files the family has already downloaded are theirs to keep. Cloudflare's sign-in records are kept by Cloudflare under its own retention rules.</p>
+  <p>The storyteller can ask us to delete their story by emailing <a href="mailto:privacy@firsthandstories.app">privacy@firsthandstories.app</a>. If the storyteller has died or can no longer decide, the family members they named can ask instead. Within 48 hours we take the story site down, delete its recordings, transcript and photos, and remove the family's email addresses from the sign-in list. Within 30 days we delete every copy we keep, including backups. Files the family has already downloaded are theirs to keep. Cloudflare's sign-in records are kept by Cloudflare under its own retention rules.</p>
 
   <h2>Contact</h2>
   <p>Questions about privacy: <a href="mailto:privacy@firsthandstories.app">privacy@firsthandstories.app</a></p>
