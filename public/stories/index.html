@@ -13,7 +13,7 @@
 <meta property="og:description" content="Life stories recorded in person, edited without changing a word, and kept on a private website for the family.">
 <meta property="og:url" content="https://firsthandstories.app/stories/">
 <meta property="og:image" content="https://firsthandstories.app/stories/images/opening.png">
-<meta property="og:image:alt" content="The opening page of a family's private Firsthand Stories site">
+<meta property="og:image:alt" content="A sample Firsthand Stories site for a fictional storyteller, with a list of chapters">
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root { --bg: #fbf8f3; --fg: #1d1d1f; --muted: #5f5f66; --accent: #c8423f; --on-accent: #ffffff; --line: #e5ded3; --card: #ffffff; }
@@ -43,7 +43,9 @@
   .shots { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); align-items: start; }
   figure { margin: 0; }
   figure img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); background: var(--card); }
+  figure img.phone { max-width: 170px; margin: 0 auto; border: 0; background: none; border-radius: 0; }
   figcaption { margin-top: 8px; font-size: 0.9rem; color: var(--muted); text-align: center; }
+  .note { margin: 16px 0 0; font-size: 0.9rem; color: var(--muted); text-align: center; }
   .privacy ul { padding-left: 1.2em; margin: 0; }
   .privacy li + li { margin-top: 6px; }
   .pilot { text-align: center; }
@@ -94,21 +96,22 @@
     <h2 id="see">What the family receives</h2>
     <div class="shots">
       <figure>
-        <img src="/stories/images/opening.png" loading="lazy" decoding="async"
-             alt="The opening page of a family's story site, showing the storyteller's name and photo above a list of chapters">
+        <img src="/stories/images/opening.png" width="1200" height="630" loading="lazy" decoding="async"
+             alt="Sample story site opening page: a portrait drawing beside the name Margaret Ellis, a fictional storyteller, with a list of chapters such as Growing up on the farm and Meeting Walter">
         <figcaption>The opening page</figcaption>
       </figure>
       <figure>
-        <img src="/stories/images/story.png" loading="lazy" decoding="async"
-             alt="A chapter of the story with an audio player, the transcript of what was said, and a family photo">
+        <img src="/stories/images/story.png" width="1200" height="900" loading="lazy" decoding="async"
+             alt="Sample chapter page, Meeting Walter: an audio player, the transcript of the interviewer's question and Margaret's answer, and a drawing of a wedding day">
         <figcaption>A chapter, with transcript and photos</figcaption>
       </figure>
       <figure>
-        <img src="/stories/images/phone.png" loading="lazy" decoding="async"
-             alt="The story site on an iPhone screen, with a chapter playing">
+        <img class="phone" src="/stories/images/phone.png" width="600" height="1200" loading="lazy" decoding="async"
+             alt="Sample story site on an iPhone: the chapter Growing up on the farm playing, with a drawing of a farmhouse and a line of transcript">
         <figcaption>On any phone</figcaption>
       </figure>
     </div>
+    <p class="note">Sample screens with a fictional storyteller. Each family's site uses their own photos and recordings.</p>
   </section>
 
   <section class="privacy" aria-labelledby="privacy">
