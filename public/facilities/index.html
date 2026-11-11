@@ -25,6 +25,9 @@
   .points li { margin-bottom: 8px; }
   .more { margin-top: 12px; } .more summary { cursor: pointer; color: var(--accent); font-weight: 600; min-height: 44px; display: flex; align-items: center; }
   .ways li.card:has(.more[open]) { grid-column: 1 / -1; }
+  .appshots { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin: 12px 0 8px; }
+  .appshots figure { margin: 0; } .appshots img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+  .appshots figcaption { font-size: .85rem; color: var(--muted); margin-top: 6px; }
   .shots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); list-style: none; padding: 0; }
   .shots img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 10px; }
   .shots img.phone { max-width: 200px; margin: 0 auto 10px; border: 0; }
@@ -61,6 +64,11 @@
     <ul class="ways">
       <li class="card"><h3>Your team records</h3><p>We set your activities or life-enrichment staff up with the Firsthand app on an iPad and a pair of small microphones, train them in an afternoon, and support them as they go. Your community owns the program and the recordings.</p>
         <details class="more"><summary>See How the App Works</summary>
+          <div class="appshots">
+            <figure><picture><source srcset="/images/app/template-dark.jpg" media="(prefers-color-scheme: dark)"><img src="/images/app/template-light.jpg" width="750" height="1000" loading="lazy" alt="The iPad app showing a question list grouped into Early Life, Young Adulthood, Work, Family and Reflections"></picture><figcaption>Your questions, grouped into stories.</figcaption></figure>
+            <figure><picture><source srcset="/images/app/interview-dark.jpg" media="(prefers-color-scheme: dark)"><img src="/images/app/interview-light.jpg" width="750" height="1000" loading="lazy" alt="The iPad app showing a finished interview: chapters with their photos and the transcript beneath each"></picture><figcaption>Every answer a chapter, with photos and transcript.</figcaption></figure>
+            <figure><picture><source srcset="/images/app/home-dark.jpg" media="(prefers-color-scheme: dark)"><img src="/images/app/home-light.jpg" width="750" height="1000" loading="lazy" alt="The iPad app home screen: templates to start an interview, and the recorded interviews"></picture><figcaption>Start an interview in one tap.</figcaption></figure>
+          </div>
           <ul class="points">
             <li><strong>Ready-made questions.</strong> A full personal-history list, grouped into stories from childhood to today. Staff skip, reorder or add their own; families can send questions ahead of time.</li>
             <li><strong>One tap per question.</strong> The interviewer taps each question as they ask it, so every answer becomes its own chapter. No editing afterwards.</li>
