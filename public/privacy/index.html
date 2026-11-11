@@ -43,11 +43,11 @@
 </header>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="muted">Firsthand · Effective October 11, 2026 · Updated October 29, 2026</p>
+  <p class="muted">Firsthand · Effective October 11, 2026 · Updated November 4, 2026</p>
   <p>This policy covers the Firsthand app. Story sites made for Firsthand Stories clients are covered in <a href="#story-sites">Story sites</a>, below.</p>
 
   <div class="summary">
-    <p><strong>In short (the app):</strong> Firsthand keeps your interviews on your devices and, if you use iCloud Sync, in your own iCloud. We don't collect, see or sell any of your information, there's no account to create, and the app has no ads, analytics or tracking.</p>
+    <p><strong>In short (the app):</strong> Firsthand keeps your interviews on your devices and, if you use iCloud Sync, in your own iCloud. We don't collect, see or sell any of your information unless you choose Publish to Web or Create Prep Page, there's no account to create to use it, and the app has no ads, analytics or tracking.</p>
   </div>
 
   <h2>What stays on your devices</h2>
@@ -58,7 +58,7 @@
     <li>Names, photos, places and other interview details you enter</li>
     <li>Your question templates</li>
   </ul>
-  <p>For the Firsthand app, we don't run servers that receive this information, and Firsthand never uploads your interviews anywhere but your own iCloud. Transcription, speaker detection and the drafting of job interview questions from a resume all happen on your device.</p>
+  <p>For the Firsthand app, we don't run servers that receive this information, and Firsthand never uploads your interviews anywhere but your own iCloud, except one you choose to publish (see Publish to Web, below) and the questions of one you choose to send a Prep Page for (see Prep Page, below). Transcription, speaker detection and the drafting of job interview questions from a resume all happen on your device.</p>
 
   <h2>Permissions the app asks for</h2>
   <ul>
@@ -81,6 +81,12 @@
   <p>Tailor to the Guest can draft questions about a guest from public information. If you search for a guest by name, the name is sent to <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">Wikipedia</a> to find their article, and the article (and a photo, if it has one) is downloaded. If you give a link instead, only that web page is opened. Nothing about your interviews is sent, and the questions are drafted on your device. These requests go straight from your device to Wikipedia or the site you chose, never to us.</p>
 
   <h2>When you share</h2>
+  <h2 id="prep-page">Prep Page</h2>
+  <p>Create Prep Page is for Firsthand Stories staff, with the same sign-in as Publish to Web. Only when you choose Create Prep Page for an interview that hasn't begun does the app send its questions (with their sections and story titles), the interview's title, and the guest's and interviewer's names to Firsthand Stories, where they become a page at a private link for the guest and their family. Anyone with the link can open the page, mark questions to skip, write notes under a story, add questions and add photos (with captions) to a story, each with a name if they give one; that is kept with the page and fetched by the app when you open the upcoming interview. Once the interview begins, skips, notes and questions can't be changed, but photos can still be added; the app brings each photo onto its story in the interview. Deleting the upcoming interview in the app deletes the page and everything written on it. Nothing else about the interview is sent: no recording, photos, place or notes.</p>
+
+  <h2 id="publish">Publish to Web</h2>
+  <p>Publish to Web is for Firsthand Stories staff. Only when you choose Publish for an interview does the app upload that interview's audio (one file per question), its photos, its transcript, a PDF of it, the guest's name and the interview's notes, date and place to Firsthand Stories, where it becomes a private story site (see <a href="#story-sites">Story sites</a>). To sign in, your email address is sent to us and we email you a one-time code; the app keeps the sign-in in your device's keychain until you sign out in Settings › Web Publishing. If you enter the guest's email address, it's sent too, so they can sign in as the story's owner and choose who else can see it. Nothing else about your interviews is sent, and nothing is sent until you choose Publish.</p>
+
   <p>If you export or share an interview (audio, video, a PDF or text version, or an interview file to back up or move to another device), it goes wherever you choose to send it, such as Messages, Mail, Files or another app. What happens to it there is governed by that service.</p>
 
   <h2>iCloud Sync</h2>
@@ -115,11 +121,11 @@
   <p>We keep the original recordings and files on our own iPhone, iPad and computer, in our own iCloud, and on a backup drive we keep. We keep these copies until we're asked to delete the story (see below).</p>
 
   <h3>Where story sites are hosted</h3>
-  <p>Story sites are hosted by Cloudflare, which handles the files under <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a>.</p>
+  <p>Story sites are hosted by Cloudflare (Workers, D1 and R2 storage, and Email Sending for sign-in codes), which handles the files under <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a>.</p>
 
   <h3>Signing in</h3>
-  <p>Family members sign in with their email address and a one-time code sent by Cloudflare Access. The code expires after about 10 minutes, and after a while they'll need a new code to sign in again. Cloudflare Access sets a cookie in the browser to keep them signed in. Cloudflare keeps a record of each sign-in (the email address, the time and the IP address), which we use for security and to see whether family members have been able to sign in.</p>
-  <p>The family's email addresses are kept in Cloudflare Access's list of people who can sign in. We use them to let family members sign in and to contact the family about their story, and we remove them when the story site is deleted.</p>
+  <p>Family members sign in with their email address and a 6-digit code we email them. The code expires after 10 minutes, and a sign-in lasts 30 days. A cookie in the browser keeps them signed in; we keep only a scrambled (hashed) copy of codes and sign-ins, never the codes themselves.</p>
+  <p>The family's email addresses are kept in the story's list of people who can sign in, which the story's owner manages on the site. We use them to let family members sign in and to contact the family about their story, and we remove them when the story site is deleted.</p>
 
   <h3>Analytics, cookies and other companies</h3>
   <p>Cloudflare Web Analytics counts visits to story sites, such as how often pages are viewed; Cloudflare says it doesn't use cookies for this. Apart from Cloudflare Access's sign-in cookie, story sites set no cookies. The page remembers two display settings in your browser: whether the transcript is shown beneath the photo, and whether a community's name is shown at the top. Story sites show no ads, and apart from Cloudflare we don't share story sites or their visitors' information with other companies.</p>
