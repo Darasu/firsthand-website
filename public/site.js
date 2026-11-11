@@ -46,3 +46,23 @@
     addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
     move();
   }
+
+  // Tuning (#233): [ and ] soften or strengthen the photos in steps of 5%, 0 resets; the value shows bottom left and is kept in this browser.
+  // Try levels, then tell Claude the number to make it the default (--photo in site.css).
+  (() => {
+    const r = document.documentElement.style, key = 'tune-photo';
+    let v = null, badge = null, hide = 0;
+    try { v = parseFloat(localStorage.getItem(key)); } catch (e) {}
+    if (v > 0) r.setProperty('--photo', v);
+    addEventListener('keydown', e => {
+      if (e.metaKey || e.ctrlKey || e.altKey || /input|textarea|select/i.test(e.target.tagName)) return;
+      if (!['[', ']', '0'].includes(e.key)) return;
+      const base = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--photo')) || .7;
+      if (e.key === '0') { r.removeProperty('--photo'); try { localStorage.removeItem(key); } catch (x) {} }
+      else { v = Math.min(1, Math.max(.2, Math.round((base + (e.key === ']' ? .05 : -.05)) * 100) / 100)); r.setProperty('--photo', v); try { localStorage.setItem(key, v); } catch (x) {} }
+      if (!badge) { badge = document.createElement('div'); badge.className = 'tune-badge'; badge.setAttribute('role', 'status'); document.body.append(badge); }
+      const now = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--photo'));
+      badge.textContent = 'Photos ' + Math.round(now * 100) + '%  ([ softer, ] stronger, 0 reset)';
+      badge.hidden = false; clearTimeout(hide); hide = setTimeout(() => badge.hidden = true, 4000);
+    });
+  })();
