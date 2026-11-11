@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Share Your Life Stories This Christmas · Firsthand Stories</title>
-<meta name="description" content="Record your memories in your own voice and pass them on to family and friends. Spots are limited. Book now for Christmas. Free 15-minute call to plan your story.">
+<meta name="description" content="Personal history interviews, photo scanning and printed books for Christmas: packages, prices and how it works. Free 15-minute call to plan your story.">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,6 +62,23 @@
   .brandline strong, .brandline span { white-space: nowrap; }
   .brandline strong { color: var(--fg); }
   .brandline svg { width: 40px; height: 16px; }
+  .plans { display: grid; gap: 16px; }
+  @media (min-width: 640px) { .plans { grid-template-columns: repeat(3, 1fr); } main.wide-ok { max-width: 900px; } }
+  .plan { background: var(--box); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+  .plan.featured { border: 2px solid var(--accent); }
+  .plan h3 { margin: 0; font-size: 1.2rem; }
+  .plan .tag { margin: 0 0 4px; color: var(--accent); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+  .plan .price { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 2rem; margin: 4px 0 8px; color: var(--accent); }
+  .plan ul { margin: 0; padding-left: 1.1em; color: var(--text); font-size: 0.95rem; }
+  .plan li { margin-bottom: 6px; }
+  .prices { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  .prices th { text-align: left; padding: 20px 0 6px; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .prices td { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--text); vertical-align: top; }
+  .prices td:last-child { text-align: right; white-space: nowrap; padding-left: 16px; color: var(--fg); font-weight: 600; }
+  .note { color: var(--muted); font-size: 1rem; margin: 16px 0 0; }
+  details { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; padding: 14px 0; min-height: 44px; font-weight: 600; }
+  details p { margin: 0 0 16px; color: var(--text); }
   footer { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
   footer a { margin-right: 16px; }
 </style>
@@ -90,30 +107,116 @@
     <p class="small">Free 15-minute call to plan your story.</p>
   </div>
 
-  <h2 class="serif-head">Your story, in your words.</h2>
-  <p class="sub serif-line">We ask the questions; you tell the stories. We record every word.</p>
-
+  <h2 class="serif-head">Sound familiar?</h2>
+  <p class="sub serif-line">Most families have the same four problems.</p>
   <div class="rows">
     <div class="row">
-      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
-      <p><strong>Your recording.</strong> Your voice, with every question its own chapter.</p>
+      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M7 7V5h10v2"/></svg></div>
+      <p><strong>Boxes of photos nobody sees.</strong> Albums in the closet, slides in a carousel, negatives in an envelope. Most of them haven't been looked at in years, and many can't be viewed at all without a scanner.</p>
     </div>
     <div class="row">
-      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
-      <p><strong>Your story page.</strong> A private web page with your photos and every word written out.</p>
+      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17h.01"/></svg></div>
+      <p><strong>No one knows the stories behind them.</strong> Who is that standing next to Grandpa? Where was this house? The only person who knows is the one in the picture, and nobody has written it down.</p>
     </div>
     <div class="row">
-      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg></div>
-      <p><strong>Yours to share.</strong> Send family a link, or download the audio and a printable transcript.</p>
+      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <p><strong>There's never enough time.</strong> Sorting, scanning, interviewing, editing and putting it all together takes weeks. It stays on the someday list, and someday doesn't always come.</p>
+    </div>
+    <div class="row">
+      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/></svg></div>
+      <p><strong>Recordings that never get heard.</strong> A long phone video with no way to find the good parts is hard to share and easy to lose.</p>
     </div>
   </div>
 
-  <h2 class="serif-head">How it works</h2>
+  <h2 class="serif-head">We do all of it for you.</h2>
+  <p class="sub serif-line">A conversation, your photos, and a finished family keepsake.</p>
   <ol>
-    <li>Call, text or email, and we'll plan your story together in a free 15-minute call.</li>
-    <li>We sit down with you and record, at your pace, over one session or several.</li>
-    <li>You receive your recording and your private story page, ready to share with the people you choose.</li>
+    <li><strong>A free 15-minute planning call.</strong> Tell us who you'd like to honor. We choose questions together, and you can add your own.</li>
+    <li><strong>We gather the photos.</strong> Send us digital photos, or we scan prints, album pages, slides and negatives (see below).</li>
+    <li><strong>We sit down and record.</strong> At home, at their pace, with professional microphones for the interviewer and the storyteller. Several short sessions are fine.</li>
+    <li><strong>We put it together.</strong> Every story becomes its own chapter, long pauses and "um"s are gently trimmed, every word is written out, and photos are placed beside the stories they belong to.</li>
+    <li><strong>Your family keeps it.</strong> A private story page to listen, read and share, plus downloads of the audio and a printable transcript. Add a printed book if you'd like one under the tree.</li>
   </ol>
+
+  <h2 class="serif-head">Packages</h2>
+  <p class="sub serif-line">Every package includes the planning call, the recording, a written transcript and a private story page.</p>
+  <div class="plans">
+    <div class="plan">
+      <h3>Conversation</h3>
+      <p class="price">$295</p>
+      <ul>
+        <li>Up to 1 hour of recorded interview, one session</li>
+        <li>Up to 25 photos you send us digitally</li>
+        <li>Chaptered recording and full transcript</li>
+        <li>Private story page to share with family</li>
+      </ul>
+    </div>
+    <div class="plan featured">
+      <p class="tag">Most chosen</p>
+      <h3>Life Story</h3>
+      <p class="price">$595</p>
+      <ul>
+        <li>Up to 3 hours of interview, over up to 3 sessions</li>
+        <li>Up to 100 photos, including scanning of loose prints</li>
+        <li>Questions shared ahead of time; family can add their own</li>
+        <li>Keepsake PDF of their stories with photos</li>
+        <li>Everything in Conversation</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <h3>Heirloom</h3>
+      <p class="price">$1,195</p>
+      <ul>
+        <li>Up to 6 hours of interview, as many sessions as needed</li>
+        <li>Up to 300 photos, including albums, slides and negatives</li>
+        <li>One printed hardcover book of their stories and photos</li>
+        <li>Everything in Life Story</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="serif-head">Price list</h2>
+  <p class="sub serif-line">Add to any package, or ask us about something not listed.</p>
+  <table class="prices">
+    <tbody>
+      <tr><th colspan="2">Interview</th></tr>
+      <tr><td>Additional interview hour</td><td>$125</td></tr>
+      <tr><td>Travel beyond 30 miles of Charlotte</td><td>$0.70 / mile</td></tr>
+      <tr><th colspan="2">Photos</th></tr>
+      <tr><td>Digital photos you send us</td><td>Free</td></tr>
+      <tr><td>Scanning loose prints</td><td>$0.75 each</td></tr>
+      <tr><td>Album pages, photographed without removing photos</td><td>$2 per page</td></tr>
+      <tr><td>Slides and negatives</td><td>$1.50 each</td></tr>
+      <tr><td>Restoration of a faded or damaged photo</td><td>$15 each</td></tr>
+      <tr><th colspan="2">Keepsakes</th></tr>
+      <tr><td>Printed hardcover book</td><td>$149</td></tr>
+      <tr><td>Additional copies of the book</td><td>$59 each</td></tr>
+      <tr><td>USB drive with audio, photos and transcript</td><td>$35</td></tr>
+      <tr><th colspan="2">Gifts</th></tr>
+      <tr><td>Gift certificate, printed and ready for under the tree</td><td>Any package</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="serif-head">About the photos</h2>
+  <p class="sub serif-line">However your photos are stored, we can bring them along.</p>
+  <div class="rows">
+    <div class="row"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+      <p><strong>Already digital.</strong> Photos on a phone, computer or in an online album. Share them with a link and we take it from there.</p></div>
+    <div class="row"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/></svg></div>
+      <p><strong>Loose prints.</strong> We scan them at your home during a session, or you drop them off and get every one back.</p></div>
+    <div class="row"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"/></svg></div>
+      <p><strong>Photo albums.</strong> Old albums are often glued or fragile, so we photograph each page in place and never pull photos out.</p></div>
+    <div class="row"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 9h18M3 15h18M7 6v3M11 6v3M15 6v3M7 15v3M11 15v3M15 15v3"/></svg></div>
+      <p><strong>Slides and negatives.</strong> We digitize them so you can finally see them, often for the first time in decades.</p></div>
+  </div>
+  <p class="note">During the interview we look through the photos together, so each one comes with the story of who, where and when.</p>
+
+  <h2 class="serif-head">Questions people ask</h2>
+  <details><summary>How long should the interview be?</summary><p>An hour covers the highlights. Three hours tells a life story, from childhood to today. Longer conversations are best split into sessions of an hour or so, so nobody gets tired.</p></details>
+  <details><summary>Can it be finished by Christmas?</summary><p>Yes, if the interview is recorded by mid-December. If not, give a gift certificate and we'll record in the new year.</p></details>
+  <details><summary>Who can hear it?</summary><p>Only the people you choose. Your story page is private, and the recording belongs to your family.</p></details>
+  <details><summary>Can family members join in?</summary><p>Yes. Family can send questions ahead of time, sit in on the interview, or add photos of their own.</p></details>
+  <details><summary>What if they're shy or unsure what to say?</summary><p>They see the questions ahead of time and can skip any of them. It feels like a relaxed conversation, not a performance.</p></details>
 
   <div class="box closing">
     <p class="serif-head">For yourself, or as a gift for a parent or grandparent.</p>
