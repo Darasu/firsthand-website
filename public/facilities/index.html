@@ -23,15 +23,22 @@
   .ways p { margin: 0; color: var(--text); }
   .points { padding-left: 1.2em; color: var(--text); }
   .points li { margin-bottom: 8px; }
-  .more { margin-top: 12px; } .more summary { cursor: pointer; color: var(--accent); font-weight: 600; min-height: 44px; display: flex; align-items: center; }
-  .ways li.card:has(.more[open]) { grid-column: 1 / -1; }
-  .appshots { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin: 12px 0 8px; }
-  .appshots figure { margin: 0; } .appshots img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
-  .appshots figcaption { font-size: .85rem; color: var(--muted); margin-top: 6px; }
   .shots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); list-style: none; padding: 0; }
   .shots img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 10px; }
   .shots img.phone { max-width: 200px; margin: 0 auto 10px; border: 0; }
   .shots h3 { margin: 0 0 4px; font-size: 1.05rem; } .shots p { margin: 0; color: var(--text); font-size: .95rem; }
+  /* Screenshots on the paper, light only (#233) */
+  .callouts { margin: 8px 0 24px; }
+  .callouts .frame { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(60,40,20,.18); background: #fff; }
+  .callouts img { display: block; width: 100%; height: auto; }
+  .pin { position: absolute; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; font: 700 15px/30px -apple-system, system-ui, sans-serif; text-align: center; box-shadow: 0 0 0 4px rgba(255,255,255,.85), 0 4px 12px rgba(0,0,0,.25); }
+  .legend { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 8px 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .legend li { display: flex; gap: 10px; align-items: baseline; color: var(--text); }
+  .legend .n { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; line-height: 24px; text-align: center; }
+  .appshots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: 8px 0 20px; }
+  .appshots figure { margin: 0; } .appshots img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(60,40,20,.14); }
+  .appshots figcaption { font-size: .9rem; color: var(--muted); margin-top: 8px; }
+  @media (max-width: 520px) { .pin { width: 22px; height: 22px; font-size: 12px; line-height: 22px; } }
 </style>
 </head>
 <body>
@@ -62,25 +69,31 @@
   <section aria-labelledby="ways">
     <h2 id="ways" class="serif">Two ways to run it.</h2>
     <ul class="ways">
-      <li class="card"><h3>Your team records</h3><p>We set your activities or life-enrichment staff up with the Firsthand app on an iPad and a pair of small microphones, train them in an afternoon, and support them as they go. Your community owns the program and the recordings.</p>
-        <details class="more"><summary>See How the App Works</summary>
-          <div class="appshots">
-            <figure><picture><source srcset="/images/app/template-dark.jpg" media="(prefers-color-scheme: dark)"><img src="/images/app/template-light.jpg" width="750" height="1000" loading="lazy" alt="The iPad app showing a question list grouped into Early Life, Young Adulthood, Work, Family and Reflections"></picture><figcaption>Your questions, grouped into stories.</figcaption></figure>
-            <figure><picture><source srcset="/images/app/interview-dark.jpg" media="(prefers-color-scheme: dark)"><img src="/images/app/interview-light.jpg" width="750" height="1000" loading="lazy" alt="The iPad app showing a finished interview: chapters with their photos and the transcript beneath each"></picture><figcaption>Every answer a chapter, with photos and transcript.</figcaption></figure>
-            <figure><picture><source srcset="/images/app/home-dark.jpg" media="(prefers-color-scheme: dark)"><img src="/images/app/home-light.jpg" width="750" height="1000" loading="lazy" alt="The iPad app home screen: templates to start an interview, and the recorded interviews"></picture><figcaption>Start an interview in one tap.</figcaption></figure>
-          </div>
-          <ul class="points">
-            <li><strong>Ready-made questions.</strong> A full personal-history list, grouped into stories from childhood to today. Staff skip, reorder or add their own; families can send questions ahead of time.</li>
-            <li><strong>One tap per question.</strong> The interviewer taps each question as they ask it, so every answer becomes its own chapter. No editing afterwards.</li>
-            <li><strong>Two voices, two tracks.</strong> Small clip-on microphones record the interviewer and the resident separately, so the resident&rsquo;s voice stays clear even in a busy room. The iPad&rsquo;s own mic works too.</li>
-            <li><strong>Pause and pick up later.</strong> Stop when the resident tires and resume another day; it all joins into one story.</li>
-            <li><strong>Transcripts on the iPad.</strong> Every word is written out on the device itself, with long pauses and filler words tidied automatically.</li>
-            <li><strong>Photos beside the moments.</strong> Add scanned photos to any chapter, from the iPad&rsquo;s camera or library.</li>
-            <li><strong>Publish in one step.</strong> A private story page for the family, plus audio, a video slideshow and a printable booklet.</li>
-            <li><strong>Private by default.</strong> Recordings stay on your iPads and your own iCloud until someone chooses to publish one.</li>
-          </ul>
-        </details></li>
+      <li class="card"><h3>Your team records</h3><p>We set your activities or life-enrichment staff up with the Firsthand app on an iPad and a pair of small microphones, train them in an afternoon, and support them as they go. Your community owns the program and the recordings.</p></li>
       <li class="card"><h3>We record for you</h3><p>We come to your community on a schedule, sit down with residents one by one, scan their photos and deliver each story ready to share. Nothing for your staff to learn.</p></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="how">
+    <h2 id="how" class="serif">How the app works.</h2>
+    <p class="sub serif-line">Everything your team needs on one iPad.</p>
+    <figure class="callouts">
+      <div class="frame"><img src="/images/app/timeline-light.jpg" width="1400" height="1050" loading="lazy"
+        alt="The Firsthand app on an iPad in landscape: an interview's chapters with photos and transcript on the left, and each microphone's waveform on its own lane on the right"><span class="pin" style="left:33%;top:17%">1</span><span class="pin" style="left:31.5%;top:28%">2</span><span class="pin" style="left:34%;top:41%">3</span><span class="pin" style="left:86%;top:16%">4</span><span class="pin" style="left:86%;top:38%">5</span><span class="pin" style="left:84%;top:90%">6</span></div>
+      <ol class="legend"><li><span class="n">1</span>Sections and stories, as in your question list</li><li><span class="n">2</span>Every question its own chapter, with its photos</li><li><span class="n">3</span>The transcript by speaker, written on the iPad</li><li><span class="n">4</span>Chapters marked along the timeline</li><li><span class="n">5</span>Two microphones, two tracks: each voice on its own lane</li><li><span class="n">6</span>Play, skip back or ahead, change the speed</li></ol>
+    </figure>
+    <div class="appshots">
+      <figure><img src="/images/app/template-light.jpg" width="750" height="1000" loading="lazy" alt="A question list grouped into Early Life, Young Adulthood, Work, Family and Reflections"><figcaption>Your questions, grouped into stories. Skip, reorder or add your own.</figcaption></figure>
+      <figure><img src="/images/app/interview-light.jpg" width="750" height="1000" loading="lazy" alt="A finished interview: chapters with their photos and the transcript beneath each"><figcaption>Every answer a chapter, with photos and transcript.</figcaption></figure>
+      <figure><img src="/images/app/home-light.jpg" width="750" height="1000" loading="lazy" alt="The home screen: templates to start an interview, and the recorded interviews"><figcaption>Start an interview in one tap.</figcaption></figure>
+    </div>
+    <ul class="points">
+      <li><strong>One tap per question.</strong> The interviewer taps each question as they ask it, so every answer becomes its own chapter. No editing afterwards.</li>
+      <li><strong>Two voices, two tracks.</strong> Small clip-on microphones record the interviewer and the resident separately, so the resident&rsquo;s voice stays clear even in a busy room. The iPad&rsquo;s own mic works too.</li>
+      <li><strong>Pause and pick up later.</strong> Stop when the resident tires and resume another day; it all joins into one story.</li>
+      <li><strong>Transcripts on the iPad.</strong> Every word is written out on the device itself, with long pauses and filler words tidied automatically.</li>
+      <li><strong>Publish in one step.</strong> A private story page for the family, plus audio, a video slideshow and a printable booklet.</li>
+      <li><strong>Private by default.</strong> Recordings stay on your iPads and your own iCloud until someone chooses to publish one.</li>
     </ul>
   </section>
 
