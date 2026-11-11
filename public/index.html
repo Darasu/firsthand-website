@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Firsthand Stories · Your life story, in your own voice</title>
+<title>Firsthand Stories · Your story. Told firsthand.</title>
 <meta name="description" content="Record your life story in your own voice, while the details are sharp, with your photos playing along on a private website for your family. In person in the Charlotte area and in retirement communities.">
 <link rel="canonical" href="https://firsthandstories.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Firsthand Stories">
-<meta property="og:title" content="Firsthand Stories · Your life story, in your own voice">
+<meta property="og:title" content="Firsthand Stories · Your story. Told firsthand.">
 <meta property="og:description" content="Life stories recorded in person, edited without changing a word, and kept on a private website for the family.">
 <meta property="og:url" content="https://firsthandstories.app/">
 <meta property="og:image" content="https://firsthandstories.app/stories/images/opening.png">
@@ -28,11 +28,21 @@
   main { max-width: 880px; margin: 0 auto; padding: 16px 16px 80px; }
   a { color: var(--accent); }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-  .site-header { max-width: 880px; margin: 0 auto; padding: 8px 8px 0; }
-  .site-header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 4px; }
-  .site-header a { display: block; padding: 10px 8px; border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 0.95rem; }
-  .site-header a:hover { color: var(--accent); }
-  .site-header a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+  .topbar { position: sticky; top: 0; z-index: 10; }
+  .topbar::before { content: ""; position: absolute; inset: 0; opacity: var(--p, 0); border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--bg) 70%, transparent); -webkit-backdrop-filter: blur(20px) saturate(1.6); backdrop-filter: blur(20px) saturate(1.6); }
+  .topbar-in { position: relative; max-width: 880px; margin: 0 auto; padding: 4px 8px; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 52px; }
+  .mini-brand { display: flex; align-items: center; gap: 8px; color: var(--fg); text-decoration: none; font-weight: 600; padding: 8px;
+    opacity: var(--p, 0); transform: translateY(calc((1 - var(--p, 0)) * 8px)); }
+  .mini-brand .mark { width: 32px; height: 14px; }
+  .topbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 2px; }
+  .topbar nav a { display: block; padding: 12px 8px; border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 0.92rem; }
+  .topbar nav a:hover { color: var(--accent); }
+  @media (max-width: 520px) { .topbar ul { flex-wrap: nowrap; } .topbar nav a { padding: 12px 6px; font-size: .85rem; } .mini-brand span { display: none; } }
+  .big-brand { display: flex; align-items: center; gap: 14px; margin: 4px 0 20px;
+    opacity: calc(1 - var(--p, 0)); transform: translateY(calc(var(--p, 0) * -14px)) scale(calc(1 - var(--p, 0) * .08)); transform-origin: left center; }
+  .big-brand .mark { width: 72px; height: 30px; flex: none; }
+  .big-brand p { margin: 0; font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1; }
   .serif { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; letter-spacing: -0.02em; }
   .serif-line { font-family: Fraunces, Georgia, serif; font-style: italic; }
   .banner { display: flex; align-items: center; gap: 16px; background: var(--box); border: 1px solid var(--line); border-radius: 18px;
@@ -109,13 +119,12 @@
     .margin-photos img { position: absolute; height: auto; border: 6px solid #fbf8f3; border-radius: 3px;
       box-shadow: 0 14px 34px rgba(0,0,0,.28); transform: translate3d(0, var(--y, 0px), 0) rotate(var(--r)); will-change: transform; }
     .margin-photos img.big { border-width: 10px; box-shadow: 0 30px 70px rgba(0,0,0,.35); }
-    .site-header, main { position: relative; z-index: 1; }
+    main { position: relative; z-index: 1; }
     /* Liquid Glass sheet: the content floats over the photos, which show through blurred at its edges */
     main { margin-top: 12px; padding: 28px 40px 56px; border-radius: 36px;
       background: color-mix(in srgb, var(--bg) 72%, transparent);
       -webkit-backdrop-filter: blur(28px) saturate(1.5); backdrop-filter: blur(28px) saturate(1.5);
       border: 1px solid var(--glass-edge); box-shadow: inset 0 1px 0 var(--glass-shine), 0 30px 80px rgba(0,0,0,.18); }
-    .site-header { margin-top: 12px; }
   }
   footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
   footer a { margin-right: 16px; }
@@ -147,19 +156,23 @@
   <img class="small" src="/images/gano-old2_2.jpg" width="400" height="324" alt="" loading="lazy" data-speed="0.28" style="top:94%;right:calc((100vw - 880px) / 2 - 234px);width:130px;--r:-3deg">
   <img class="small" src="/images/gano-1940s3_5.jpg" width="270" height="400" alt="" loading="lazy" data-speed="0.22" style="top:95%;left:calc((100vw - 880px) / 2 - 225px);width:150px;--r:3deg">
 </div>
-<header class="site-header">
-  <nav aria-label="Site"><ul><li><a href="/" aria-current="page">Firsthand Stories</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="mini-brand" href="/" aria-label="Firsthand Stories, home"><svg viewBox="110 360 805 328" aria-hidden="true" class="mark"><defs><linearGradient id="fhA" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1024" y2="0"><stop offset="0.12" stop-color="#FFD58A"/><stop offset="0.5" stop-color="#FFB27A"/><stop offset="0.88" stop-color="#F07A7A"/></linearGradient></defs><path fill="url(#fhA)" d="M119 524L126 526L134 528L142 530L149 532L157 535L165 538L173 540L181 543L189 545L197 547L205 549L214 550L222 551L231 551L240 550L249 548L259 545L268 541L277 536L286 530L295 522L304 514L313 506L322 496L331 486L339 476L348 466L356 457L364 448L372 439L380 432L386 426L393 423L397 421L400 421L401 421L402 422L404 424L407 427L412 432L417 440L424 451L430 464L437 478L444 494L452 511L459 529L467 547L475 565L483 583L491 600L500 616L509 631L518 644L528 656L540 667L554 675L570 679L587 678L602 673L615 666L625 656L635 645L643 633L651 621L659 608L666 594L674 581L681 567L688 554L695 542L701 531L708 520L715 511L721 503L727 496L733 491L739 487L744 484L750 482L756 480L762 480L768 480L775 481L783 482L790 485L798 487L806 490L814 494L822 497L830 500L838 503L846 506L854 509L862 512L871 514L879 516L887 518L895 519L903 520L905 508L900 507L892 506L885 504L877 502L870 499L862 496L855 493L847 490L840 486L832 482L824 478L817 474L809 470L801 466L793 462L785 458L776 456L767 453L758 452L748 452L738 454L728 457L718 461L708 467L698 474L689 483L680 492L670 503L662 515L653 527L644 539L636 552L627 565L619 577L611 588L603 598L596 607L589 614L583 618L579 620L578 620L579 619L580 619L579 618L575 615L570 609L564 601L558 590L551 576L544 561L536 545L528 528L520 510L512 492L504 474L496 456L487 440L478 424L469 410L459 398L448 387L437 378L423 371L408 368L394 369L380 373L368 380L358 388L349 397L341 407L333 417L326 428L318 439L311 450L304 461L297 471L290 481L283 490L276 498L270 505L263 511L257 516L250 521L244 524L237 527L231 529L224 530L217 530L210 530L202 530L195 529L187 527L180 526L172 524L164 522L156 520L148 518L140 516L132 514L124 513L121 512Z"/></svg><span>Firsthand Stories</span></a>
+    <nav aria-label="Site"><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
+  </div>
 </header>
 <main>
+  <div class="big-brand"><svg viewBox="110 360 805 328" aria-hidden="true" class="mark"><defs><linearGradient id="fhB" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1024" y2="0"><stop offset="0.12" stop-color="#FFD58A"/><stop offset="0.5" stop-color="#FFB27A"/><stop offset="0.88" stop-color="#F07A7A"/></linearGradient></defs><path fill="url(#fhB)" d="M119 524L126 526L134 528L142 530L149 532L157 535L165 538L173 540L181 543L189 545L197 547L205 549L214 550L222 551L231 551L240 550L249 548L259 545L268 541L277 536L286 530L295 522L304 514L313 506L322 496L331 486L339 476L348 466L356 457L364 448L372 439L380 432L386 426L393 423L397 421L400 421L401 421L402 422L404 424L407 427L412 432L417 440L424 451L430 464L437 478L444 494L452 511L459 529L467 547L475 565L483 583L491 600L500 616L509 631L518 644L528 656L540 667L554 675L570 679L587 678L602 673L615 666L625 656L635 645L643 633L651 621L659 608L666 594L674 581L681 567L688 554L695 542L701 531L708 520L715 511L721 503L727 496L733 491L739 487L744 484L750 482L756 480L762 480L768 480L775 481L783 482L790 485L798 487L806 490L814 494L822 497L830 500L838 503L846 506L854 509L862 512L871 514L879 516L887 518L895 519L903 520L905 508L900 507L892 506L885 504L877 502L870 499L862 496L855 493L847 490L840 486L832 482L824 478L817 474L809 470L801 466L793 462L785 458L776 456L767 453L758 452L748 452L738 454L728 457L718 461L708 467L698 474L689 483L680 492L670 503L662 515L653 527L644 539L636 552L627 565L619 577L611 588L603 598L596 607L589 614L583 618L579 620L578 620L579 619L580 619L579 618L575 615L570 609L564 601L558 590L551 576L544 561L536 545L528 528L520 510L512 492L504 474L496 456L487 440L478 424L469 410L459 398L448 387L437 378L423 371L408 368L394 369L380 373L368 380L358 388L349 397L341 407L333 417L326 428L318 439L311 450L304 461L297 471L290 481L283 490L276 498L270 505L263 511L257 516L250 521L244 524L237 527L231 529L224 530L217 530L210 530L202 530L195 529L187 527L180 526L172 524L164 522L156 520L148 518L140 516L132 514L124 513L121 512Z"/></svg><p class="serif">Firsthand Stories</p></div>
   <a class="banner" href="/christmas/">
     <img src="/christmas/garland.webp" width="2000" height="1108" alt="">
-    <div><b>Give a life story this Christmas.</b><span>Save up to $200 on every package, and gift certificates keep the Christmas price into the new year.</span></div>
+    <div><b>Wrap up a lifetime.</b><span>Christmas pricing: up to $200 off every package. Gift certificates hold the price into the new year.</span></div>
   </a>
 
   <div class="hero">
     <div>
-      <h1 class="serif">Your life story, in your own voice.</h1>
-      <p class="lede">You've lived the stories your family will one day wish they'd asked about. Tell them now, while every name, place and detail is still clear. We sit down with you, record it in your own voice, and set your photos beside each story on a private website for the people you choose.</p>
+      <h1 class="serif">Your story.<br>Told firsthand.</h1>
+      <p class="lede">You were there for all of it. Now your family can be, too. We sit down with you, record your stories in your own voice, and set your photos right beside them, on a private page that plays on any phone.</p>
       <div class="actions">
         <a class="button" href="tel:+17044128761">Call or Text (704) 412-8761</a>
         <a class="button secondary" href="/pricing/">See Pricing</a>
@@ -170,8 +183,8 @@
   </div>
 
   <section aria-labelledby="why">
-    <h2 id="why" class="serif">Why now, and not someday?</h2>
-    <p class="sub serif-line">Most people wait until it's harder. The best time is while you're busy living.</p>
+    <h2 id="why" class="serif">Why now? Because you remember.</h2>
+    <p class="sub serif-line">The details are sharpest while you're still making them.</p>
     <div class="strip" aria-hidden="true">
       <div class="track">
         <img src="/images/gano-1940s2_6.jpg" width="473" height="700" alt="">
@@ -209,22 +222,22 @@
       </div>
     </div>
     <ul class="grid">
-      <li class="card"><h3>You're the one who knows</h3><p>Who's in that photo, where that house was, why you took that job. Only you can tell it, and it's best told while it's fresh.</p></li>
-      <li class="card"><h3>Photos nobody sees</h3><p>Albums in the closet, slides in a carousel, negatives in an envelope. We scan them and you tell us the story behind each one.</p></li>
-      <li class="card"><h3>You talk, we do the rest</h3><p>No writing, no technology to learn. We plan, record, scan, edit and put it all together. You just tell the stories.</p></li>
+      <li class="card"><h3>You're the source.</h3><p>Who's in the photo. Where the house was. Why you took the job. Nobody else has the footnotes.</p></li>
+      <li class="card"><h3>Out of the shoebox.</h3><p>Albums, slides, negatives. We scan them. You tell us what was really going on.</p></li>
+      <li class="card"><h3>All talk. No homework.</h3><p>Nothing to write, nothing to learn. We plan, record, scan and edit. You just tell it like it was.</p></li>
     </ul>
   </section>
 
   <section aria-labelledby="see">
     <div class="feature">
       <div>
-        <h2 id="see" class="serif">Photos that play along with the story.</h2>
-        <p class="sub serif-line">Not a recording in a folder. A story your family can sit and listen to, in your voice.</p>
+        <h2 id="see" class="serif">Picture this.</h2>
+        <p class="sub serif-line">Photos that turn up right on cue.</p>
         <ul>
-          <li>As they talk about the wedding, the wedding photo appears.</li>
-          <li>Every story is its own chapter, so you can go straight to the one you want.</li>
-          <li>Every word is written out and highlighted as it's spoken.</li>
-          <li>It works on any phone, and the audio, photos and a printable transcript are yours to download.</li>
+          <li>Mention the wedding, and there&rsquo;s the wedding.</li>
+          <li>Every story gets its own chapter. Skip straight to the good part.</li>
+          <li>Every word, written out and highlighted as you say it.</li>
+          <li>Plays on any phone, tablet or computer. No app required.</li>
         </ul>
       </div>
       <figure>
@@ -237,28 +250,28 @@
 
   <section aria-labelledby="keep">
     <h2 id="keep" class="serif">Yours to keep.</h2>
-    <p class="sub serif-line">Download everything, and it plays without us.</p>
+    <p class="sub serif-line">Download it all. It plays just fine without us.</p>
     <ul class="grid">
-      <li class="card keep"><img src="/images/keep-audio.png" width="631" height="349" alt="" loading="lazy"><h3>Audio</h3><p>The whole recording, in chapters, to play anywhere and keep for good.</p></li>
-      <li class="card keep"><img src="/images/keep-video.png" width="633" height="349" alt="" loading="lazy"><h3>Video slideshow</h3><p>Their voice over the photos, ready to play when the family gathers.</p></li>
-      <li class="card keep"><img src="/images/keep-booklet.png" width="630" height="349" alt="" loading="lazy"><h3>Printable booklet</h3><p>Every word in print beside the photos, to keep on a shelf or give.</p></li>
+      <li class="card keep"><img src="/images/keep-audio.png" width="631" height="349" alt="" loading="lazy"><h3>Audio</h3><p>Every chapter, in your voice. Plays anywhere. Keeps forever.</p></li>
+      <li class="card keep"><img src="/images/keep-video.png" width="633" height="349" alt="" loading="lazy"><h3>Video slideshow</h3><p>Your voice over your photos. Made for the big screen when everyone&rsquo;s home.</p></li>
+      <li class="card keep"><img src="/images/keep-booklet.png" width="630" height="349" alt="" loading="lazy"><h3>Printable booklet</h3><p>Every word in print, beside every photo. Shelf&#8209;ready.</p></li>
     </ul>
   </section>
 
   <section aria-labelledby="how">
-    <h2 id="how" class="serif">How it works</h2>
-    <p class="sub serif-line">In person, at their pace.</p>
+    <h2 id="how" class="serif">How it works.</h2>
+    <p class="sub serif-line">Easy does it.</p>
     <ol class="grid">
-      <li class="card"><div class="num" aria-hidden="true">1</div><h3>A free planning call</h3><p>Fifteen minutes to choose the questions together. You see them ahead of time, and your family can add their own.</p></li>
-      <li class="card"><div class="num" aria-hidden="true">2</div><h3>A relaxed conversation</h3><p>At your home or in your community, with professional microphones. Skip any question; several short sessions are fine.</p></li>
-      <li class="card"><div class="num" aria-hidden="true">3</div><h3>Edited, never rewritten</h3><p>Long pauses and "um"s trimmed, never a word changed. You approve it before anyone else hears it.</p></li>
-      <li class="card"><div class="num" aria-hidden="true">4</div><h3>Yours to share</h3><p>A private page for the people you choose, and a printed book if you'd like one.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">1</div><h3>A quick call.</h3><p>Fifteen minutes, on us. We pick the questions together, and your family can slip in a few of their own.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">2</div><h3>A good conversation.</h3><p>At home or in your community, with proper microphones. Skip anything. Take a break. Take several sessions.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">3</div><h3>Edited, never rewritten.</h3><p>We trim the ums. Every word stays yours. Nothing goes out until you say so.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">4</div><h3>Shared on your terms.</h3><p>A private page for the people you choose. Add a printed book, if you're feeling bookish.</p></li>
     </ol>
   </section>
 
   <section class="card communities" aria-labelledby="communities">
-    <h2 id="communities" class="serif">For retirement communities</h2>
-    <p class="sub serif-line">A life-story program your residents will talk about.</p>
+    <h2 id="communities" class="serif">For retirement communities.</h2>
+    <p class="sub serif-line">A program residents will talk about. Literally.</p>
     <ul>
       <li><strong>On site.</strong> We record in a quiet room at your community, on a schedule that suits residents and staff.</li>
       <li><strong>For active residents.</strong> Most people tell their story best in their 50s, 60s and 70s, while names, dates and details come easily. Residents of any age are welcome.</li>
@@ -270,12 +283,12 @@
   </section>
 
   <section class="quote" aria-label="Why it matters">
-    <p class="serif">Your children will want to hear it someday.<br>Tell it while it's yours to tell.</p>
+    <p class="serif">Your grandkids will have questions.<br>Leave them answers.</p>
   </section>
 
   <section class="closing" aria-labelledby="start">
-    <h2 id="start" class="serif">Start with a free 15-minute call.</h2>
-    <p>For yourself, a spouse, or as a gift for a parent. Packages from $295, or $245 this Christmas.</p>
+    <h2 id="start" class="serif">Let&rsquo;s talk.</h2>
+    <p>You&rsquo;ve got stories. We&rsquo;ve got 15 free minutes. For yourself, your spouse or a parent. From $295, or $245 this Christmas.</p>
     <div class="actions">
       <a class="button" href="tel:+17044128761">Call or Text (704) 412-8761</a>
       <a class="button secondary" href="mailto:support@firsthandstories.app?subject=Recording%20a%20life%20story">Email Us</a>
@@ -293,6 +306,10 @@
   </footer>
 </main>
 <script>
+  // iOS-style large title: the big brand fades into the top bar over the first 90 points of scrolling
+  (() => { const r = document.documentElement.style; let t = false;
+    const f = () => { r.setProperty('--p', Math.min(1, Math.max(0, scrollY / 90)).toFixed(3)); t = false; };
+    addEventListener('scroll', () => { if (!t) { t = true; requestAnimationFrame(f); } }, { passive: true }); f(); })();
   // Sections rise into view as they're scrolled to; skipped with Reduce Motion
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
     const els = document.querySelectorAll('main > section, .grid > li, .feature figure');
