@@ -4,8 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Firsthand Stories · Their life story, in their own voice</title>
-<meta name="description" content="Firsthand Stories records residents' life stories, then gives each family a private website to keep them: chapters, a transcript, and family photos.">
+<meta name="description" content="Your parents' and grandparents' life stories, recorded in their own voice, with family photos that play along with the story on a private website. In person in the Charlotte area.">
 <link rel="canonical" href="https://firsthandstories.app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400&amp;family=Playfair+Display:ital,wght@1,500&amp;display=swap">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Firsthand Stories">
@@ -16,61 +19,61 @@
 <meta property="og:image:alt" content="The opening page of a sample Firsthand Stories site for a fictional storyteller, with a Begin Listening button">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  :root { --bg: #fbf8f3; --fg: #1d1d1f; --muted: #5f5f66; --accent: #c8423f; --on-accent: #ffffff; --line: #e5ded3; --card: #ffffff; }
+  :root { --bg: #fbf8f3; --fg: #1d1d1f; --text: #3d3630; --muted: #5f5f66; --accent: #c8423f; --on-accent: #ffffff; --line: #e5ded3; --card: #ffffff; --box: #f5ede2; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #0b0b0d; --fg: #f2f2f4; --muted: #a3a3ab; --accent: #ff7462; --on-accent: #0b0b0d; --line: #2a2a30; --card: #16161a; }
+    :root { --bg: #0b0b0d; --fg: #f2f2f4; --text: #d9d2ca; --muted: #a3a3ab; --accent: #ff7462; --on-accent: #0b0b0d; --line: #2a2a30; --card: #16161a; --box: #1a1714; }
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--fg);
-         font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 80px; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 18px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 16px 16px 80px; }
   a { color: var(--accent); }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-  .site-header { max-width: 760px; margin: 0 auto; padding: 8px 8px 0; }
+  .site-header { max-width: 880px; margin: 0 auto; padding: 8px 8px 0; }
   .site-header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 4px; }
   .site-header a { display: block; padding: 10px 8px; border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 0.95rem; }
   .site-header a:hover { color: var(--accent); }
   .site-header a[aria-current="page"] { color: var(--accent); font-weight: 600; }
-  .hero { text-align: center; }
-  h1 { font-size: 2.2rem; line-height: 1.12; margin: 0 0 16px; letter-spacing: -0.02em; }
-  .lede { font-size: 1.15rem; max-width: 600px; margin: 0 auto; color: var(--muted); }
-  h2 { font-size: 1.4rem; margin: 0 0 12px; }
-  section { margin: 56px 0; }
-  .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px;
-           grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .serif { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; letter-spacing: -0.02em; }
+  .serif-line { font-family: Fraunces, Georgia, serif; font-style: italic; }
+  .banner { display: flex; align-items: center; gap: 16px; background: var(--box); border: 1px solid var(--line); border-radius: 18px;
+            padding: 12px 16px; text-decoration: none; color: var(--fg); margin: 8px 0 32px; }
+  .banner img { width: 120px; height: auto; flex: none; }
+  .banner b { color: var(--accent); }
+  .banner span { display: block; color: var(--muted); font-size: 0.95rem; }
+  .hero { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 760px) { .hero { grid-template-columns: 1fr 1.15fr; } }
+  h1 { font-size: clamp(2.4rem, 7vw, 3.5rem); line-height: 1.05; margin: 0 0 16px; text-wrap: balance; }
+  .lede { font-size: 1.2rem; color: var(--text); margin: 0 0 24px; text-wrap: pretty; }
+  .hero img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); box-shadow: 0 20px 50px rgba(0,0,0,.12); }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .button { display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font-weight: 600; text-decoration: none;
+            background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+  .button.secondary { background: transparent; color: var(--fg); border-color: var(--line); }
+  section { margin: 72px 0; }
+  h2 { font-size: clamp(1.9rem, 5vw, 2.4rem); line-height: 1.1; margin: 0 0 8px; }
+  .sub { color: var(--text); font-size: 1.15rem; margin: 0 0 28px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); list-style: none; padding: 0; margin: 0; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
-  .num { width: 48px; height: 48px; border-radius: 13px; display: grid; place-items: center; margin-bottom: 14px;
-         background: linear-gradient(135deg, #ffc27a, #f0706a); box-shadow: 0 4px 14px rgba(240,112,106,.28);
-         color: #1d1d1f; font-weight: 700; font-size: 1.25rem; }
   .card h3 { font-size: 1.05rem; margin: 0 0 6px; }
   .card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
-  .shots { display: grid; gap: 24px; align-items: start; }
-  @media (min-width: 640px) {
-    .shots { grid-template-columns: 1fr 200px; }
-    .shots .tall { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
-  }
+  .num { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 12px;
+         background: linear-gradient(135deg, #ffc27a, #f0706a); color: #1d1d1f; font-weight: 700; }
+  .feature { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 760px) { .feature { grid-template-columns: 1.2fr 0.8fr; } }
+  .feature ul { padding-left: 1.2em; color: var(--text); margin: 0; }
+  .feature li { margin-bottom: 10px; }
   figure { margin: 0; }
-  figure img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); background: var(--card); }
-  figure img.phone { max-width: 200px; margin: 0 auto; border: 0; background: none; border-radius: 0; }
-  figcaption { margin-top: 8px; font-size: 0.9rem; color: var(--muted); text-align: center; }
-  .note { margin: 16px 0 0; font-size: 0.9rem; color: var(--muted); text-align: center; }
-  .privacy ul { padding-left: 1.2em; margin: 0; }
-  .privacy li + li { margin-top: 6px; }
-  .pilot { text-align: center; }
-  .pilot p { max-width: 560px; margin: 0 auto 24px; }
-  .button { display: inline-block; padding: 14px 28px; border-radius: 999px; background: var(--accent); color: var(--on-accent);
-            font-weight: 600; text-decoration: none; font-size: 1.05rem; }
-  .button:hover { filter: brightness(1.06); }
-  .pilot .email { margin: 12px auto 0; font-size: 0.95rem; color: var(--muted); }
+  figure img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); }
+  figure img.phone { max-width: 220px; margin: 0 auto; border: 0; }
+  figcaption, .note { margin-top: 8px; font-size: 0.9rem; color: var(--muted); text-align: center; }
+  .quote { text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .quote p { font-size: clamp(1.4rem, 4vw, 1.8rem); line-height: 1.35; margin: 0; }
+  .closing { text-align: center; background: var(--box); border: 1px solid var(--line); border-radius: 22px; padding: 32px 20px; }
+  .closing .actions { justify-content: center; }
+  .closing p { color: var(--text); }
   footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
   footer a { margin-right: 16px; }
   footer p { margin: 4px 0; }
-  .diy { text-align: center; color: var(--muted); }
-  .diy p { margin: 0; }
-  @media (min-width: 640px) {
-    main { padding-top: 32px; }
-    h1 { font-size: 2.8rem; }
-  }
 </style>
 </head>
 <body>
@@ -78,78 +81,89 @@
   <nav aria-label="Site"><ul><li><a href="/" aria-current="page">Firsthand Stories</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
 </header>
 <main>
+  <a class="banner" href="/christmas/">
+    <img src="/christmas/garland.webp" width="2000" height="1108" alt="">
+    <div><b>Give a life story this Christmas.</b><span>Save up to $200 on every package, and gift certificates keep the Christmas price into the new year.</span></div>
+  </a>
 
   <div class="hero">
-    <h1>Their life story, in their own voice</h1>
-    <p class="lede">Firsthand Stories records residents' life stories, then gives each family a private website to keep them: chapters, a transcript, and family photos.</p>
+    <div>
+      <h1 class="serif">Their life story, in their own voice.</h1>
+      <p class="lede">We sit down with your parent or grandparent, record the stories you've always meant to ask about, and bring the family photos to life beside them, on a private website your whole family can keep.</p>
+      <div class="actions">
+        <a class="button" href="tel:+17044128761">Call or Text (704) 412-8761</a>
+        <a class="button secondary" href="/pricing/">See Pricing</a>
+      </div>
+    </div>
+    <img src="/stories/images/story.png" width="1200" height="800"
+         alt="Sample story page playing the story Meeting Walter: a wedding-day photo, the words highlighted as they're spoken, an audio player and the list of chapters">
   </div>
 
-  <section aria-labelledby="how">
-    <h2 id="how">How it works</h2>
-    <ol class="steps">
-      <li class="card">
-        <div class="num" aria-hidden="true">1</div>
-        <h3>A conversation</h3>
-        <p>About an hour, at home or in a quiet room. Skip any question, anytime.</p>
-      </li>
-      <li class="card">
-        <div class="num" aria-hidden="true">2</div>
-        <h3>Edited, never rewritten</h3>
-        <p>Pauses and filler words trimmed, never a word changed. The resident approves it before anyone else hears it.</p>
-      </li>
-      <li class="card">
-        <div class="num" aria-hidden="true">3</div>
-        <h3>A private site for the family</h3>
-        <p>Chapter by chapter, with photos, on any phone. Downloads include audio, a PDF transcript with photos, and everything in one file.</p>
-      </li>
-    </ol>
+  <section aria-labelledby="why">
+    <h2 id="why" class="serif">The stories behind the photos are disappearing.</h2>
+    <p class="sub serif-line">Most families have boxes of pictures and no one left who knows what's in them.</p>
+    <ul class="grid">
+      <li class="card"><h3>Photos nobody sees</h3><p>Albums in the closet, slides in a carousel, negatives in an envelope. We scan them, including albums too fragile to take apart.</p></li>
+      <li class="card"><h3>Stories nobody wrote down</h3><p>Who's standing next to Grandpa? Where was that house? We ask while there's still someone to answer.</p></li>
+      <li class="card"><h3>No time to do it all</h3><p>Planning, interviewing, scanning, editing and putting it together takes weeks. We do every step.</p></li>
+    </ul>
   </section>
 
   <section aria-labelledby="see">
-    <h2 id="see">What the family receives</h2>
-    <div class="shots">
+    <div class="feature">
+      <div>
+        <h2 id="see" class="serif">Photos that play along with the story.</h2>
+        <p class="sub serif-line">Not a recording in a folder. A story you can sit and listen to.</p>
+        <ul>
+          <li>As they talk about the wedding, the wedding photo appears.</li>
+          <li>Every story is its own chapter, so you can go straight to the one you want.</li>
+          <li>Every word is written out and highlighted as it's spoken.</li>
+          <li>It works on any phone, and the audio, photos and a printable transcript are yours to download.</li>
+        </ul>
+      </div>
       <figure>
-        <img src="/stories/images/opening.png" width="1200" height="630" loading="lazy" decoding="async"
-             alt="Sample story site opening page: a framed sepia drawing above the name Margaret Ellis, a fictional storyteller, the words In her own words, a short summary of her story, and a Begin Listening button">
-        <figcaption>The opening page</figcaption>
-      </figure>
-      <figure>
-        <img src="/stories/images/story.png" width="1200" height="800" loading="lazy" decoding="async"
-             alt="Sample story site playing the story Meeting Walter: a sepia drawing of a wedding day, the transcript of the question and Margaret's answer with the current words highlighted, an audio player, and a list of chapters down the side">
-        <figcaption>Listening, with the transcript and photos</figcaption>
-      </figure>
-      <figure class="tall">
-        <img class="phone" src="/stories/images/phone.png" width="680" height="1400" loading="lazy" decoding="async"
-             alt="Sample story site on an iPhone: the story Growing Up on the Farm playing, with a sepia drawing of a farmhouse, an audio player, and the chapter list below">
+        <img class="phone" src="/stories/images/phone.png" width="680" height="1400"
+             alt="Sample story page on an iPhone: the story Growing Up on the Farm playing, with a farmhouse photo, an audio player and the chapter list">
         <figcaption>On any phone</figcaption>
       </figure>
     </div>
-    <p class="note">Sample screens with a fictional storyteller. Each family's site uses their own photos and recordings.</p>
+    <p class="note">Sample screens with a fictional storyteller. Each family's page uses their own photos and recordings.</p>
   </section>
 
-  <section class="privacy" aria-labelledby="privacy">
-    <h2 id="privacy">Privacy</h2>
-    <ul>
-      <li>The resident agrees first and can stop anytime.</li>
-      <li>Only the family the resident names receives the story.</li>
-      <li>Nothing is shared publicly without separate written permission.</li>
-    </ul>
-    <p>See the <a href="/privacy/#story-sites">privacy policy</a> for details.</p>
+  <section aria-labelledby="how">
+    <h2 id="how" class="serif">How it works</h2>
+    <p class="sub serif-line">In person, at their pace.</p>
+    <ol class="grid">
+      <li class="card"><div class="num" aria-hidden="true">1</div><h3>A free planning call</h3><p>Fifteen minutes to choose the questions together. Add your own, and they see them ahead of time.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">2</div><h3>A relaxed conversation</h3><p>At home, with professional microphones. Skip any question; several short sessions are fine.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">3</div><h3>Edited, never rewritten</h3><p>Long pauses and "um"s trimmed, never a word changed. They approve it before anyone else hears it.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">4</div><h3>Yours to share</h3><p>A private page for the people you choose, and a printed book if you'd like one.</p></li>
+    </ol>
   </section>
 
-  <section class="pilot card" aria-labelledby="communities">
-    <h2 id="communities">For senior living communities</h2>
-    <p>I'm offering a free pilot to Charlotte-area communities for a small group of interested residents, at no cost to the community or the residents. Email me to set up a short in-person demo.</p>
-    <a class="button" href="mailto:dallas@firsthandstories.app?subject=Firsthand%20Stories%20pilot">Email Dallas</a>
-    <p class="email">dallas@firsthandstories.app</p>
+  <section class="quote" aria-label="Why it matters">
+    <p class="serif">Someday you'll wish you'd asked.<br>Ask now, while you can.</p>
   </section>
 
-  <section class="diy" aria-label="The Firsthand app">
-    <p>Prefer to interview someone yourself? <a href="/app/">The Firsthand app</a> is coming soon for iPhone and iPad.</p>
+  <section class="closing" aria-labelledby="start">
+    <h2 id="start" class="serif">Start with a free 15-minute call.</h2>
+    <p>Packages from $295, or $245 this Christmas. Photo scanning and printed books available.</p>
+    <div class="actions">
+      <a class="button" href="tel:+17044128761">Call or Text (704) 412-8761</a>
+      <a class="button secondary" href="mailto:support@firsthandstories.app?subject=Recording%20a%20life%20story">Email Us</a>
+      <a class="button secondary" href="/pricing/">See Pricing</a>
+    </div>
   </section>
+
+  <section class="card" aria-labelledby="communities">
+    <h2 id="communities" class="serif" style="font-size:1.6rem">For senior living communities</h2>
+    <p>I'm offering a free pilot to Charlotte-area communities for a small group of interested residents, at no cost to the community or the residents. Email me to set up a short in-person demo: <a href="mailto:dallas@firsthandstories.app?subject=Firsthand%20Stories%20pilot">dallas@firsthandstories.app</a></p>
+  </section>
+
+  <p class="note">Private by design: only the people the storyteller names receive the story. See the <a href="/privacy/#story-sites">privacy policy</a>. Prefer to interview someone yourself? <a href="/app/">The Firsthand app</a> is coming soon for iPhone and iPad.</p>
 
   <footer>
-    <p><a href="/app/">Firsthand app</a><a href="/privacy/">Privacy Policy</a><a href="mailto:dallas@firsthandstories.app">Contact</a></p>
+    <p><a href="/pricing/">Pricing</a><a href="/app/">Firsthand app</a><a href="/privacy/">Privacy Policy</a><a href="mailto:dallas@firsthandstories.app">Contact</a></p>
     <p>Firsthand app support: <a href="mailto:support@firsthandstories.app">support@firsthandstories.app</a></p>
     <p>© 2026 Firsthand Stories</p>
   </footer>
