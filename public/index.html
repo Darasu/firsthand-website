@@ -71,9 +71,32 @@
   .closing { text-align: center; background: var(--box); border: 1px solid var(--line); border-radius: 22px; padding: 32px 20px; }
   .closing .actions { justify-content: center; }
   .closing p { color: var(--text); }
-  .strip { display: flex; gap: 10px; overflow: hidden; margin: 0 0 22px; height: 166px; padding: 8px 4px; }
-  .strip img { height: 100%; width: auto; flex: none; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
-  .strip img:nth-child(odd) { transform: rotate(-2deg); } .strip img:nth-child(even) { transform: rotate(2deg); }
+  .strip { overflow: hidden; margin: 0 -16px 22px; padding: 14px 0;
+           -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+                   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .track { display: flex; gap: 14px; width: max-content; animation: drift 90s linear infinite; }
+  .strip:hover .track { animation-play-state: paused; }
+  .track img { height: 170px; width: auto; flex: none; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,.2);
+               transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+  .track img:nth-child(3n+1) { transform: rotate(-2.5deg); } .track img:nth-child(3n+2) { transform: rotate(1.5deg) translateY(6px); }
+  .track img:nth-child(3n) { transform: rotate(-.5deg) translateY(-4px); }
+  .track img:hover { transform: scale(1.08) rotate(0); }
+  @keyframes drift { to { transform: translateX(-50%); } }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .grid > .reveal:nth-child(2) { transition-delay: .1s; } .grid > .reveal:nth-child(3) { transition-delay: .2s; } .grid > .reveal:nth-child(4) { transition-delay: .3s; }
+  .hero > * { animation: rise .9s cubic-bezier(.2,.8,.2,1) both; } .hero > img { animation-delay: .2s; }
+  .hero img { transition: transform .6s cubic-bezier(.2,.8,.2,1); } .hero img:hover { transform: translateY(-6px) rotate(-.5deg); }
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+  .card { transition: transform .3s ease, box-shadow .3s ease; }
+  .grid .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+  .feature .phone { animation: float 6s ease-in-out infinite; }
+  @keyframes float { 50% { transform: translateY(-10px); } }
+  @media (prefers-reduced-motion: reduce) {
+    .track, .hero > *, .feature .phone { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .strip { overflow-x: auto; }
+  }
   .keep img { display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 14px; }
   .communities { padding: 28px 24px; }
   .communities ul { padding-left: 1.2em; color: var(--text); margin: 0 0 16px; }
@@ -111,13 +134,40 @@
     <h2 id="why" class="serif">Why now, and not someday?</h2>
     <p class="sub serif-line">Most people wait until it's harder. The best time is while you're busy living.</p>
     <div class="strip" aria-hidden="true">
-      <img src="/images/gano-1940s2_6.jpg" width="473" height="700" alt="" loading="lazy">
-      <img src="/images/gano-byronruthmarriage_2.jpg" width="700" height="504" alt="" loading="lazy">
-      <img src="/images/gano-iramargaretgano_1.jpg" width="700" height="664" alt="" loading="lazy">
-      <img src="/images/gano-ggearlylife_4.jpg" width="700" height="560" alt="" loading="lazy">
-      <img src="/images/gano-grandkids_5.jpg" width="700" height="682" alt="" loading="lazy">
-      <img src="/images/gano-petersenfamily1_2.jpg" width="676" height="700" alt="" loading="lazy">
-      <img src="/images/gano-evvaetc_6.jpg" width="700" height="683" alt="" loading="lazy">
+      <div class="track">
+        <img src="/images/gano-1940s2_6.jpg" width="473" height="700" alt="">
+        <img src="/images/gano-iramargaretgano_1.jpg" width="700" height="664" alt="">
+        <img src="/images/gano-1940s3_7.jpg" width="600" height="438" alt="">
+        <img src="/images/gano-ggearlylife_4.jpg" width="700" height="560" alt="">
+        <img src="/images/gano-1940s3_3.jpg" width="599" height="600" alt="">
+        <img src="/images/gano-grandkids_5.jpg" width="700" height="682" alt="">
+        <img src="/images/gano-junedogs_2.jpg" width="600" height="574" alt="">
+        <img src="/images/gano-levikeys_1.jpg" width="600" height="453" alt="">
+        <img src="/images/gano-petersenfamily1_2.jpg" width="676" height="700" alt="">
+        <img src="/images/gano-juneyoung7_4.jpg" width="600" height="450" alt="">
+        <img src="/images/gano-rattler_2.jpg" width="435" height="600" alt="">
+        <img src="/images/gano-ggearlylife_3.jpg" width="407" height="600" alt="">
+        <img src="/images/gano-evvaetc_6.jpg" width="700" height="683" alt="">
+        <img src="/images/gano-1940s2_2.jpg" width="392" height="600" alt="">
+        <img src="/images/gano-ciderpress_1.jpg" width="489" height="600" alt="">
+        <img src="/images/gano-lince2_2.jpg" width="600" height="577" alt="">
+        <img src="/images/gano-1940s2_6.jpg" width="473" height="700" alt="" aria-hidden="true">
+        <img src="/images/gano-iramargaretgano_1.jpg" width="700" height="664" alt="" aria-hidden="true">
+        <img src="/images/gano-1940s3_7.jpg" width="600" height="438" alt="" aria-hidden="true">
+        <img src="/images/gano-ggearlylife_4.jpg" width="700" height="560" alt="" aria-hidden="true">
+        <img src="/images/gano-1940s3_3.jpg" width="599" height="600" alt="" aria-hidden="true">
+        <img src="/images/gano-grandkids_5.jpg" width="700" height="682" alt="" aria-hidden="true">
+        <img src="/images/gano-junedogs_2.jpg" width="600" height="574" alt="" aria-hidden="true">
+        <img src="/images/gano-levikeys_1.jpg" width="600" height="453" alt="" aria-hidden="true">
+        <img src="/images/gano-petersenfamily1_2.jpg" width="676" height="700" alt="" aria-hidden="true">
+        <img src="/images/gano-juneyoung7_4.jpg" width="600" height="450" alt="" aria-hidden="true">
+        <img src="/images/gano-rattler_2.jpg" width="435" height="600" alt="" aria-hidden="true">
+        <img src="/images/gano-ggearlylife_3.jpg" width="407" height="600" alt="" aria-hidden="true">
+        <img src="/images/gano-evvaetc_6.jpg" width="700" height="683" alt="" aria-hidden="true">
+        <img src="/images/gano-1940s2_2.jpg" width="392" height="600" alt="" aria-hidden="true">
+        <img src="/images/gano-ciderpress_1.jpg" width="489" height="600" alt="" aria-hidden="true">
+        <img src="/images/gano-lince2_2.jpg" width="600" height="577" alt="" aria-hidden="true">
+      </div>
     </div>
     <ul class="grid">
       <li class="card"><h3>You're the one who knows</h3><p>Who's in that photo, where that house was, why you took that job. Only you can tell it, and it's best told while it's fresh.</p></li>
@@ -203,5 +253,14 @@
     <p>© 2026 Firsthand Stories</p>
   </footer>
 </main>
+<script>
+  // Sections rise into view as they're scrolled to; skipped with Reduce Motion
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const els = document.querySelectorAll('main > section, .grid > li, .feature figure');
+    els.forEach(e => e.classList.add('reveal'));
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(e => io.observe(e));
+  }
+</script>
 </body>
 </html>
