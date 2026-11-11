@@ -75,6 +75,11 @@
   .prices th { text-align: left; padding: 20px 0 6px; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
   .prices td { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--text); vertical-align: top; }
   .prices td:last-child { text-align: right; white-space: nowrap; padding-left: 16px; color: var(--fg); font-weight: 600; }
+  .plan .price s { color: var(--muted); font-size: 1.1rem; }
+  .plan .save { margin: -6px 0 10px; font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+  .offer { text-align: left; margin: 0 0 20px; }
+  .offer .lead { color: var(--accent); }
+  .offer ul { margin: 8px 0 0; padding-left: 1.2em; color: var(--text); }
   .note { color: var(--muted); font-size: 1rem; margin: 16px 0 0; }
   details { border-bottom: 1px solid var(--line); }
   summary { cursor: pointer; padding: 14px 0; min-height: 44px; font-weight: 600; }
@@ -85,7 +90,7 @@
 </head>
 <body>
 <header class="site-header">
-  <nav aria-label="Site"><ul><li><a href="/">Firsthand Stories</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
+  <nav aria-label="Site"><ul><li><a href="/">Firsthand Stories</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
 </header>
 <main>
   <div class="hero">
@@ -140,10 +145,19 @@
 
   <h2 class="serif-head">Packages</h2>
   <p class="sub serif-line">Every package includes the planning call, the recording, a written transcript and a private story page.</p>
+  <div class="box offer">
+    <p class="lead">Christmas pricing</p>
+    <ul>
+      <li>Save $50 to $200 on every package</li>
+      <li>Your first 50 prints scanned free with any package</li>
+      <li>Gift certificates bought by December 24 keep the Christmas price through March 31, 2027</li>
+    </ul>
+  </div>
+
   <div class="plans">
     <div class="plan">
       <h3>Conversation</h3>
-      <p class="price">$295</p>
+      <p class="price"><s>$295</s> $245</p><p class="save">Save $50 this Christmas</p>
       <ul>
         <li>Up to 1 hour of recorded interview, one session</li>
         <li>Up to 25 photos you send us digitally</li>
@@ -154,7 +168,7 @@
     <div class="plan featured">
       <p class="tag">Most chosen</p>
       <h3>Life Story</h3>
-      <p class="price">$595</p>
+      <p class="price"><s>$595</s> $495</p><p class="save">Save $100 this Christmas</p>
       <ul>
         <li>Up to 3 hours of interview, over up to 3 sessions</li>
         <li>Up to 100 photos, including scanning of loose prints</li>
@@ -165,7 +179,7 @@
     </div>
     <div class="plan">
       <h3>Heirloom</h3>
-      <p class="price">$1,195</p>
+      <p class="price"><s>$1,195</s> $995</p><p class="save">Save $200 this Christmas</p>
       <ul>
         <li>Up to 6 hours of interview, as many sessions as needed</li>
         <li>Up to 300 photos, including albums, slides and negatives</li>
@@ -176,7 +190,7 @@
   </div>
 
   <h2 class="serif-head">Price list</h2>
-  <p class="sub serif-line">Add to any package, or ask us about something not listed.</p>
+  <p class="sub serif-line">Add to any package, or ask us about something not listed. Also on our <a href="/pricing/">pricing page</a>.</p>
   <table class="prices">
     <tbody>
       <tr><th colspan="2">Interview</th></tr>
