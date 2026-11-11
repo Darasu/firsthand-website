@@ -23,6 +23,10 @@
   .ways p { margin: 0; color: var(--text); }
   .points { padding-left: 1.2em; color: var(--text); }
   .points li { margin-bottom: 8px; }
+  .shots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); list-style: none; padding: 0; }
+  .shots img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 10px; }
+  .shots img.phone { max-width: 200px; margin: 0 auto 10px; border: 0; }
+  .shots h3 { margin: 0 0 4px; font-size: 1.05rem; } .shots p { margin: 0; color: var(--text); font-size: .95rem; }
 </style>
 </head>
 <body>
@@ -66,6 +70,18 @@
       <li>A private page that plays on any phone, shared only with the people they choose.</li>
       <li>A full transcript, and a printed book if they&rsquo;d like one.</li>
       <li>Questions shared ahead of time, so family can add their own.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="see">
+    <h2 id="see" class="serif">What families receive.</h2>
+    <img src="/images/page-desktop.png" width="1158" height="600" loading="lazy" style="display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin-bottom:16px"
+         alt="A story page's opening: an old photo, the storyteller's name, a short summary of their life story, and a Begin Listening button">
+    <ul class="shots">
+      <li class="card"><img class="phone" src="/images/page-phone.png" width="340" height="700" loading="lazy" alt="A story page on a phone, playing a chapter beside its photo"><h3>On any phone</h3><p>Chapters play beside the photos they belong to. Nothing to install.</p></li>
+      <li class="card"><img src="/images/keep-audio.png" width="631" height="349" loading="lazy" alt=""><h3>Audio</h3><p>Every chapter, in the resident&rsquo;s own voice.</p></li>
+      <li class="card"><img src="/images/keep-video.png" width="633" height="349" loading="lazy" alt=""><h3>Video slideshow</h3><p>Their voice over their photos, for family gatherings.</p></li>
+      <li class="card"><img src="/images/keep-booklet.png" width="630" height="349" loading="lazy" alt=""><h3>Printable booklet</h3><p>Every word in print, beside every photo.</p></li>
     </ul>
   </section>
 
