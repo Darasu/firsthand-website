@@ -23,6 +23,8 @@
   .ways p { margin: 0; color: var(--text); }
   .points { padding-left: 1.2em; color: var(--text); }
   .points li { margin-bottom: 8px; }
+  .more { margin-top: 12px; } .more summary { cursor: pointer; color: var(--accent); font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+  .ways li.card:has(.more[open]) { grid-column: 1 / -1; }
   .shots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); list-style: none; padding: 0; }
   .shots img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 10px; }
   .shots img.phone { max-width: 200px; margin: 0 auto 10px; border: 0; }
@@ -57,7 +59,19 @@
   <section aria-labelledby="ways">
     <h2 id="ways" class="serif">Two ways to run it.</h2>
     <ul class="ways">
-      <li class="card"><h3>Your team records</h3><p>We set your activities or life-enrichment staff up with the Firsthand app on an iPad and a pair of small microphones, train them in an afternoon, and support them as they go. Your community owns the program and the recordings.</p></li>
+      <li class="card"><h3>Your team records</h3><p>We set your activities or life-enrichment staff up with the Firsthand app on an iPad and a pair of small microphones, train them in an afternoon, and support them as they go. Your community owns the program and the recordings.</p>
+        <details class="more"><summary>See How the App Works</summary>
+          <ul class="points">
+            <li><strong>Ready-made questions.</strong> A full personal-history list, grouped into stories from childhood to today. Staff skip, reorder or add their own; families can send questions ahead of time.</li>
+            <li><strong>One tap per question.</strong> The interviewer taps each question as they ask it, so every answer becomes its own chapter. No editing afterwards.</li>
+            <li><strong>Two voices, two tracks.</strong> Small clip-on microphones record the interviewer and the resident separately, so the resident&rsquo;s voice stays clear even in a busy room. The iPad&rsquo;s own mic works too.</li>
+            <li><strong>Pause and pick up later.</strong> Stop when the resident tires and resume another day; it all joins into one story.</li>
+            <li><strong>Transcripts on the iPad.</strong> Every word is written out on the device itself, with long pauses and filler words tidied automatically.</li>
+            <li><strong>Photos beside the moments.</strong> Add scanned photos to any chapter, from the iPad&rsquo;s camera or library.</li>
+            <li><strong>Publish in one step.</strong> A private story page for the family, plus audio, a video slideshow and a printable booklet.</li>
+            <li><strong>Private by default.</strong> Recordings stay on your iPads until someone chooses to publish one.</li>
+          </ul>
+        </details></li>
       <li class="card"><h3>We record for you</h3><p>We come to your community on a schedule, sit down with residents one by one, scan their photos and deliver each story ready to share. Nothing for your staff to learn.</p></li>
     </ul>
   </section>
