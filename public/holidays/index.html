@@ -3,250 +3,153 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Share Your Life Stories This Holiday Season · Firsthand Stories</title>
-<meta name="description" content="Personal history interviews, photo scanning and printed books for the holidays: packages, prices and how it works. Free 15-minute call to plan your story.">
+<title>Holiday Pricing · Firsthand Stories</title>
+<meta name="description" content="Record your life story, or a parent&rsquo;s, for the holidays. Up to $200 off every package through December 24, with photo scanning and printed books.">
+<link rel="canonical" href="https://firsthandstories.app/holidays/">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Firsthand Stories">
+<meta property="og:title" content="Holiday Pricing · Firsthand Stories">
+<meta property="og:description" content="Record your life story, or a parent&rsquo;s, for the holidays. Up to $200 off every package through December 24, with photo scanning and printed books.">
+<meta property="og:url" content="https://firsthandstories.app/holidays/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400&amp;family=Playfair+Display:ital,wght@1,500;1,600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400&amp;family=Playfair+Display:ital,wght@1,500&amp;display=swap">
+<link rel="stylesheet" href="/site.css">
 <style>
-  /* The door flier's look (holidays 2026): Playfair italic headings, Fraunces italic lines, deep red, warm greys, cream boxes */
-  :root { --bg: #ffffff; --fg: #1f1b18; --text: #3d3630; --muted: #5f574f; --accent: #c8423f; --on-accent: #ffffff;
-          --line: #eadfd2; --box: #fbf6ef; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #0b0b0d; --fg: #f2eee9; --text: #d9d2ca; --muted: #a39b92; --accent: #ff7462; --on-accent: #0b0b0d;
-            --line: #34302c; --box: #1a1714; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--fg);
-         font: 19px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-  a { color: var(--accent); }
-  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-  .site-header { max-width: 760px; margin: 0 auto; padding: 8px 8px 0; }
-  .site-header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 4px; }
-  .site-header a { display: block; padding: 10px 8px; border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 0.95rem; }
-  .site-header a:hover { color: var(--accent); }
-  main { max-width: 680px; margin: 0 auto; padding: 24px 16px 80px; }
-  .serif-head { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; letter-spacing: -0.02em; }
-  .serif-line { font-family: Fraunces, Georgia, serif; font-style: italic; font-weight: 400; }
-  .hero { text-align: center; }
-  h1 { color: var(--accent); font-size: clamp(2.3rem, 8vw, 3.6rem); line-height: 1.05; margin: 8px 0 0; text-wrap: balance; }
-  .garland { display: block; width: min(100%, 600px); height: auto; margin: 20px auto 8px; }
-  .line1 { font-size: clamp(1.35rem, 4.5vw, 1.7rem); line-height: 1.3; margin: 0; }
-  .line2 { color: var(--text); font-size: 1.1rem; line-height: 1.45; margin: 0; text-wrap: pretty; }
-  .divider { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 16px 0; }
-  .divider span { width: 48px; height: 1px; background: var(--accent); }
-  .divider i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-  .box { background: var(--box); border: 1px solid var(--line); border-radius: 18px; padding: 22px; text-align: center; margin: 8px 0 0; }
-  .box p { margin: 0; }
-  .box .lead { font-weight: 500; }
-  .box .small { color: var(--muted); font-size: 1rem; margin-top: 12px; }
-  .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 16px 0 0; }
-  .actions a { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px; border-radius: 999px;
-               font-weight: 600; font-size: 1.05rem; text-decoration: none; border: 1px solid var(--line); color: var(--fg); background: var(--bg); }
-  .actions a.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-  h2 { font-size: clamp(1.8rem, 6vw, 2.3rem); line-height: 1.1; margin: 56px 0 8px; }
-  .sub { color: var(--text); font-size: 1.15rem; line-height: 1.4; margin: 0 0 24px; text-wrap: pretty; }
-  .rows { display: grid; gap: 16px; }
-  .row { display: flex; gap: 16px; align-items: center; }
-  .row .ic { flex: none; width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--accent); display: grid; place-items: center; }
-  .row .ic svg { width: 24px; height: 24px; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .row p { margin: 0; color: var(--text); text-wrap: pretty; }
-  .row strong { color: var(--fg); }
-  ol { padding-left: 1.3em; margin: 0; color: var(--text); }
-  ol li { margin: 0 0 8px; }
-  .closing { margin-top: 56px; }
-  .closing .serif-head { font-size: 1.6rem; line-height: 1.2; color: var(--fg); margin: 0 0 4px; text-wrap: balance; }
-  .brandline { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; color: var(--muted); font-size: 0.9rem; }
-  .brandline { flex-wrap: wrap; row-gap: 2px; }
-  .brandline strong, .brandline span { white-space: nowrap; }
-  .brandline strong { color: var(--fg); }
-  .brandline svg { width: 40px; height: 16px; }
-  .plans { display: grid; gap: 16px; }
-  @media (min-width: 640px) { .plans { grid-template-columns: repeat(3, 1fr); } main.wide-ok { max-width: 900px; } }
-  .plan { background: var(--box); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+  .garland { display: block; width: min(100%, 640px); height: auto; margin: 8px auto 0; }
+  .hol-hero { text-align: center; }
+  .hol-hero .lede { margin: 16px auto 24px; max-width: 600px; }
+  .hol-hero .actions { justify-content: center; }
+  .plans { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); list-style: none; padding: 0; margin: 0; }
   .plan.featured { border: 2px solid var(--accent); }
-  .plan h3 { margin: 0; font-size: 1.2rem; }
-  .plan .tag { margin: 0 0 4px; color: var(--accent); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
-  .plan .price { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 2rem; margin: 4px 0 8px; color: var(--accent); }
-  .plan ul { margin: 0; padding-left: 1.1em; color: var(--text); font-size: 0.95rem; }
+  .plan .tag { margin: 0 0 4px; color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+  .plan h3 { font-size: 1.25rem; margin: 0; }
+  .plan .line { margin: 2px 0 12px; color: var(--muted); font-family: Fraunces, Georgia, serif; font-style: italic; }
+  .plan .price { font-size: 2.2rem; font-weight: 700; letter-spacing: -.02em; margin: 0; line-height: 1; }
+  .plan .price s { font-size: 1.1rem; font-weight: 500; color: var(--muted); margin-right: 6px; }
+  .plan .sale { margin: 6px 0 14px; font-size: 0.92rem; color: var(--accent); font-weight: 600; }
+  .plan ul { margin: 0; padding-left: 1.1em; color: var(--muted); font-size: 0.95rem; }
   .plan li { margin-bottom: 6px; }
-  .prices { width: 100%; border-collapse: collapse; font-size: 1rem; }
-  .prices th { text-align: left; padding: 20px 0 6px; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  .prices td { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--text); vertical-align: top; }
-  .prices td:last-child { text-align: right; white-space: nowrap; padding-left: 16px; color: var(--fg); font-weight: 600; }
-  .plan .price s { color: var(--muted); font-size: 1.1rem; }
-  .plan .save { margin: -6px 0 10px; font-size: 0.85rem; font-weight: 600; color: var(--accent); }
-  .offer { text-align: left; margin: 0 0 20px; }
-  .offer .lead { color: var(--accent); }
+  .offer { border: 2px solid var(--accent); }
   .offer ul { margin: 8px 0 0; padding-left: 1.2em; color: var(--text); }
-  .note { color: var(--muted); font-size: 1rem; margin: 16px 0 0; }
+  .offer li { margin-bottom: 6px; }
+  ol.steps { counter-reset: s; }
   details { border-bottom: 1px solid var(--line); }
   summary { cursor: pointer; padding: 14px 0; min-height: 44px; font-weight: 600; }
   details p { margin: 0 0 16px; color: var(--text); }
-  footer { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
-  footer a { margin-right: 16px; }
 </style>
 </head>
 <body>
-<header class="site-header">
-  <nav aria-label="Site"><ul><li><a href="/">Firsthand Stories</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
+<div class="margin-photos" aria-hidden="true">
+  <img class="big" src="/images/gano-ggearlylife_4-lg.jpg" width="1000" height="800" alt="" loading="lazy" data-speed="0.06" style="top:12%;right:calc((100vw - 880px) / 2 - 540px);width:540px;--r:2deg">
+  <img class="big" src="/images/gano-iramargaretgano_1-lg.jpg" width="1000" height="948" alt="" loading="lazy" data-speed="0.07" style="top:30%;left:calc((100vw - 880px) / 2 - 286px);width:520px;--r:2deg">
+  <img class="big" src="/images/gano-levikeys_1-lg.jpg" width="1000" height="756" alt="" loading="lazy" data-speed="0.06" style="top:60%;left:calc((100vw - 880px) / 2 - 609px);width:580px;--r:-1.5deg">
+  <img class="small" src="/images/gano-waltjune_2.jpg" width="483" height="500" alt="" loading="lazy" data-speed="0.2" style="top:3%;right:calc((100vw - 880px) / 2 - 94px);width:170px;--r:4deg">
+  <img class="small" src="/images/gano-1940s3_1.jpg" width="318" height="500" alt="" loading="lazy" data-speed="0.32" style="top:24%;right:calc((100vw - 880px) / 2 - 176px);width:110px;--r:-4deg">
+  <img class="small" src="/images/gano-ganofamily2_2.jpg" width="485" height="500" alt="" loading="lazy" data-speed="0.18" style="top:30%;right:calc((100vw - 880px) / 2 - 299px);width:260px;--r:-2deg">
+  <img class="small" src="/images/gano-iragano1_2.jpg" width="353" height="500" alt="" loading="lazy" data-speed="0.22" style="top:50%;left:calc((100vw - 880px) / 2 - 300px);width:200px;--r:-4deg">
+  <img class="small" src="/images/gano-1940s_3.jpg" width="420" height="500" alt="" loading="lazy" data-speed="0.33" style="top:68%;right:calc((100vw - 880px) / 2 - 204px);width:120px;--r:-3deg">
+  <img class="small" src="/images/gano-juneyoung5_5.jpg" width="309" height="400" alt="" loading="lazy" data-speed="0.3" style="top:88%;left:calc((100vw - 880px) / 2 - 50px);width:110px;--r:-5deg">
+  <img class="small" src="/images/gano-1940s3_5.jpg" width="270" height="400" alt="" loading="lazy" data-speed="0.22" style="top:95%;left:calc((100vw - 880px) / 2 - 240px);width:150px;--r:3deg">
+</div>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="mini-brand" href="/" aria-label="Firsthand Stories, home"><svg viewBox="110 360 805 328" aria-hidden="true" class="mark"><defs><linearGradient id="fhA" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1024" y2="0"><stop offset="0.12" stop-color="#FFD58A"/><stop offset="0.5" stop-color="#FFB27A"/><stop offset="0.88" stop-color="#F07A7A"/></linearGradient></defs><path fill="url(#fhA)" d="M119 524L126 526L134 528L142 530L149 532L157 535L165 538L173 540L181 543L189 545L197 547L205 549L214 550L222 551L231 551L240 550L249 548L259 545L268 541L277 536L286 530L295 522L304 514L313 506L322 496L331 486L339 476L348 466L356 457L364 448L372 439L380 432L386 426L393 423L397 421L400 421L401 421L402 422L404 424L407 427L412 432L417 440L424 451L430 464L437 478L444 494L452 511L459 529L467 547L475 565L483 583L491 600L500 616L509 631L518 644L528 656L540 667L554 675L570 679L587 678L602 673L615 666L625 656L635 645L643 633L651 621L659 608L666 594L674 581L681 567L688 554L695 542L701 531L708 520L715 511L721 503L727 496L733 491L739 487L744 484L750 482L756 480L762 480L768 480L775 481L783 482L790 485L798 487L806 490L814 494L822 497L830 500L838 503L846 506L854 509L862 512L871 514L879 516L887 518L895 519L903 520L905 508L900 507L892 506L885 504L877 502L870 499L862 496L855 493L847 490L840 486L832 482L824 478L817 474L809 470L801 466L793 462L785 458L776 456L767 453L758 452L748 452L738 454L728 457L718 461L708 467L698 474L689 483L680 492L670 503L662 515L653 527L644 539L636 552L627 565L619 577L611 588L603 598L596 607L589 614L583 618L579 620L578 620L579 619L580 619L579 618L575 615L570 609L564 601L558 590L551 576L544 561L536 545L528 528L520 510L512 492L504 474L496 456L487 440L478 424L469 410L459 398L448 387L437 378L423 371L408 368L394 369L380 373L368 380L358 388L349 397L341 407L333 417L326 428L318 439L311 450L304 461L297 471L290 481L283 490L276 498L270 505L263 511L257 516L250 521L244 524L237 527L231 529L224 530L217 530L210 530L202 530L195 529L187 527L180 526L172 524L164 522L156 520L148 518L140 516L132 514L124 513L121 512Z"/></svg><span>Firsthand Stories</span></a>
+    <nav aria-label="Site"><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
+  </div>
 </header>
 <main>
-  <div class="hero">
-    <h1 class="serif-head">Share your life stories this holiday season.</h1>
-    <img class="garland" src="garland.webp" width="2000" height="1108" alt="A pine garland with five glass ornaments, each printed with an old family photo">
-    <p class="line1 serif-line">Record your memories in your own voice.</p>
-    <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
-    <p class="line2">Pass them on to family and friends<br>this holiday season and beyond.</p>
-    <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
-  </div>
-
-  <div class="box">
-    <p class="lead">Spots are limited. Book now for the holidays.</p>
+  <div class="big-brand"><svg viewBox="110 360 805 328" aria-hidden="true" class="mark"><defs><linearGradient id="fhB" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1024" y2="0"><stop offset="0.12" stop-color="#FFD58A"/><stop offset="0.5" stop-color="#FFB27A"/><stop offset="0.88" stop-color="#F07A7A"/></linearGradient></defs><path fill="url(#fhB)" d="M119 524L126 526L134 528L142 530L149 532L157 535L165 538L173 540L181 543L189 545L197 547L205 549L214 550L222 551L231 551L240 550L249 548L259 545L268 541L277 536L286 530L295 522L304 514L313 506L322 496L331 486L339 476L348 466L356 457L364 448L372 439L380 432L386 426L393 423L397 421L400 421L401 421L402 422L404 424L407 427L412 432L417 440L424 451L430 464L437 478L444 494L452 511L459 529L467 547L475 565L483 583L491 600L500 616L509 631L518 644L528 656L540 667L554 675L570 679L587 678L602 673L615 666L625 656L635 645L643 633L651 621L659 608L666 594L674 581L681 567L688 554L695 542L701 531L708 520L715 511L721 503L727 496L733 491L739 487L744 484L750 482L756 480L762 480L768 480L775 481L783 482L790 485L798 487L806 490L814 494L822 497L830 500L838 503L846 506L854 509L862 512L871 514L879 516L887 518L895 519L903 520L905 508L900 507L892 506L885 504L877 502L870 499L862 496L855 493L847 490L840 486L832 482L824 478L817 474L809 470L801 466L793 462L785 458L776 456L767 453L758 452L748 452L738 454L728 457L718 461L708 467L698 474L689 483L680 492L670 503L662 515L653 527L644 539L636 552L627 565L619 577L611 588L603 598L596 607L589 614L583 618L579 620L578 620L579 619L580 619L579 618L575 615L570 609L564 601L558 590L551 576L544 561L536 545L528 528L520 510L512 492L504 474L496 456L487 440L478 424L469 410L459 398L448 387L437 378L423 371L408 368L394 369L380 373L368 380L358 388L349 397L341 407L333 417L326 428L318 439L311 450L304 461L297 471L290 481L283 490L276 498L270 505L263 511L257 516L250 521L244 524L237 527L231 529L224 530L217 530L210 530L202 530L195 529L187 527L180 526L172 524L164 522L156 520L148 518L140 516L132 514L124 513L121 512Z"/></svg><p class="serif">Firsthand Stories</p></div>
+  <div class="hol-hero">
+    <h1 class="serif">This year, give something<br>with a little history.</h1>
+    <img class="garland" src="/holidays/garland.webp" width="2000" height="1108" alt="A pine garland with five glass ornaments, each printed with an old family photo">
+    <p class="lede">Record your life story, or a parent&rsquo;s, in time to share when everyone&rsquo;s home. Up to $200 off, through December 24.</p>
     <div class="actions">
-      <a class="primary" href="tel:+17044128761">Call (704) 412-8761</a>
-      <a href="sms:+17044128761">Text Us</a>
-      <a href="mailto:support@firsthandstories.app?subject=Recording%20my%20story">Email Us</a>
-    </div>
-    <p class="small">Free 15-minute call to plan your story.</p>
-  </div>
-
-  <h2 class="serif-head">Sound familiar?</h2>
-  <p class="sub serif-line">Most families have the same four problems.</p>
-  <div class="rows">
-    <div class="row">
-      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M7 7V5h10v2"/></svg></div>
-      <p><strong>Boxes of photos nobody sees.</strong> Albums in the closet, slides in a carousel, negatives in an envelope. Most of them haven't been looked at in years, and many can't be viewed at all without a scanner.</p>
-    </div>
-    <div class="row">
-      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17h.01"/></svg></div>
-      <p><strong>You're the only one who knows the stories behind them.</strong> Who is that standing beside you? Where was that house? Your children and grandchildren will want to know, and the best time to tell it is while every detail is clear.</p>
-    </div>
-    <div class="row">
-      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-      <p><strong>There's never enough time.</strong> Sorting, scanning, interviewing, editing and putting it all together takes weeks. It stays on the someday list, and someday doesn't always come.</p>
-    </div>
-    <div class="row">
-      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/></svg></div>
-      <p><strong>Recordings that never get heard.</strong> A long phone video with no way to find the good parts is hard to share and easy to lose.</p>
+      <a class="button" href="tel:+17044128761">Call or Text (704) 412-8761</a>
+      <a class="button secondary" href="mailto:support@firsthandstories.app?subject=Recording%20a%20life%20story">Email Us</a>
     </div>
   </div>
 
-  <h2 class="serif-head">We do all of it for you.</h2>
-  <p class="sub serif-line">A conversation, your photos, and a finished family keepsake.</p>
-  <ol>
-    <li><strong>A free 15-minute planning call.</strong> Tell us about yourself, or about the person you'd like to give this to. We choose questions together, and you can add your own.</li>
-    <li><strong>We gather the photos.</strong> Send us digital photos, or we scan prints, album pages, slides and negatives (see below).</li>
-    <li><strong>We sit down and record.</strong> At home or in your community, at your pace, with professional microphones for the interviewer and the storyteller. Several short sessions are fine.</li>
-    <li><strong>We put it together.</strong> Every story becomes its own chapter, long pauses and "um"s are gently trimmed, every word is written out, and photos are placed beside the stories they belong to.</li>
-    <li><strong>Your family keeps it.</strong> A private story page to listen, read and share, plus downloads of the audio and a printable transcript. Add a printed book if you'd like one under the tree.</li>
-  </ol>
-
-  <h2 class="serif-head">Packages</h2>
-  <p class="sub serif-line">Every package includes the planning call, the recording, a written transcript and a private story page.</p>
-  <div class="box offer">
-    <p class="lead">Holiday pricing</p>
-    <ul>
-      <li>Save $50 to $200 on every package</li>
-      <li>Your first 50 prints scanned free with any package</li>
-      <li>Gift certificates bought by December 24 keep the holiday price through March 31, 2027</li>
+  <section aria-labelledby="why">
+    <h2 id="why" class="serif">The trouble with shoeboxes.</h2>
+    <p class="sub serif-line">Every family has one. Most never get opened.</p>
+    <ul class="grid">
+      <li class="card"><h3>Photos nobody sees.</h3><p>Albums in the closet. Slides in a carousel. Negatives in an envelope nobody can look through.</p></li>
+      <li class="card"><h3>Stories nobody wrote down.</h3><p>Who&rsquo;s that next to Grandpa? Where was that house? You know. Nobody else does.</p></li>
+      <li class="card"><h3>Never enough time.</h3><p>Sorting, scanning, interviewing, editing. It&rsquo;s on the someday list. Someday is busy.</p></li>
+      <li class="card"><h3>Recordings nobody hears.</h3><p>A two-hour phone video with no way to find the good part isn&rsquo;t much of a keepsake.</p></li>
     </ul>
-  </div>
+  </section>
 
-  <div class="plans">
-    <div class="plan">
-      <h3>Conversation</h3>
-      <p class="price"><s>$295</s> $245</p><p class="save">Save $50 this holiday season</p>
+  <section aria-labelledby="how">
+    <h2 id="how" class="serif">We take it from here.</h2>
+    <p class="sub serif-line">You bring the stories. We bring everything else.</p>
+    <ol class="grid">
+      <li class="card"><div class="num" aria-hidden="true">1</div><h3>A quick call.</h3><p>Fifteen minutes, free. Tell us about yourself, or who it&rsquo;s for, and we pick the questions together.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">2</div><h3>The photos.</h3><p>Send digital ones, or we scan prints, album pages, slides and negatives.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">3</div><h3>The conversation.</h3><p>At home or in your community, with proper microphones. As many short sessions as you like.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">4</div><h3>The finishing.</h3><p>Chapters, a transcript, the ums trimmed, every photo beside its story.</p></li>
+      <li class="card"><div class="num" aria-hidden="true">5</div><h3>The unwrapping.</h3><p>A private page to share, and a printed book if you want one under the tree.</p></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="packages">
+    <h2 id="packages" class="serif">Holiday pricing.</h2>
+    <p class="sub serif-line">Same packages. Smaller numbers.</p>
+    <div class="card offer" style="margin-bottom:20px">
       <ul>
-        <li>Up to 1 hour of recorded interview, one session</li>
-        <li>Up to 25 photos you send us digitally</li>
-        <li>Chaptered recording and full transcript</li>
-        <li>Private story page to share with family</li>
+        <li>Up to $200 off every package.</li>
+        <li>Your first 50 prints scanned free.</li>
+        <li>Gift certificates bought by December 24 hold the holiday price through March 31, 2027.</li>
       </ul>
     </div>
-    <div class="plan featured">
-      <p class="tag">Most chosen</p>
-      <h3>Life Story</h3>
-      <p class="price"><s>$595</s> $495</p><p class="save">Save $100 this holiday season</p>
-      <ul>
-        <li>Up to 3 hours of interview, over up to 3 sessions</li>
-        <li>Up to 100 photos, including scanning of loose prints</li>
-        <li>Questions shared ahead of time; family can add their own</li>
-        <li>Keepsake PDF of your stories with photos</li>
-        <li>Everything in Conversation</li>
-      </ul>
-    </div>
-    <div class="plan">
-      <h3>Heirloom</h3>
-      <p class="price"><s>$1,195</s> $995</p><p class="save">Save $200 this holiday season</p>
-      <ul>
-        <li>Up to 6 hours of interview, as many sessions as needed</li>
-        <li>Up to 300 photos, including albums, slides and negatives</li>
-        <li>One printed hardcover book of your stories and photos</li>
-        <li>Everything in Life Story</li>
-      </ul>
-    </div>
-  </div>
+    <ul class="plans">
+      <li class="card plan"><h3>Conversation</h3><p class="line">The highlights.</p>
+        <p class="price"><s>$295</s>$245</p><p class="sale">Save $50</p><ul><li>Up to 1 hour of interview, one session</li><li>Up to 25 photos you send us digitally</li><li>Chaptered recording and full transcript</li><li>A private story page to share</li></ul></li>
+      <li class="card plan featured"><p class="tag">Most chosen</p><h3>Life Story</h3><p class="line">The whole arc.</p>
+        <p class="price"><s>$595</s>$495</p><p class="sale">Save $100</p><ul><li>Up to 3 hours, over up to 3 sessions</li><li>Up to 100 photos, loose prints scanned</li><li>Questions ahead of time; family can add their own</li><li>Keepsake PDF of your stories and photos</li><li>Everything in Conversation</li></ul></li>
+      <li class="card plan"><h3>Heirloom</h3><p class="line">The works, bound.</p>
+        <p class="price"><s>$1,195</s>$995</p><p class="sale">Save $200</p><ul><li>Up to 6 hours, as many sessions as it takes</li><li>Up to 300 photos, albums, slides and negatives too</li><li>A printed hardcover book of your stories</li><li>Everything in Life Story</li></ul></li>
+    </ul>
+    <p class="note">Scanning, extra hours and extra books are on the <a href="/pricing/">price list</a>.</p>
+  </section>
 
-  <h2 class="serif-head">Price list</h2>
-  <p class="sub serif-line">Add to any package, or ask us about something not listed. Also on our <a href="/pricing/">pricing page</a>.</p>
-  <table class="prices">
-    <tbody>
-      <tr><th colspan="2">Interview</th></tr>
-      <tr><td>Additional interview hour</td><td>$125</td></tr>
-      <tr><td>Travel beyond 30 miles of Charlotte</td><td>$0.70 / mile</td></tr>
-      <tr><th colspan="2">Photos</th></tr>
-      <tr><td>Digital photos you send us</td><td>Free</td></tr>
-      <tr><td>Scanning loose prints</td><td>$0.45 each</td></tr>
-      <tr><td>Album pages, photographed without removing photos</td><td>$1 per page</td></tr>
-      <tr><td>Slides and negatives</td><td>$0.65 each</td></tr>
-      <tr><td>Restoration of a faded or damaged photo</td><td>$12 each</td></tr>
-      <tr><th colspan="2">Keepsakes</th></tr>
-      <tr><td>Printed hardcover book</td><td>$119</td></tr>
-      <tr><td>Additional copies of the book</td><td>$49 each</td></tr>
-      <tr><td>USB drive with audio, photos and transcript</td><td>$35</td></tr>
-      <tr><th colspan="2">Gifts</th></tr>
-      <tr><td>Gift certificate, printed and ready for under the tree</td><td>Any package</td></tr>
-    </tbody>
-  </table>
+  <section aria-labelledby="photos">
+    <h2 id="photos" class="serif">However they&rsquo;re stored.</h2>
+    <p class="sub serif-line">We&rsquo;ll get them out of there.</p>
+    <ul class="grid">
+      <li class="card"><h3>Already digital.</h3><p>On a phone, a computer or an online album. Send a link.</p></li>
+      <li class="card"><h3>Loose prints.</h3><p>Scanned at your home, or dropped off and every one returned.</p></li>
+      <li class="card"><h3>Photo albums.</h3><p>Old albums are glued and fragile, so we photograph each page in place.</p></li>
+      <li class="card"><h3>Slides and negatives.</h3><p>Digitized, so you can see them. Often for the first time in decades.</p></li>
+    </ul>
+  </section>
 
-  <h2 class="serif-head">About the photos</h2>
-  <p class="sub serif-line">However your photos are stored, we can bring them along.</p>
-  <div class="rows">
-    <div class="row"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-      <p><strong>Already digital.</strong> Photos on a phone, computer or in an online album. Share them with a link and we take it from there.</p></div>
-    <div class="row"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/></svg></div>
-      <p><strong>Loose prints.</strong> We scan them at your home during a session, or you drop them off and get every one back.</p></div>
-    <div class="row"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"/></svg></div>
-      <p><strong>Photo albums.</strong> Old albums are often glued or fragile, so we photograph each page in place and never pull photos out.</p></div>
-    <div class="row"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 9h18M3 15h18M7 6v3M11 6v3M15 6v3M7 15v3M11 15v3M15 15v3"/></svg></div>
-      <p><strong>Slides and negatives.</strong> We digitize them so you can finally see them, often for the first time in decades.</p></div>
-  </div>
-  <p class="note">During the interview we look through the photos together, so each one comes with the story of who, where and when.</p>
+  <section aria-labelledby="faq">
+    <h2 id="faq" class="serif">Questions.</h2>
+    <details><summary>Am I too young for this?</summary><p>No. Most people tell their story best in their 50s, 60s and 70s, while names, dates and details come easily. You can always add chapters later.</p></details>
+    <details><summary>Can it be ready in time for the holidays?</summary><p>Yes, if we record by mid-December. If not, give a gift certificate and we&rsquo;ll record in the new year at the holiday price.</p></details>
+    <details><summary>How long should the interview be?</summary><p>An hour covers the highlights. Three hours covers a life, from childhood to today. Longer conversations work best in sessions of an hour or so.</p></details>
+    <details><summary>Who can hear it?</summary><p>Only the people you choose. Your story page is private, and the recording belongs to your family.</p></details>
+    <details><summary>Can my family join in?</summary><p>Yes. They can send questions ahead of time, sit in, or add photos of their own.</p></details>
+    <details><summary>What if I&rsquo;m not sure what to say?</summary><p>You&rsquo;ll see the questions ahead of time and can skip any of them. It&rsquo;s a conversation, not a performance.</p></details>
+  </section>
 
-  <h2 class="serif-head">Questions people ask</h2>
-  <details><summary>Am I too young for this?</summary><p>No. Most people tell their story best in their 50s, 60s and 70s, while names, dates and details come easily. You can always add more chapters later.</p></details>
-  <details><summary>How long should the interview be?</summary><p>An hour covers the highlights. Three hours tells a life story, from childhood to today. Longer conversations are best split into sessions of an hour or so, so nobody gets tired.</p></details>
-  <details><summary>Can it be finished in time for the holidays?</summary><p>Yes, if the interview is recorded by mid-December. If not, give a gift certificate and we'll record in the new year.</p></details>
-  <details><summary>Who can hear it?</summary><p>Only the people you choose. Your story page is private, and the recording belongs to your family.</p></details>
-  <details><summary>Can my family join in?</summary><p>Yes. Family can send questions ahead of time, sit in on the interview, or add photos of their own.</p></details>
-  <details><summary>What if I'm not sure what to say?</summary><p>You see the questions ahead of time and can skip any of them. It feels like a relaxed conversation, not a performance.</p></details>
-
-  <div class="box closing">
-    <p class="serif-head">For yourself, your spouse, or as a gift for a parent.</p>
+  <section class="closing" aria-labelledby="start">
+    <h2 id="start" class="serif">Unwrap a lifetime.</h2>
+    <p>Spots are limited before the holidays. Start with a free 15-minute call.</p>
     <div class="actions">
-      <a class="primary" href="tel:+17044128761">Call or Text (704) 412-8761</a>
-      <a href="mailto:support@firsthandstories.app?subject=Recording%20my%20story">Email Us</a>
+      <a class="button" href="tel:+17044128761">Call or Text (704) 412-8761</a>
+      <a class="button secondary" href="mailto:support@firsthandstories.app?subject=Recording%20a%20life%20story">Email Us</a>
     </div>
-  </div>
-
-  <div class="brandline"><svg viewBox="110 360 805 328" aria-hidden="true"><defs><linearGradient id="fhVoice" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1024" y2="0"><stop offset="0.12" stop-color="#FFD58A"/><stop offset="0.5" stop-color="#FFB27A"/><stop offset="0.88" stop-color="#F07A7A"/></linearGradient></defs><path fill="url(#fhVoice)" d="M119 524L126 526L134 528L142 530L149 532L157 535L165 538L173 540L181 543L189 545L197 547L205 549L214 550L222 551L231 551L240 550L249 548L259 545L268 541L277 536L286 530L295 522L304 514L313 506L322 496L331 486L339 476L348 466L356 457L364 448L372 439L380 432L386 426L393 423L397 421L400 421L401 421L402 422L404 424L407 427L412 432L417 440L424 451L430 464L437 478L444 494L452 511L459 529L467 547L475 565L483 583L491 600L500 616L509 631L518 644L528 656L540 667L554 675L570 679L587 678L602 673L615 666L625 656L635 645L643 633L651 621L659 608L666 594L674 581L681 567L688 554L695 542L701 531L708 520L715 511L721 503L727 496L733 491L739 487L744 484L750 482L756 480L762 480L768 480L775 481L783 482L790 485L798 487L806 490L814 494L822 497L830 500L838 503L846 506L854 509L862 512L871 514L879 516L887 518L895 519L903 520L905 508L900 507L892 506L885 504L877 502L870 499L862 496L855 493L847 490L840 486L832 482L824 478L817 474L809 470L801 466L793 462L785 458L776 456L767 453L758 452L748 452L738 454L728 457L718 461L708 467L698 474L689 483L680 492L670 503L662 515L653 527L644 539L636 552L627 565L619 577L611 588L603 598L596 607L589 614L583 618L579 620L578 620L579 619L580 619L579 618L575 615L570 609L564 601L558 590L551 576L544 561L536 545L528 528L520 510L512 492L504 474L496 456L487 440L478 424L469 410L459 398L448 387L437 378L423 371L408 368L394 369L380 373L368 380L358 388L349 397L341 407L333 417L326 428L318 439L311 450L304 461L297 471L290 481L283 490L276 498L270 505L263 511L257 516L250 521L244 524L237 527L231 529L224 530L217 530L210 530L202 530L195 529L187 527L180 526L172 524L164 522L156 520L148 518L140 516L132 514L124 513L121 512Z"/></svg><strong>Firsthand Stories</strong><span>·</span><span>firsthandstories.app/holidays</span></div>
+  </section>
 
   <footer>
-    <a href="/">Firsthand Stories</a><a href="/privacy/">Privacy Policy</a><a href="mailto:support@firsthandstories.app">Support</a>
-    <div>© 2026 Firsthand</div>
+    <p><a href="/">Firsthand Stories</a><a href="/pricing/">Pricing</a><a href="/app/">Firsthand app</a><a href="/privacy/">Privacy Policy</a><a href="mailto:support@firsthandstories.app">Contact</a></p>
+    <p>© 2026 Firsthand Stories</p>
   </footer>
 </main>
+<script src="/site.js" defer></script>
 </body>
 </html>

@@ -3,115 +3,90 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Firsthand · Their story, in their words</title>
+<title>Firsthand · Interview like a pro</title>
+<meta name="description" content="Firsthand turns an interview you lead into something finished: a chapter for every question, a transcript and files ready to share. Coming soon for iPhone and iPad.">
 <link rel="canonical" href="https://firsthandstories.app/app/">
-<meta name="description" content="Firsthand records interviews you lead yourself and turns them into a finished recording: chapters for each question, a transcript, and files ready to share. For iPhone and iPad.">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Firsthand Stories">
+<meta property="og:title" content="Firsthand · Interview like a pro">
+<meta property="og:description" content="Firsthand turns an interview you lead into something finished: a chapter for every question, a transcript and files ready to share. Coming soon for iPhone and iPad.">
+<meta property="og:url" content="https://firsthandstories.app/app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400&amp;family=Playfair+Display:ital,wght@1,500&amp;display=swap">
+<link rel="stylesheet" href="/site.css">
 <style>
-  :root { --bg: #fbf8f3; --fg: #1d1d1f; --muted: #5f5f66; --accent: #c8423f; --line: #e5ded3; --card: #ffffff; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #0b0b0d; --fg: #f2f2f4; --muted: #a3a3ab; --accent: #ff7462; --line: #2a2a30; --card: #16161a; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--fg);
-         font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 80px; }
-  .site-header { max-width: 760px; margin: 0 auto; padding: 8px 8px 0; }
-  .site-header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 4px; }
-  .site-header a { display: block; padding: 10px 8px; border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 0.95rem; }
-  .site-header a:hover { color: var(--accent); }
-  .site-header a[aria-current="page"] { color: var(--accent); font-weight: 600; }
-  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-  .band { margin: 40px 0 0; padding: 16px 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--card);
-          display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+  .app-hero { text-align: center; }
+  .app-hero img { width: 120px; height: 120px; border-radius: 27px; box-shadow: 0 20px 50px rgba(0,0,0,.3); }
+  .app-hero h1 { margin: 20px 0 4px; }
+  .app-hero .lede { margin: 16px auto 0; max-width: 620px; }
+  .soon { display: inline-block; margin-top: 24px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-weight: 600; font-size: .95rem; }
+  .band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
   .band p { margin: 0; font-weight: 600; }
-  .band a { font-weight: 600; }
-  .hero { text-align: center; }
-  .hero img { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
-  h1 { font-size: 2.6rem; line-height: 1.1; margin: 24px 0 4px; letter-spacing: -0.02em; }
-  .tagline { font-size: 1.35rem; color: var(--muted); margin: 0 0 20px; }
-  .lede { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-  .soon { display: inline-block; margin-top: 24px; padding: 10px 18px; border-radius: 999px;
-          border: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
-  h2 { font-size: 1.3rem; margin: 0 0 6px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 56px 0; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
   .icon { width: 48px; height: 48px; border-radius: 13px; display: grid; place-items: center; margin-bottom: 14px;
-          background: linear-gradient(135deg, #ffc27a, #f0706a); box-shadow: 0 4px 14px rgba(240,112,106,.28); }
-  .icon svg { width: 26px; height: 26px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .card h2 { font-size: 1.05rem; }
-  .card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
-  section { margin: 48px 0; }
-  a { color: var(--accent); }
-  footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
-  footer a { margin-right: 16px; }
+    background: linear-gradient(135deg, #ffc27a, #f0706a); box-shadow: 0 4px 14px rgba(240,112,106,.28); }
+  .icon svg { width: 26px; height: 26px; fill: none; stroke: #1d1d1f; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 </style>
 </head>
 <body>
-<header class="site-header">
-  <nav aria-label="Site"><ul><li><a href="/">Firsthand Stories</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/app/" aria-current="page">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
+<div class="margin-photos" aria-hidden="true">
+  <img class="big" src="/images/gano-1940s2_6-lg.jpg" width="676" height="1000" alt="" loading="lazy" data-speed="0.08" style="top:2%;left:calc((100vw - 880px) / 2 - 361px);width:380px;--r:-3deg">
+  <img class="big" src="/images/gano-levikeys_1-lg.jpg" width="1000" height="756" alt="" loading="lazy" data-speed="0.06" style="top:60%;left:calc((100vw - 880px) / 2 - 609px);width:580px;--r:-1.5deg">
+  <img class="small" src="/images/gano-junedogs_1.jpg" width="482" height="500" alt="" loading="lazy" data-speed="0.16" style="top:12%;left:calc((100vw - 880px) / 2 - 138px);width:230px;--r:3deg">
+  <img class="small" src="/images/gano-1940s2_7.jpg" width="348" height="500" alt="" loading="lazy" data-speed="0.34" style="top:42%;left:calc((100vw - 880px) / 2 - 40px);width:100px;--r:5deg">
+  <img class="small" src="/images/gano-juneyoung6_6.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.15" style="top:57%;right:calc((100vw - 880px) / 2 - 364px);width:280px;--r:3deg">
+  <img class="small" src="/images/gano-lince3_3.jpg" width="500" height="439" alt="" loading="lazy" data-speed="0.2" style="top:78%;left:calc((100vw - 880px) / 2 - 336px);width:240px;--r:-2deg">
+</div>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="mini-brand" href="/" aria-label="Firsthand Stories, home"><svg viewBox="110 360 805 328" aria-hidden="true" class="mark"><defs><linearGradient id="fhA" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1024" y2="0"><stop offset="0.12" stop-color="#FFD58A"/><stop offset="0.5" stop-color="#FFB27A"/><stop offset="0.88" stop-color="#F07A7A"/></linearGradient></defs><path fill="url(#fhA)" d="M119 524L126 526L134 528L142 530L149 532L157 535L165 538L173 540L181 543L189 545L197 547L205 549L214 550L222 551L231 551L240 550L249 548L259 545L268 541L277 536L286 530L295 522L304 514L313 506L322 496L331 486L339 476L348 466L356 457L364 448L372 439L380 432L386 426L393 423L397 421L400 421L401 421L402 422L404 424L407 427L412 432L417 440L424 451L430 464L437 478L444 494L452 511L459 529L467 547L475 565L483 583L491 600L500 616L509 631L518 644L528 656L540 667L554 675L570 679L587 678L602 673L615 666L625 656L635 645L643 633L651 621L659 608L666 594L674 581L681 567L688 554L695 542L701 531L708 520L715 511L721 503L727 496L733 491L739 487L744 484L750 482L756 480L762 480L768 480L775 481L783 482L790 485L798 487L806 490L814 494L822 497L830 500L838 503L846 506L854 509L862 512L871 514L879 516L887 518L895 519L903 520L905 508L900 507L892 506L885 504L877 502L870 499L862 496L855 493L847 490L840 486L832 482L824 478L817 474L809 470L801 466L793 462L785 458L776 456L767 453L758 452L748 452L738 454L728 457L718 461L708 467L698 474L689 483L680 492L670 503L662 515L653 527L644 539L636 552L627 565L619 577L611 588L603 598L596 607L589 614L583 618L579 620L578 620L579 619L580 619L579 618L575 615L570 609L564 601L558 590L551 576L544 561L536 545L528 528L520 510L512 492L504 474L496 456L487 440L478 424L469 410L459 398L448 387L437 378L423 371L408 368L394 369L380 373L368 380L358 388L349 397L341 407L333 417L326 428L318 439L311 450L304 461L297 471L290 481L283 490L276 498L270 505L263 511L257 516L250 521L244 524L237 527L231 529L224 530L217 530L210 530L202 530L195 529L187 527L180 526L172 524L164 522L156 520L148 518L140 516L132 514L124 513L121 512Z"/></svg><span>Firsthand Stories</span></a>
+    <nav aria-label="Site"><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/app/" aria-current="page">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
+  </div>
 </header>
 <main>
-  <div class="hero">
-    <img src="/icon.svg" alt="The Firsthand icon: a warm voice line on black">
-    <h1>Firsthand</h1>
-    <p class="tagline">Their story, in their words.</p>
-    <p class="lede">Firsthand records interviews you lead yourself and turns them into something finished: a recording divided into chapters, one for each question you asked, with a transcript and files ready to share. Sit down with a grandparent, a veteran, a podcast guest or a job candidate, and come away with more than a long audio file.</p>
+  <div class="big-brand"><svg viewBox="110 360 805 328" aria-hidden="true" class="mark"><defs><linearGradient id="fhB" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1024" y2="0"><stop offset="0.12" stop-color="#FFD58A"/><stop offset="0.5" stop-color="#FFB27A"/><stop offset="0.88" stop-color="#F07A7A"/></linearGradient></defs><path fill="url(#fhB)" d="M119 524L126 526L134 528L142 530L149 532L157 535L165 538L173 540L181 543L189 545L197 547L205 549L214 550L222 551L231 551L240 550L249 548L259 545L268 541L277 536L286 530L295 522L304 514L313 506L322 496L331 486L339 476L348 466L356 457L364 448L372 439L380 432L386 426L393 423L397 421L400 421L401 421L402 422L404 424L407 427L412 432L417 440L424 451L430 464L437 478L444 494L452 511L459 529L467 547L475 565L483 583L491 600L500 616L509 631L518 644L528 656L540 667L554 675L570 679L587 678L602 673L615 666L625 656L635 645L643 633L651 621L659 608L666 594L674 581L681 567L688 554L695 542L701 531L708 520L715 511L721 503L727 496L733 491L739 487L744 484L750 482L756 480L762 480L768 480L775 481L783 482L790 485L798 487L806 490L814 494L822 497L830 500L838 503L846 506L854 509L862 512L871 514L879 516L887 518L895 519L903 520L905 508L900 507L892 506L885 504L877 502L870 499L862 496L855 493L847 490L840 486L832 482L824 478L817 474L809 470L801 466L793 462L785 458L776 456L767 453L758 452L748 452L738 454L728 457L718 461L708 467L698 474L689 483L680 492L670 503L662 515L653 527L644 539L636 552L627 565L619 577L611 588L603 598L596 607L589 614L583 618L579 620L578 620L579 619L580 619L579 618L575 615L570 609L564 601L558 590L551 576L544 561L536 545L528 528L520 510L512 492L504 474L496 456L487 440L478 424L469 410L459 398L448 387L437 378L423 371L408 368L394 369L380 373L368 380L358 388L349 397L341 407L333 417L326 428L318 439L311 450L304 461L297 471L290 481L283 490L276 498L270 505L263 511L257 516L250 521L244 524L237 527L231 529L224 530L217 530L210 530L202 530L195 529L187 527L180 526L172 524L164 522L156 520L148 518L140 516L132 514L124 513L121 512Z"/></svg><p class="serif">Firsthand Stories</p></div>
+  <div class="app-hero">
+    <img src="/icon.svg" width="120" height="120" alt="The Firsthand icon: a warm voice line on black">
+    <h1 class="serif">Firsthand.</h1>
+    <p class="sub serif-line" style="margin:0">Interview like a pro. No pro required.</p>
+    <p class="lede">Firsthand turns an interview you lead into something finished: a chapter for every question, a transcript, and files ready to share. A grandparent, a veteran, a podcast guest, a job candidate. Same app.</p>
     <span class="soon">Coming soon for iPhone and iPad</span>
   </div>
 
-  <aside class="band" aria-label="Firsthand Stories service">
-    <p>Want us to record the story for you?</p>
-    <a href="/">Learn about Firsthand Stories →</a>
-  </aside>
-
-  <div class="grid">
-    <div class="card">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M18 4v16"/><path d="M18 4l3 2.5-3 2.5"/></svg></div>
-      <h2>Ask, and it becomes a chapter</h2>
-      <p>Tap each question as you begin asking it. Later, jump straight to the story about the farm, the first job or the move across the world.</p>
-    </div>
-    <div class="card">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
-      <h2>Templates for every kind of interview</h2>
-      <p>Personal History, A Veteran's Story, An Immigration Story, Job Interview, Podcast Guest and more, or write your own.</p>
-    </div>
-    <div class="card">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3" width="6" height="10" rx="3"/><rect x="14.5" y="3" width="6" height="10" rx="3"/><path d="M6.5 13v4M17.5 13v4M4 21h5M15 21h5"/></svg></div>
-      <h2>Two mics, or just your iPhone</h2>
-      <p>Record you and your guest on separate tracks with a pair of wireless lapel mics, or simply use the iPhone's microphone.</p>
-    </div>
-    <div class="card">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h2M7 8v8M11 4v16M15 7v10M19 10v4M21 12h0"/></svg></div>
-      <h2>A finished recording</h2>
-      <p>A transcript, gentle clean-up of pauses and filler words, and exports as audio with chapters, a video slideshow, or a PDF.</p>
-    </div>
-    <div class="card">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M9.5 15l2 2 3.5-3.5"/></svg></div>
-      <h2>Over as many sessions as it takes</h2>
-      <p>Older guests need rest. Continue an interview another day, with a recap of where you left off.</p>
-    </div>
-    <div class="card">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2"/></svg></div>
-      <h2>Private by design</h2>
-      <p>Everything stays on your device. No account, no ads, no tracking. Transcription runs on your iPhone.</p>
-    </div>
-  </div>
-
-  <section>
-    <h2>Support</h2>
-    <p>Questions, problems or ideas? Email <a href="mailto:support@firsthandstories.app">support@firsthandstories.app</a> and we'll get back to you.</p>
+  <section class="card band" aria-label="Firsthand Stories service">
+    <p>Rather we did the asking?</p>
+    <a href="/">Meet Firsthand Stories &rsaquo;</a>
   </section>
 
-  <section>
-    <h2>Privacy</h2>
-    <p>Firsthand doesn't collect any of your information. Read the <a href="/privacy/">privacy policy</a>.</p>
+  <section aria-labelledby="feat">
+    <h2 id="feat" class="serif">What it does.</h2>
+    <p class="sub serif-line">The hard parts, handled.</p>
+    <ul class="grid">
+      <li class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h7"/><path d="M18 4v16"/><path d="M18 4l3 2.5-3 2.5"/></svg></div><h3>Ask, and it&rsquo;s a chapter.</h3><p>Tap each question as you ask it. Later, skip straight to the farm, the first job or the move across the world.</p></li>
+      <li class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><h3>A template for every talk.</h3><p>Personal History, A Veteran&rsquo;s Story, An Immigration Story, Job Interview, Podcast Guest and more. Or write your own.</p></li>
+      <li class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3" width="6" height="10" rx="3"/><rect x="14.5" y="3" width="6" height="10" rx="3"/><path d="M6.5 13v4M17.5 13v4M4 21h5M15 21h5"/></svg></div><h3>Two mics. Or just the one.</h3><p>You and your guest on separate tracks with a pair of wireless lapel mics. Or simply the iPhone&rsquo;s own microphone.</p></li>
+      <li class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h2M7 8v8M11 4v16M15 7v10M19 10v4M21 12h0"/></svg></div><h3>Finished, not just recorded.</h3><p>A transcript, gentle clean-up of pauses and ums, and exports as chaptered audio, a video slideshow or a PDF.</p></li>
+      <li class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M9.5 15l2 2 3.5-3.5"/></svg></div><h3>Take five. Or five days.</h3><p>Older guests need rest. Pick up another day, with a recap of where you left off.</p></li>
+      <li class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2"/></svg></div><h3>Private by design.</h3><p>Everything stays on your device. No account, no ads, no tracking. Transcription happens right on your iPhone.</p></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="support">
+    <h2 id="support" class="serif">Support.</h2>
+    <p>Questions, problems or ideas? Email <a href="mailto:support@firsthandstories.app">support@firsthandstories.app</a>. A real person will write back.</p>
+  </section>
+
+  <section aria-labelledby="priv">
+    <h2 id="priv" class="serif">Privacy.</h2>
+    <p>Firsthand doesn&rsquo;t collect any of your information. The details are in the <a href="/privacy/">privacy policy</a>.</p>
   </section>
 
   <footer>
-    <a href="/">Firsthand Stories</a><a href="/privacy/">Privacy Policy</a><a href="mailto:support@firsthandstories.app">Support</a>
-    <div>© 2026 Firsthand</div>
+    <p><a href="/">Firsthand Stories</a><a href="/pricing/">Pricing</a><a href="/app/">Firsthand app</a><a href="/privacy/">Privacy Policy</a><a href="mailto:support@firsthandstories.app">Contact</a></p>
+    <p>© 2026 Firsthand Stories</p>
   </footer>
 </main>
+<script src="/site.js" defer></script>
 </body>
 </html>
