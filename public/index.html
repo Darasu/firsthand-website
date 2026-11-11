@@ -71,6 +71,10 @@
   .closing { text-align: center; background: var(--box); border: 1px solid var(--line); border-radius: 22px; padding: 32px 20px; }
   .closing .actions { justify-content: center; }
   .closing p { color: var(--text); }
+  .strip { display: flex; gap: 10px; overflow: hidden; margin: 0 0 22px; height: 166px; padding: 8px 4px; }
+  .strip img { height: 100%; width: auto; flex: none; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  .strip img:nth-child(odd) { transform: rotate(-2deg); } .strip img:nth-child(even) { transform: rotate(2deg); }
+  .keep img { display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 14px; }
   footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
   footer a { margin-right: 16px; }
   footer p { margin: 4px 0; }
@@ -95,13 +99,21 @@
         <a class="button secondary" href="/pricing/">See Pricing</a>
       </div>
     </div>
-    <img src="/stories/images/story.png" width="1200" height="800"
-         alt="Sample story page playing the story Meeting Walter: a wedding-day photo, the words highlighted as they're spoken, an audio player and the list of chapters">
+    <img src="/images/page-desktop.png" width="1158" height="600"
+         alt="A story page's opening: an old photo of a man on a horse with two children, the name Ray Edward Hale, a short summary of his life story, and a Begin Listening button">
   </div>
 
   <section aria-labelledby="why">
     <h2 id="why" class="serif">The stories behind the photos are disappearing.</h2>
     <p class="sub serif-line">Most families have boxes of pictures and no one left who knows what's in them.</p>
+    <div class="strip" aria-hidden="true">
+      <img src="/images/gano-waltdiploma_2.jpg" width="539" height="700" alt="" loading="lazy">
+      <img src="/images/gano-juneyoung7_3.jpg" width="640" height="700" alt="" loading="lazy">
+      <img src="/images/gano-1940s_3.jpg" width="588" height="700" alt="" loading="lazy">
+      <img src="/images/gano-waltjune_2.jpg" width="677" height="700" alt="" loading="lazy">
+      <img src="/images/gano-mapalince_1.jpg" width="439" height="700" alt="" loading="lazy">
+      <img src="/images/gano-waltjune_1.jpg" width="530" height="700" alt="" loading="lazy">
+    </div>
     <ul class="grid">
       <li class="card"><h3>Photos nobody sees</h3><p>Albums in the closet, slides in a carousel, negatives in an envelope. We scan them, including albums too fragile to take apart.</p></li>
       <li class="card"><h3>Stories nobody wrote down</h3><p>Who's standing next to Grandpa? Where was that house? We ask while there's still someone to answer.</p></li>
@@ -122,12 +134,21 @@
         </ul>
       </div>
       <figure>
-        <img class="phone" src="/stories/images/phone.png" width="680" height="1400"
-             alt="Sample story page on an iPhone: the story Growing Up on the Farm playing, with a farmhouse photo, an audio player and the chapter list">
+        <img class="phone" src="/images/page-phone.png" width="309" height="629"
+             alt="A story page on an iPhone: the story Grandpa with the Kids playing beside its 1942 photo, an audio player, and the Childhood chapter's list of stories">
         <figcaption>On any phone</figcaption>
       </figure>
     </div>
-    <p class="note">Sample screens with a fictional storyteller. Each family's page uses their own photos and recordings.</p>
+  </section>
+
+  <section aria-labelledby="keep">
+    <h2 id="keep" class="serif">Yours to keep.</h2>
+    <p class="sub serif-line">Download everything, and it plays without us.</p>
+    <ul class="grid">
+      <li class="card keep"><img src="/images/keep-audio.png" width="631" height="349" alt="" loading="lazy"><h3>Audio</h3><p>The whole recording, in chapters, to play anywhere and keep for good.</p></li>
+      <li class="card keep"><img src="/images/keep-video.png" width="633" height="349" alt="" loading="lazy"><h3>Video slideshow</h3><p>Their voice over the photos, ready to play when the family gathers.</p></li>
+      <li class="card keep"><img src="/images/keep-booklet.png" width="630" height="349" alt="" loading="lazy"><h3>Printable booklet</h3><p>Every word in print beside the photos, to keep on a shelf or give.</p></li>
+    </ul>
   </section>
 
   <section aria-labelledby="how">
