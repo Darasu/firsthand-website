@@ -39,6 +39,10 @@
   .appshots figure { margin: 0; } .appshots img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(60,40,20,.14); }
   .appshots figcaption { font-size: .9rem; color: var(--muted); margin-top: 8px; }
   @media (max-width: 520px) { .pin { width: 22px; height: 22px; font-size: 12px; line-height: 22px; } }
+  /* The interview site's Paper appearance (#ecebe8 and #f5f4f1) laid over the app's white, as a multiply tint (#233) */
+  .callouts .frame::after, .paper::after { content: ""; position: absolute; inset: 0; background: #f2efe9; mix-blend-mode: multiply; pointer-events: none; border-radius: inherit; }
+  .paper { position: relative; display: block; border-radius: 14px; }
+  .pin { z-index: 1; }
 </style>
 </head>
 <body>
@@ -83,9 +87,9 @@
       <ol class="legend"><li><span class="n">1</span>Sections and stories, as in your question list</li><li><span class="n">2</span>Every question its own chapter, with its photos</li><li><span class="n">3</span>The transcript by speaker, written on the iPad</li><li><span class="n">4</span>Chapters marked along the timeline</li><li><span class="n">5</span>Two microphones, two tracks: each voice on its own lane</li><li><span class="n">6</span>Play, skip back or ahead, change the speed</li></ol>
     </figure>
     <div class="appshots">
-      <figure><img src="/images/app/template-light.jpg" width="750" height="1000" loading="lazy" alt="A question list grouped into Early Life, Young Adulthood, Work, Family and Reflections"><figcaption>Your questions, grouped into stories. Skip, reorder or add your own.</figcaption></figure>
-      <figure><img src="/images/app/interview-light.jpg" width="750" height="1000" loading="lazy" alt="A finished interview: chapters with their photos and the transcript beneath each"><figcaption>Every answer a chapter, with photos and transcript.</figcaption></figure>
-      <figure><img src="/images/app/home-light.jpg" width="750" height="1000" loading="lazy" alt="The home screen: templates to start an interview, and the recorded interviews"><figcaption>Start an interview in one tap.</figcaption></figure>
+      <figure><span class="paper"><img src="/images/app/template-light.jpg" width="750" height="1000" loading="lazy" alt="A question list grouped into Early Life, Young Adulthood, Work, Family and Reflections"></span><figcaption>Your questions, grouped into stories. Skip, reorder or add your own.</figcaption></figure>
+      <figure><span class="paper"><img src="/images/app/interview-light.jpg" width="750" height="1000" loading="lazy" alt="A finished interview: chapters with their photos and the transcript beneath each"></span><figcaption>Every answer a chapter, with photos and transcript.</figcaption></figure>
+      <figure><span class="paper"><img src="/images/app/home-light.jpg" width="750" height="1000" loading="lazy" alt="The home screen: templates to start an interview, and the recorded interviews"></span><figcaption>Start an interview in one tap.</figcaption></figure>
     </div>
     <ul class="points">
       <li><strong>One tap per question.</strong> The interviewer taps each question as they ask it, so every answer becomes its own chapter. No editing afterwards.</li>
