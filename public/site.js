@@ -57,7 +57,7 @@
     addEventListener('keydown', e => {
       if (e.metaKey || e.ctrlKey || e.altKey || /input|textarea|select/i.test(e.target.tagName)) return;
       if (!['[', ']', '0'].includes(e.key)) return;
-      const base = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--photo')) || .7;
+      const base = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--photo')) || .5;
       if (e.key === '0') { r.removeProperty('--photo'); try { localStorage.removeItem(key); } catch (x) {} }
       else { v = Math.min(1, Math.max(.2, Math.round((base + (e.key === ']' ? .05 : -.05)) * 100) / 100)); r.setProperty('--photo', v); try { localStorage.setItem(key, v); } catch (x) {} }
       if (!badge) { badge = document.createElement('div'); badge.className = 'tune-badge'; badge.setAttribute('role', 'status'); document.body.append(badge); }
