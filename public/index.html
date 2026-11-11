@@ -102,12 +102,34 @@
   .communities ul { padding-left: 1.2em; color: var(--text); margin: 0 0 16px; }
   .communities li { margin-bottom: 10px; }
   .communities > p { color: var(--text); }
+  body { position: relative; overflow-x: hidden; }
+  .margin-photos { display: none; }
+  @media (min-width: 1260px) {
+    .margin-photos { display: block; position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+    .margin-photos img { position: absolute; height: auto; border: 6px solid #fbf8f3; border-radius: 3px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.28); transform: translate3d(0, var(--y, 0px), 0) rotate(var(--r)); will-change: transform; opacity: .92; }
+    main, .site-header { position: relative; z-index: 1; }
+  }
   footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
   footer a { margin-right: 16px; }
   footer p { margin: 4px 0; }
 </style>
 </head>
 <body>
+<div class="margin-photos" aria-hidden="true">
+  <img src="/images/gano-waltjune_2.jpg" width="483" height="500" alt="" loading="lazy" data-speed="0.13" style="top:4%;left:calc(max(0px, (100vw - 880px) / 2 - 190px) * 0.18);width:190px;--r:-4deg">
+  <img src="/images/gano-junedogs_1.jpg" width="482" height="500" alt="" loading="lazy" data-speed="0.22" style="top:7%;right:calc(max(0px, (100vw - 880px) / 2 - 150px) * 0.30);width:150px;--r:3deg">
+  <img src="/images/gano-1940s3_1.jpg" width="318" height="500" alt="" loading="lazy" data-speed="0.29" style="top:16%;left:calc(max(0px, (100vw - 880px) / 2 - 120px) * 0.58);width:120px;--r:2deg">
+  <img src="/images/gano-juneyoung7_3.jpg" width="457" height="500" alt="" loading="lazy" data-speed="0.14" style="top:20%;right:calc(max(0px, (100vw - 880px) / 2 - 200px) * 0.08);width:200px;--r:-3deg">
+  <img src="/images/gano-ganofamily2_2.jpg" width="485" height="500" alt="" loading="lazy" data-speed="0.20" style="top:30%;left:calc(max(0px, (100vw - 880px) / 2 - 170px) * 0.10);width:170px;--r:3deg">
+  <img src="/images/gano-1940s2_7.jpg" width="348" height="500" alt="" loading="lazy" data-speed="0.28" style="top:34%;right:calc(max(0px, (100vw - 880px) / 2 - 130px) * 0.52);width:130px;--r:-2deg">
+  <img src="/images/gano-grandkids_4.jpg" width="500" height="470" alt="" loading="lazy" data-speed="0.11" style="top:45%;left:calc(max(0px, (100vw - 880px) / 2 - 210px) * 0.26);width:210px;--r:-2deg">
+  <img src="/images/gano-iragano1_2.jpg" width="353" height="500" alt="" loading="lazy" data-speed="0.24" style="top:49%;right:calc(max(0px, (100vw - 880px) / 2 - 140px) * 0.22);width:140px;--r:4deg">
+  <img src="/images/gano-juneyoung6_6.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.27" style="top:59%;left:calc(max(0px, (100vw - 880px) / 2 - 150px) * 0.50);width:150px;--r:4deg">
+  <img src="/images/gano-old3_2.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.15" style="top:64%;right:calc(max(0px, (100vw - 880px) / 2 - 200px) * 0.12);width:200px;--r:-3deg">
+  <img src="/images/gano-1940s_3.jpg" width="420" height="500" alt="" loading="lazy" data-speed="0.21" style="top:73%;left:calc(max(0px, (100vw - 880px) / 2 - 160px) * 0.14);width:160px;--r:-3deg">
+  <img src="/images/gano-lince3_3.jpg" width="500" height="439" alt="" loading="lazy" data-speed="0.18" style="top:79%;right:calc(max(0px, (100vw - 880px) / 2 - 170px) * 0.34);width:170px;--r:2deg">
+</div>
 <header class="site-header">
   <nav aria-label="Site"><ul><li><a href="/" aria-current="page">Firsthand Stories</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
 </header>
@@ -260,6 +282,15 @@
     els.forEach(e => e.classList.add('reveal'));
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
     els.forEach(e => io.observe(e));
+  }
+  // Margin photos drift at different speeds as the page scrolls (parallax); still with Reduce Motion
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const ph = [...document.querySelectorAll('.margin-photos img')];
+    let ticking = false;
+    const move = () => { const mid = scrollY + innerHeight / 2; ph.forEach(i => { const home = i.offsetTop + i.offsetHeight / 2; i.style.setProperty('--y', ((home - mid) * i.dataset.speed).toFixed(1) + 'px'); }); ticking = false; };
+    addEventListener('resize', move);
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
+    move();
   }
 </script>
 </body>
