@@ -74,7 +74,7 @@
   .feature li { margin-bottom: 10px; }
   figure { margin: 0; }
   figure img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); }
-  figure img.phone { max-width: 220px; margin: 0 auto; border: 0; }
+  figure img.phone { max-width: 230px; margin: 0 auto; border: 0; border-radius: 0; background: none; filter: drop-shadow(0 24px 40px rgba(0,0,0,.35)); }
   figcaption, .note { margin-top: 8px; font-size: 0.9rem; color: var(--muted); text-align: center; }
   .quote { text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; }
   .quote p { font-size: clamp(1.4rem, 4vw, 1.8rem); line-height: 1.35; margin: 0; }
@@ -114,7 +114,7 @@
   .communities > p { color: var(--text); }
   html, body { overflow-x: clip; } body { position: relative; }
   .margin-photos { display: none; }
-  @media (min-width: 1260px) {
+  @media (min-width: 1100px) {
     .margin-photos { display: block; position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
     .margin-photos img { position: absolute; height: auto; border: 6px solid #fbf8f3; border-radius: 3px;
       box-shadow: 0 14px 34px rgba(0,0,0,.28); transform: translate3d(0, var(--y, 0px), 0) rotate(var(--r)); will-change: transform; }
@@ -127,29 +127,30 @@
       border: 1px solid var(--glass-edge); box-shadow: inset 0 1px 0 var(--glass-shine), 0 30px 80px rgba(0,0,0,.18); }
   }
   /* Holiday sticker: a price sticker slapped on the page; sticks in the right margin on wide screens */
-  .sticker { position: absolute; top: 58px; right: 10px; z-index: 5; width: 116px; height: 116px;
-    display: grid; place-content: center; text-align: center; text-decoration: none; color: #fff; line-height: 1;
-    transform: rotate(12deg); animation: slap .7s cubic-bezier(.2,1.6,.4,1) .6s both; transition: transform .3s cubic-bezier(.2,1.6,.4,1);
-    filter: drop-shadow(0 10px 18px rgba(150,30,30,.4)); isolation: isolate; }
-  .sticker .s-burst { position: absolute; inset: 0; clip-path: polygon(50.0% 0.0%, 55.7% 6.4%, 62.9% 1.7%, 66.8% 9.3%, 75.0% 6.7%, 76.8% 15.1%, 85.4% 14.6%, 84.9% 23.2%, 93.3% 25.0%, 90.7% 33.2%, 98.3% 37.1%, 93.6% 44.3%, 100.0% 50.0%, 93.6% 55.7%, 98.3% 62.9%, 90.7% 66.8%, 93.3% 75.0%, 84.9% 76.8%, 85.4% 85.4%, 76.8% 84.9%, 75.0% 93.3%, 66.8% 90.7%, 62.9% 98.3%, 55.7% 93.6%, 50.0% 100.0%, 44.3% 93.6%, 37.1% 98.3%, 33.2% 90.7%, 25.0% 93.3%, 23.2% 84.9%, 14.6% 85.4%, 15.1% 76.8%, 6.7% 75.0%, 9.3% 66.8%, 1.7% 62.9%, 6.4% 55.7%, 0.0% 50.0%, 6.4% 44.3%, 1.7% 37.1%, 9.3% 33.2%, 6.7% 25.0%, 15.1% 23.2%, 14.6% 14.6%, 23.2% 15.1%, 25.0% 6.7%, 33.2% 9.3%, 37.1% 1.7%, 44.3% 6.4%); z-index: -1;
-    background: radial-gradient(circle at 35% 30%, #ef5a4f, #c62f2b 55%, #a3201f); }
-  .sticker .s-burst::after { content: ""; position: absolute; inset: 12%; border-radius: 50%; border: 2px dashed rgba(255,226,160,.85); }
-  .sticker:hover { transform: rotate(0deg) scale(1.08); }
-  .sticker:hover .s-burst { animation: spin 6s linear infinite; }
-  @keyframes spin { to { rotate: 360deg; } }
-  .sticker .s-top { font-size: .6rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #ffe2a0; }
-  .sticker .s-upto { font-size: .62rem; font-weight: 600; margin-top: 4px; opacity: .9; }
-  .sticker .s-big { font-weight: 800; font-size: 1.85rem; letter-spacing: -.03em; margin: 1px 0 0; }
-  .sticker .s-bot { font-size: .9rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-  @keyframes slap { from { opacity: 0; transform: rotate(40deg) scale(1.3); } }
+  /* Holiday bow and gift tag: sticks in the right margin on wide screens */
+  .sticker { position: absolute; top: 56px; right: 8px; z-index: 5; width: 128px; display: flex; flex-direction: column; align-items: center;
+    text-decoration: none; transform: rotate(8deg); transform-origin: 50% 20%; animation: drop .9s cubic-bezier(.2,1.5,.4,1) .5s both;
+    filter: drop-shadow(0 10px 14px rgba(90,10,10,.35)); }
+  .sticker .bow { width: 100%; height: auto; display: block; position: relative; z-index: 2; }
+  .sticker .tag { margin-top: -10px; position: relative; display: grid; gap: 2px; text-align: center; padding: 14px 10px 10px; width: 86%;
+    background: linear-gradient(160deg, #fffaf0, #f3e6cf); color: #8e1416; border-radius: 6px 6px 10px 10px;
+    clip-path: polygon(14% 0, 86% 0, 100% 12%, 100% 100%, 0 100%, 0 12%); transform-origin: 50% 0; animation: sway 4s ease-in-out 1.6s infinite; }
+  .sticker .tag::before { content: ""; position: absolute; top: 5px; left: 50%; width: 7px; height: 7px; margin-left: -3.5px; border-radius: 50%; background: #c9b48e; }
+  .sticker .t-top { font-size: .62rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #b8322f; margin-top: 4px; }
+  .sticker .t-big { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.05rem; line-height: 1.1; color: #3a1a12; }
+  .sticker .t-more { font-size: .62rem; font-weight: 600; color: #8e1416; }
+  .sticker:hover { transform: rotate(0deg) scale(1.05); transition: transform .4s cubic-bezier(.2,1.5,.4,1); }
+  @keyframes drop { from { opacity: 0; transform: translateY(-40px) rotate(-10deg); } }
+  @keyframes sway { 50% { transform: rotate(-4deg); } }
   main { position: relative; }
-  .big-brand { padding-right: 120px; }
+  .big-brand { padding-right: 130px; }
   @media (min-width: 1260px) {
-    .sticker { position: fixed; top: 74px; right: calc(((100vw - 880px) / 2 - 156px) / 2); width: 156px; height: 156px; }
-    .sticker .s-top { font-size: .72rem; } .sticker .s-upto { font-size: .75rem; } .sticker .s-big { font-size: 2.6rem; } .sticker .s-bot { font-size: 1.15rem; }
+    .sticker { position: fixed; top: 70px; right: max(16px, calc(((100vw - 880px) / 2 - 180px) / 2)); width: 180px; }
+    .sticker .t-top { font-size: .72rem; } .sticker .t-big { font-size: 1.45rem; } .sticker .t-more { font-size: .72rem; }
     .big-brand { padding-right: 0; }
   }
-  @media (prefers-reduced-motion: reduce) { .sticker, .sticker:hover .s-burst { animation: none; } }
+  @media (max-width: 1259px) { .sticker { width: 100px; } .sticker .t-big { font-size: .9rem; } .sticker .t-top, .sticker .t-more { font-size: .55rem; } .big-brand { margin-bottom: 52px; } }
+  @media (prefers-reduced-motion: reduce) { .sticker, .sticker .tag { animation: none; } }
   footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
   footer a { margin-right: 16px; }
   footer p { margin: 4px 0; }
@@ -157,28 +158,28 @@
 </head>
 <body>
 <div class="margin-photos" aria-hidden="true">
-  <img class="big" src="/images/gano-1940s2_6-lg.jpg" width="676" height="1000" alt="" loading="lazy" data-speed="0.08" style="top:3%;left:calc((100vw - 880px) / 2 - 252px);width:360px;--r:-3deg">
-  <img class="big" src="/images/gano-ggearlylife_4-lg.jpg" width="1000" height="800" alt="" loading="lazy" data-speed="0.06" style="top:14%;right:calc((100vw - 880px) / 2 - 360px);width:500px;--r:2deg">
-  <img class="big" src="/images/gano-iramargaretgano_1-lg.jpg" width="1000" height="948" alt="" loading="lazy" data-speed="0.07" style="top:33%;left:calc((100vw - 880px) / 2 - 326px);width:480px;--r:2deg">
-  <img class="big" src="/images/gano-waltjune_2-lg.jpg" width="967" height="1000" alt="" loading="lazy" data-speed="0.09" style="top:47%;right:calc((100vw - 880px) / 2 - 294px);width:420px;--r:-2deg">
-  <img class="big" src="/images/gano-levikeys_1-lg.jpg" width="1000" height="756" alt="" loading="lazy" data-speed="0.06" style="top:63%;left:calc((100vw - 880px) / 2 - 343px);width:520px;--r:-1.5deg">
-  <img class="big" src="/images/gano-lince2_2-lg.jpg" width="1000" height="961" alt="" loading="lazy" data-speed="0.08" style="top:80%;right:calc((100vw - 880px) / 2 - 322px);width:460px;--r:3deg">
-  <img class="small" src="/images/gano-waltjune_2.jpg" width="483" height="500" alt="" loading="lazy" data-speed="0.2" style="top:3%;right:calc((100vw - 880px) / 2 - 212px);width:170px;--r:4deg">
-  <img class="small" src="/images/gano-junedogs_1.jpg" width="482" height="500" alt="" loading="lazy" data-speed="0.16" style="top:12%;left:calc((100vw - 880px) / 2 - 242px);width:230px;--r:3deg">
-  <img class="small" src="/images/gano-1940s3_1.jpg" width="318" height="500" alt="" loading="lazy" data-speed="0.32" style="top:24%;right:calc((100vw - 880px) / 2 - 220px);width:110px;--r:-4deg">
-  <img class="small" src="/images/gano-juneyoung7_3.jpg" width="457" height="500" alt="" loading="lazy" data-speed="0.3" style="top:22%;left:calc((100vw - 880px) / 2 - 238px);width:140px;--r:-3deg">
-  <img class="small" src="/images/gano-ganofamily2_2.jpg" width="485" height="500" alt="" loading="lazy" data-speed="0.18" style="top:30%;right:calc((100vw - 880px) / 2 - 231px);width:210px;--r:-2deg">
-  <img class="small" src="/images/gano-1940s2_7.jpg" width="348" height="500" alt="" loading="lazy" data-speed="0.34" style="top:42%;left:calc((100vw - 880px) / 2 - 220px);width:100px;--r:5deg">
-  <img class="small" src="/images/gano-grandkids_4.jpg" width="500" height="470" alt="" loading="lazy" data-speed="0.26" style="top:39%;right:calc((100vw - 880px) / 2 - 240px);width:150px;--r:3deg">
-  <img class="small" src="/images/gano-iragano1_2.jpg" width="353" height="500" alt="" loading="lazy" data-speed="0.22" style="top:51%;left:calc((100vw - 880px) / 2 - 234px);width:180px;--r:-4deg">
-  <img class="small" src="/images/gano-juneyoung6_6.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.15" style="top:58%;right:calc((100vw - 880px) / 2 - 240px);width:240px;--r:3deg">
-  <img class="small" src="/images/gano-old3_2.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.3" style="top:71%;left:calc((100vw - 880px) / 2 - 247px);width:130px;--r:4deg">
-  <img class="small" src="/images/gano-1940s_3.jpg" width="420" height="500" alt="" loading="lazy" data-speed="0.33" style="top:69%;right:calc((100vw - 880px) / 2 - 240px);width:120px;--r:-3deg">
-  <img class="small" src="/images/gano-lince3_3.jpg" width="500" height="439" alt="" loading="lazy" data-speed="0.2" style="top:79%;left:calc((100vw - 880px) / 2 - 240px);width:200px;--r:-2deg">
-  <img class="small" src="/images/gano-ggearlylife_5.jpg" width="384" height="400" alt="" loading="lazy" data-speed="0.24" style="top:87%;right:calc((100vw - 880px) / 2 - 221px);width:170px;--r:4deg">
-  <img class="small" src="/images/gano-juneyoung5_5.jpg" width="309" height="400" alt="" loading="lazy" data-speed="0.3" style="top:88%;left:calc((100vw - 880px) / 2 - 231px);width:110px;--r:-5deg">
-  <img class="small" src="/images/gano-old2_2.jpg" width="400" height="324" alt="" loading="lazy" data-speed="0.28" style="top:94%;right:calc((100vw - 880px) / 2 - 234px);width:130px;--r:-3deg">
-  <img class="small" src="/images/gano-1940s3_5.jpg" width="270" height="400" alt="" loading="lazy" data-speed="0.22" style="top:95%;left:calc((100vw - 880px) / 2 - 225px);width:150px;--r:3deg">
+  <img class="big" src="/images/gano-1940s2_6-lg.jpg" width="676" height="1000" alt="" loading="lazy" data-speed="0.08" style="top:2%;left:calc((100vw - 880px) / 2 - 361px);width:380px;--r:-3deg">
+  <img class="big" src="/images/gano-ggearlylife_4-lg.jpg" width="1000" height="800" alt="" loading="lazy" data-speed="0.06" style="top:12%;right:calc((100vw - 880px) / 2 - 540px);width:540px;--r:2deg">
+  <img class="big" src="/images/gano-iramargaretgano_1-lg.jpg" width="1000" height="948" alt="" loading="lazy" data-speed="0.07" style="top:30%;left:calc((100vw - 880px) / 2 - 286px);width:520px;--r:2deg">
+  <img class="big" src="/images/gano-waltjune_2-lg.jpg" width="967" height="1000" alt="" loading="lazy" data-speed="0.09" style="top:44%;right:calc((100vw - 880px) / 2 - 273px);width:440px;--r:-2deg">
+  <img class="big" src="/images/gano-levikeys_1-lg.jpg" width="1000" height="756" alt="" loading="lazy" data-speed="0.06" style="top:60%;left:calc((100vw - 880px) / 2 - 609px);width:580px;--r:-1.5deg">
+  <img class="big" src="/images/gano-lince2_2-lg.jpg" width="1000" height="961" alt="" loading="lazy" data-speed="0.08" style="top:76%;right:calc((100vw - 880px) / 2 - 250px);width:500px;--r:3deg">
+  <img class="small" src="/images/gano-waltjune_2.jpg" width="483" height="500" alt="" loading="lazy" data-speed="0.2" style="top:3%;right:calc((100vw - 880px) / 2 - 94px);width:170px;--r:4deg">
+  <img class="small" src="/images/gano-junedogs_1.jpg" width="482" height="500" alt="" loading="lazy" data-speed="0.16" style="top:12%;left:calc((100vw - 880px) / 2 - 138px);width:230px;--r:3deg">
+  <img class="small" src="/images/gano-1940s3_1.jpg" width="318" height="500" alt="" loading="lazy" data-speed="0.32" style="top:24%;right:calc((100vw - 880px) / 2 - 176px);width:110px;--r:-4deg">
+  <img class="small" src="/images/gano-juneyoung7_3.jpg" width="457" height="500" alt="" loading="lazy" data-speed="0.3" style="top:21%;left:calc((100vw - 880px) / 2 - 285px);width:150px;--r:-3deg">
+  <img class="small" src="/images/gano-ganofamily2_2.jpg" width="485" height="500" alt="" loading="lazy" data-speed="0.18" style="top:30%;right:calc((100vw - 880px) / 2 - 299px);width:260px;--r:-2deg">
+  <img class="small" src="/images/gano-1940s2_7.jpg" width="348" height="500" alt="" loading="lazy" data-speed="0.34" style="top:42%;left:calc((100vw - 880px) / 2 - 40px);width:100px;--r:5deg">
+  <img class="small" src="/images/gano-grandkids_4.jpg" width="500" height="470" alt="" loading="lazy" data-speed="0.26" style="top:38%;right:calc((100vw - 880px) / 2 - 68px);width:150px;--r:3deg">
+  <img class="small" src="/images/gano-iragano1_2.jpg" width="353" height="500" alt="" loading="lazy" data-speed="0.22" style="top:50%;left:calc((100vw - 880px) / 2 - 300px);width:200px;--r:-4deg">
+  <img class="small" src="/images/gano-juneyoung6_6.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.15" style="top:57%;right:calc((100vw - 880px) / 2 - 364px);width:280px;--r:3deg">
+  <img class="small" src="/images/gano-old3_2.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.3" style="top:70%;left:calc((100vw - 880px) / 2 - 65px);width:130px;--r:4deg">
+  <img class="small" src="/images/gano-1940s_3.jpg" width="420" height="500" alt="" loading="lazy" data-speed="0.33" style="top:68%;right:calc((100vw - 880px) / 2 - 204px);width:120px;--r:-3deg">
+  <img class="small" src="/images/gano-lince3_3.jpg" width="500" height="439" alt="" loading="lazy" data-speed="0.2" style="top:78%;left:calc((100vw - 880px) / 2 - 336px);width:240px;--r:-2deg">
+  <img class="small" src="/images/gano-ggearlylife_5.jpg" width="384" height="400" alt="" loading="lazy" data-speed="0.24" style="top:86%;right:calc((100vw - 880px) / 2 - 85px);width:170px;--r:4deg">
+  <img class="small" src="/images/gano-juneyoung5_5.jpg" width="309" height="400" alt="" loading="lazy" data-speed="0.3" style="top:88%;left:calc((100vw - 880px) / 2 - 50px);width:110px;--r:-5deg">
+  <img class="small" src="/images/gano-old2_2.jpg" width="400" height="324" alt="" loading="lazy" data-speed="0.28" style="top:93%;right:calc((100vw - 880px) / 2 - 275px);width:220px;--r:-3deg">
+  <img class="small" src="/images/gano-1940s3_5.jpg" width="270" height="400" alt="" loading="lazy" data-speed="0.22" style="top:95%;left:calc((100vw - 880px) / 2 - 240px);width:150px;--r:3deg">
 </div>
 <header class="topbar">
   <div class="topbar-in">
@@ -187,8 +188,25 @@
   </div>
 </header>
 <a class="sticker" href="/holidays/" aria-label="Holiday sale: up to $200 off every package">
-  <span class="s-burst" aria-hidden="true"></span>
-  <span class="s-top">Holiday Sale</span><span class="s-upto">up to</span><span class="s-big">$200</span><span class="s-bot">off</span>
+  <svg class="bow" viewBox="0 0 200 130" aria-hidden="true">
+    <defs>
+      <linearGradient id="rib" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6b5e"/><stop offset=".45" stop-color="#d9302b"/><stop offset="1" stop-color="#8e1416"/></linearGradient>
+      <linearGradient id="ribL" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b81f20"/><stop offset=".5" stop-color="#e5463d"/><stop offset="1" stop-color="#7d1012"/></linearGradient>
+      <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <pattern id="satin" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="4" height="4" fill="#000" opacity="0"/><rect width="1.4" height="4" fill="#000" opacity=".08"/></pattern>
+      <radialGradient id="knot" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ff7a6b"/><stop offset=".6" stop-color="#c8272a"/><stop offset="1" stop-color="#7a0f12"/></radialGradient>
+    </defs>
+    <path d="M92 70 L60 128 L76 122 L84 132 L100 76 Z" fill="url(#ribL)"/><path d="M108 70 L140 128 L124 122 L116 132 L100 76 Z" fill="url(#rib)"/>
+    <g><path d="M98 62 C70 20 18 6 10 34 C4 58 46 82 96 72 Z" fill="url(#ribL)"/><path d="M98 62 C70 20 18 6 10 34 C4 58 46 82 96 72 Z" fill="url(#satin)"/>
+       <path d="M90 60 C66 36 34 24 22 34" fill="none" stroke="url(#shine)" stroke-width="6" stroke-linecap="round"/>
+       <path d="M96 70 C70 60 42 52 26 44" fill="none" stroke="#6e0c0f" stroke-opacity=".35" stroke-width="2"/></g>
+    <g><path d="M102 62 C130 20 182 6 190 34 C196 58 154 82 104 72 Z" fill="url(#rib)"/><path d="M102 62 C130 20 182 6 190 34 C196 58 154 82 104 72 Z" fill="url(#satin)"/>
+       <path d="M110 60 C134 36 166 24 178 34" fill="none" stroke="url(#shine)" stroke-width="6" stroke-linecap="round"/>
+       <path d="M104 70 C130 60 158 52 174 44" fill="none" stroke="#6e0c0f" stroke-opacity=".35" stroke-width="2"/></g>
+    <ellipse cx="100" cy="67" rx="15" ry="13" fill="url(#knot)"/><ellipse cx="100" cy="67" rx="15" ry="13" fill="url(#satin)"/>
+    <path d="M92 61 Q100 57 107 61" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <span class="tag"><span class="t-top">Holiday Sale</span><span class="t-big">Up to $200 off</span><span class="t-more">See offer &rsaquo;</span></span>
 </a>
 <main>
   <div class="big-brand"><svg viewBox="110 360 805 328" aria-hidden="true" class="mark"><defs><linearGradient id="fhB" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1024" y2="0"><stop offset="0.12" stop-color="#FFD58A"/><stop offset="0.5" stop-color="#FFB27A"/><stop offset="0.88" stop-color="#F07A7A"/></linearGradient></defs><path fill="url(#fhB)" d="M119 524L126 526L134 528L142 530L149 532L157 535L165 538L173 540L181 543L189 545L197 547L205 549L214 550L222 551L231 551L240 550L249 548L259 545L268 541L277 536L286 530L295 522L304 514L313 506L322 496L331 486L339 476L348 466L356 457L364 448L372 439L380 432L386 426L393 423L397 421L400 421L401 421L402 422L404 424L407 427L412 432L417 440L424 451L430 464L437 478L444 494L452 511L459 529L467 547L475 565L483 583L491 600L500 616L509 631L518 644L528 656L540 667L554 675L570 679L587 678L602 673L615 666L625 656L635 645L643 633L651 621L659 608L666 594L674 581L681 567L688 554L695 542L701 531L708 520L715 511L721 503L727 496L733 491L739 487L744 484L750 482L756 480L762 480L768 480L775 481L783 482L790 485L798 487L806 490L814 494L822 497L830 500L838 503L846 506L854 509L862 512L871 514L879 516L887 518L895 519L903 520L905 508L900 507L892 506L885 504L877 502L870 499L862 496L855 493L847 490L840 486L832 482L824 478L817 474L809 470L801 466L793 462L785 458L776 456L767 453L758 452L748 452L738 454L728 457L718 461L708 467L698 474L689 483L680 492L670 503L662 515L653 527L644 539L636 552L627 565L619 577L611 588L603 598L596 607L589 614L583 618L579 620L578 620L579 619L580 619L579 618L575 615L570 609L564 601L558 590L551 576L544 561L536 545L528 528L520 510L512 492L504 474L496 456L487 440L478 424L469 410L459 398L448 387L437 378L423 371L408 368L394 369L380 373L368 380L358 388L349 397L341 407L333 417L326 428L318 439L311 450L304 461L297 471L290 481L283 490L276 498L270 505L263 511L257 516L250 521L244 524L237 527L231 529L224 530L217 530L210 530L202 530L195 529L187 527L180 526L172 524L164 522L156 520L148 518L140 516L132 514L124 513L121 512Z"/></svg><p class="serif">Firsthand Stories</p></div>
@@ -265,7 +283,7 @@
         </ul>
       </div>
       <figure>
-        <img class="phone" src="/images/page-phone.png" width="309" height="629"
+        <img class="phone" src="/images/page-phone.png" width="340" height="700"
              alt="A story page on an iPhone: the story Grandpa with the Kids playing beside its 1942 photo, an audio player, and the Childhood chapter's list of stories">
         <figcaption>On any phone</figcaption>
       </figure>
