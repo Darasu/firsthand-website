@@ -137,3 +137,5 @@
 main a:not(.button):not(.banner) { text-decoration-thickness: 1px; text-underline-offset: 3px; transition: text-decoration-color .2s ease, color .2s ease; }
 main a:not(.button):hover { text-decoration-thickness: 2px; }
 @media (prefers-reduced-motion: reduce) { .button, .button:hover, .button:active { transform: none; } }
+/* Photos sit back a little so the words lead (#233) */
+.hero img, .margin-photos img, .keep img, figure img:not(.phone) { opacity: .85; filter: saturate(.85); }
