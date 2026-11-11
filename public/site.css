@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,0&display=swap");
 /* Shared by every page of firsthandstories.app: tokens, the collapsing large title and glass top bar, the glass content sheet, margin photos, the holiday bow, cards and motion */
   :root { --bg: #fbf8f3; --fg: #1d1d1f; --text: #3d3630; --muted: #5f5f66; --accent: #c8423f; --on-accent: #ffffff; --line: #e5ded3; --card: #ffffff; --box: #f5ede2; --glass-edge: rgba(255,255,255,.7); --glass-shine: rgba(255,255,255,.9); }
   @media (prefers-color-scheme: dark) {
@@ -12,17 +13,19 @@
   .topbar::before { content: ""; position: absolute; inset: 0; opacity: var(--p, 0); border-bottom: 1px solid var(--line);
     background: color-mix(in srgb, var(--bg) 70%, transparent); -webkit-backdrop-filter: blur(20px) saturate(1.6); backdrop-filter: blur(20px) saturate(1.6); }
   .topbar-in { position: relative; max-width: 880px; margin: 0 auto; padding: 4px 8px; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 52px; }
-  .mini-brand { display: flex; align-items: center; gap: 8px; color: var(--fg); text-decoration: none; font-weight: 600; padding: 8px;
-    opacity: var(--p, 0); transform: translateY(calc((1 - var(--p, 0)) * 8px)); }
+  .mini-brand { display: flex; align-items: center; gap: 6px; color: var(--fg); text-decoration: none; padding: 8px; opacity: var(--mini, 0); }
   .mini-brand .mark { width: 32px; height: 14px; }
   .topbar ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 2px; }
   .topbar nav a { display: block; padding: 12px 8px; border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 0.92rem; }
   .topbar nav a:hover { color: var(--accent); }
   @media (max-width: 520px) { .topbar ul { flex-wrap: nowrap; } .topbar nav a { padding: 12px 6px; font-size: .85rem; } .mini-brand span { display: none; } }
-  .big-brand { display: flex; align-items: center; gap: 14px; margin: 4px 0 48px;
-    opacity: calc(1 - var(--p, 0)); transform: translateY(calc(var(--p, 0) * -14px)) scale(calc(1 - var(--p, 0) * .08)); transform-origin: left center; }
+  .big-brand { display: flex; align-items: center; gap: 14px; margin: 4px 0 48px; transform-origin: 0 0; will-change: transform, opacity; }
   .big-brand .mark { width: 72px; height: 30px; flex: none; }
   .big-brand p { margin: 0; font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1; }
+  /* The wordmark: Fraunces, soft and upright, whose rounded strokes echo the voice line */
+  .wordmark, .big-brand p, .mini-brand span { font-family: Fraunces, Georgia, serif; font-style: normal; font-weight: 600;
+    font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 72; letter-spacing: -0.015em; }
+  .mini-brand span { font-size: 1.25rem; line-height: 1; }
   .serif { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; letter-spacing: -0.02em; }
   .serif-line { font-family: Fraunces, Georgia, serif; font-style: italic; }
   .banner { display: flex; align-items: center; gap: 16px; background: var(--box); border: 1px solid var(--line); border-radius: 18px;
@@ -134,3 +137,15 @@
   footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
   footer a { margin-right: 16px; }
   footer p { margin: 4px 0; }
+
+/* Hover: buttons lift, links warm up */
+.button { transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, background-color .2s ease, border-color .2s ease, filter .2s ease; }
+.button:hover { transform: translateY(-2px); box-shadow: 0 10px 24px color-mix(in srgb, var(--accent) 35%, transparent); filter: brightness(1.06); }
+.button:active { transform: translateY(0) scale(.98); box-shadow: none; }
+.button.secondary:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 8px 20px rgba(0,0,0,.12); filter: none; }
+.topbar nav a { transition: color .2s ease, background-color .2s ease; }
+.topbar nav a:hover { background: color-mix(in srgb, var(--fg) 8%, transparent); }
+.mini-brand { transition: transform .25s ease; } .mini-brand:hover { transform: scale(1.03); }
+main a:not(.button):not(.banner) { text-decoration-thickness: 1px; text-underline-offset: 3px; transition: text-decoration-color .2s ease, color .2s ease; }
+main a:not(.button):hover { text-decoration-thickness: 2px; }
+@media (prefers-reduced-motion: reduce) { .button, .button:hover, .button:active { transform: none; } }
