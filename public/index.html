@@ -128,7 +128,7 @@
   }
   /* Holiday sticker: a price sticker slapped on the page; sticks in the right margin on wide screens */
   /* Holiday bow and gift tag: sticks in the right margin on wide screens */
-  .sticker { position: absolute; top: 56px; right: 8px; z-index: 5; width: 128px; display: flex; flex-direction: column; align-items: center;
+  .sticker { position: absolute; top: 56px; right: 8px; z-index: 11; width: 128px; display: flex; flex-direction: column; align-items: center;
     text-decoration: none; transform: rotate(8deg); transform-origin: 50% 20%; animation: drop .9s cubic-bezier(.2,1.5,.4,1) .5s both;
     filter: drop-shadow(0 10px 14px rgba(90,10,10,.35)); }
   .sticker .bow { width: 100%; height: auto; display: block; position: relative; z-index: 2; }
@@ -145,7 +145,7 @@
   main { position: relative; }
   .big-brand { padding-right: 130px; }
   @media (min-width: 1260px) {
-    .sticker { position: fixed; top: 70px; right: max(16px, calc(((100vw - 880px) / 2 - 180px) / 2)); width: 180px; }
+    .sticker { position: fixed; top: 10px; right: max(16px, calc(((100vw - 880px) / 2 - 180px) / 2)); width: 180px; }
     .sticker .t-top { font-size: .72rem; } .sticker .t-big { font-size: 1.45rem; } .sticker .t-more { font-size: .72rem; }
     .big-brand { padding-right: 0; }
   }
@@ -264,7 +264,7 @@
       </div>
     </div>
     <ul class="grid">
-      <li class="card"><h3>You're the source.</h3><p>Who's in the photo. Where the house was. Why you took the job. Nobody else has the footnotes.</p></li>
+      <li class="card"><h3>You're the source.</h3><p>Who's in the photo. Where the house was. Why you took the job. You know the details. You know the story.</p></li>
       <li class="card"><h3>Out of the shoebox.</h3><p>Albums, slides, negatives. We scan them. You tell us what was really going on.</p></li>
       <li class="card"><h3>All talk. No homework.</h3><p>Nothing to write, nothing to learn. We plan, record, scan and edit. You just tell it like it was.</p></li>
     </ul>
