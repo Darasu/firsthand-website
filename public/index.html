@@ -19,9 +19,9 @@
 <meta property="og:image:alt" content="The opening page of a sample Firsthand Stories site for a fictional storyteller, with a Begin Listening button">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  :root { --bg: #fbf8f3; --fg: #1d1d1f; --text: #3d3630; --muted: #5f5f66; --accent: #c8423f; --on-accent: #ffffff; --line: #e5ded3; --card: #ffffff; --box: #f5ede2; }
+  :root { --bg: #fbf8f3; --fg: #1d1d1f; --text: #3d3630; --muted: #5f5f66; --accent: #c8423f; --on-accent: #ffffff; --line: #e5ded3; --card: #ffffff; --box: #f5ede2; --glass-edge: rgba(255,255,255,.7); --glass-shine: rgba(255,255,255,.9); }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #0b0b0d; --fg: #f2f2f4; --text: #d9d2ca; --muted: #a3a3ab; --accent: #ff7462; --on-accent: #0b0b0d; --line: #2a2a30; --card: #16161a; --box: #1a1714; }
+    :root { --bg: #0b0b0d; --fg: #f2f2f4; --text: #d9d2ca; --muted: #a3a3ab; --accent: #ff7462; --on-accent: #0b0b0d; --line: #2a2a30; --card: #16161a; --box: #1a1714; --glass-edge: rgba(255,255,255,.12); --glass-shine: rgba(255,255,255,.16); }
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 18px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
@@ -107,8 +107,15 @@
   @media (min-width: 1260px) {
     .margin-photos { display: block; position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
     .margin-photos img { position: absolute; height: auto; border: 6px solid #fbf8f3; border-radius: 3px;
-      box-shadow: 0 14px 34px rgba(0,0,0,.28); transform: translate3d(0, var(--y, 0px), 0) rotate(var(--r)); will-change: transform; opacity: .92; }
-    main, .site-header { position: relative; z-index: 1; }
+      box-shadow: 0 14px 34px rgba(0,0,0,.28); transform: translate3d(0, var(--y, 0px), 0) rotate(var(--r)); will-change: transform; }
+    .margin-photos img.big { border-width: 10px; box-shadow: 0 30px 70px rgba(0,0,0,.35); }
+    .site-header, main { position: relative; z-index: 1; }
+    /* Liquid Glass sheet: the content floats over the photos, which show through blurred at its edges */
+    main { margin-top: 12px; padding: 28px 40px 56px; border-radius: 36px;
+      background: color-mix(in srgb, var(--bg) 72%, transparent);
+      -webkit-backdrop-filter: blur(28px) saturate(1.5); backdrop-filter: blur(28px) saturate(1.5);
+      border: 1px solid var(--glass-edge); box-shadow: inset 0 1px 0 var(--glass-shine), 0 30px 80px rgba(0,0,0,.18); }
+    .site-header { margin-top: 12px; }
   }
   footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.9rem; color: var(--muted); }
   footer a { margin-right: 16px; }
@@ -117,18 +124,28 @@
 </head>
 <body>
 <div class="margin-photos" aria-hidden="true">
-  <img src="/images/gano-waltjune_2.jpg" width="483" height="500" alt="" loading="lazy" data-speed="0.13" style="top:4%;left:calc(max(0px, (100vw - 880px) / 2 - 190px) * 0.18);width:190px;--r:-4deg">
-  <img src="/images/gano-junedogs_1.jpg" width="482" height="500" alt="" loading="lazy" data-speed="0.22" style="top:7%;right:calc(max(0px, (100vw - 880px) / 2 - 150px) * 0.30);width:150px;--r:3deg">
-  <img src="/images/gano-1940s3_1.jpg" width="318" height="500" alt="" loading="lazy" data-speed="0.29" style="top:16%;left:calc(max(0px, (100vw - 880px) / 2 - 120px) * 0.58);width:120px;--r:2deg">
-  <img src="/images/gano-juneyoung7_3.jpg" width="457" height="500" alt="" loading="lazy" data-speed="0.14" style="top:20%;right:calc(max(0px, (100vw - 880px) / 2 - 200px) * 0.08);width:200px;--r:-3deg">
-  <img src="/images/gano-ganofamily2_2.jpg" width="485" height="500" alt="" loading="lazy" data-speed="0.20" style="top:30%;left:calc(max(0px, (100vw - 880px) / 2 - 170px) * 0.10);width:170px;--r:3deg">
-  <img src="/images/gano-1940s2_7.jpg" width="348" height="500" alt="" loading="lazy" data-speed="0.28" style="top:34%;right:calc(max(0px, (100vw - 880px) / 2 - 130px) * 0.52);width:130px;--r:-2deg">
-  <img src="/images/gano-grandkids_4.jpg" width="500" height="470" alt="" loading="lazy" data-speed="0.11" style="top:45%;left:calc(max(0px, (100vw - 880px) / 2 - 210px) * 0.26);width:210px;--r:-2deg">
-  <img src="/images/gano-iragano1_2.jpg" width="353" height="500" alt="" loading="lazy" data-speed="0.24" style="top:49%;right:calc(max(0px, (100vw - 880px) / 2 - 140px) * 0.22);width:140px;--r:4deg">
-  <img src="/images/gano-juneyoung6_6.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.27" style="top:59%;left:calc(max(0px, (100vw - 880px) / 2 - 150px) * 0.50);width:150px;--r:4deg">
-  <img src="/images/gano-old3_2.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.15" style="top:64%;right:calc(max(0px, (100vw - 880px) / 2 - 200px) * 0.12);width:200px;--r:-3deg">
-  <img src="/images/gano-1940s_3.jpg" width="420" height="500" alt="" loading="lazy" data-speed="0.21" style="top:73%;left:calc(max(0px, (100vw - 880px) / 2 - 160px) * 0.14);width:160px;--r:-3deg">
-  <img src="/images/gano-lince3_3.jpg" width="500" height="439" alt="" loading="lazy" data-speed="0.18" style="top:79%;right:calc(max(0px, (100vw - 880px) / 2 - 170px) * 0.34);width:170px;--r:2deg">
+  <img class="big" src="/images/gano-1940s2_6-lg.jpg" width="676" height="1000" alt="" loading="lazy" data-speed="0.08" style="top:3%;left:calc((100vw - 880px) / 2 - 252px);width:360px;--r:-3deg">
+  <img class="big" src="/images/gano-ggearlylife_4-lg.jpg" width="1000" height="800" alt="" loading="lazy" data-speed="0.06" style="top:14%;right:calc((100vw - 880px) / 2 - 360px);width:500px;--r:2deg">
+  <img class="big" src="/images/gano-iramargaretgano_1-lg.jpg" width="1000" height="948" alt="" loading="lazy" data-speed="0.07" style="top:33%;left:calc((100vw - 880px) / 2 - 326px);width:480px;--r:2deg">
+  <img class="big" src="/images/gano-waltjune_2-lg.jpg" width="967" height="1000" alt="" loading="lazy" data-speed="0.09" style="top:47%;right:calc((100vw - 880px) / 2 - 294px);width:420px;--r:-2deg">
+  <img class="big" src="/images/gano-levikeys_1-lg.jpg" width="1000" height="756" alt="" loading="lazy" data-speed="0.06" style="top:63%;left:calc((100vw - 880px) / 2 - 343px);width:520px;--r:-1.5deg">
+  <img class="big" src="/images/gano-lince2_2-lg.jpg" width="1000" height="961" alt="" loading="lazy" data-speed="0.08" style="top:80%;right:calc((100vw - 880px) / 2 - 322px);width:460px;--r:3deg">
+  <img class="small" src="/images/gano-waltjune_2.jpg" width="483" height="500" alt="" loading="lazy" data-speed="0.2" style="top:3%;right:calc((100vw - 880px) / 2 - 212px);width:170px;--r:4deg">
+  <img class="small" src="/images/gano-junedogs_1.jpg" width="482" height="500" alt="" loading="lazy" data-speed="0.16" style="top:12%;left:calc((100vw - 880px) / 2 - 242px);width:230px;--r:3deg">
+  <img class="small" src="/images/gano-1940s3_1.jpg" width="318" height="500" alt="" loading="lazy" data-speed="0.32" style="top:24%;right:calc((100vw - 880px) / 2 - 220px);width:110px;--r:-4deg">
+  <img class="small" src="/images/gano-juneyoung7_3.jpg" width="457" height="500" alt="" loading="lazy" data-speed="0.3" style="top:22%;left:calc((100vw - 880px) / 2 - 238px);width:140px;--r:-3deg">
+  <img class="small" src="/images/gano-ganofamily2_2.jpg" width="485" height="500" alt="" loading="lazy" data-speed="0.18" style="top:30%;right:calc((100vw - 880px) / 2 - 231px);width:210px;--r:-2deg">
+  <img class="small" src="/images/gano-1940s2_7.jpg" width="348" height="500" alt="" loading="lazy" data-speed="0.34" style="top:42%;left:calc((100vw - 880px) / 2 - 220px);width:100px;--r:5deg">
+  <img class="small" src="/images/gano-grandkids_4.jpg" width="500" height="470" alt="" loading="lazy" data-speed="0.26" style="top:39%;right:calc((100vw - 880px) / 2 - 240px);width:150px;--r:3deg">
+  <img class="small" src="/images/gano-iragano1_2.jpg" width="353" height="500" alt="" loading="lazy" data-speed="0.22" style="top:51%;left:calc((100vw - 880px) / 2 - 234px);width:180px;--r:-4deg">
+  <img class="small" src="/images/gano-juneyoung6_6.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.15" style="top:58%;right:calc((100vw - 880px) / 2 - 240px);width:240px;--r:3deg">
+  <img class="small" src="/images/gano-old3_2.jpg" width="500" height="438" alt="" loading="lazy" data-speed="0.3" style="top:71%;left:calc((100vw - 880px) / 2 - 247px);width:130px;--r:4deg">
+  <img class="small" src="/images/gano-1940s_3.jpg" width="420" height="500" alt="" loading="lazy" data-speed="0.33" style="top:69%;right:calc((100vw - 880px) / 2 - 240px);width:120px;--r:-3deg">
+  <img class="small" src="/images/gano-lince3_3.jpg" width="500" height="439" alt="" loading="lazy" data-speed="0.2" style="top:79%;left:calc((100vw - 880px) / 2 - 240px);width:200px;--r:-2deg">
+  <img class="small" src="/images/gano-ggearlylife_5.jpg" width="384" height="400" alt="" loading="lazy" data-speed="0.24" style="top:87%;right:calc((100vw - 880px) / 2 - 221px);width:170px;--r:4deg">
+  <img class="small" src="/images/gano-juneyoung5_5.jpg" width="309" height="400" alt="" loading="lazy" data-speed="0.3" style="top:88%;left:calc((100vw - 880px) / 2 - 231px);width:110px;--r:-5deg">
+  <img class="small" src="/images/gano-old2_2.jpg" width="400" height="324" alt="" loading="lazy" data-speed="0.28" style="top:94%;right:calc((100vw - 880px) / 2 - 234px);width:130px;--r:-3deg">
+  <img class="small" src="/images/gano-1940s3_5.jpg" width="270" height="400" alt="" loading="lazy" data-speed="0.22" style="top:95%;left:calc((100vw - 880px) / 2 - 225px);width:150px;--r:3deg">
 </div>
 <header class="site-header">
   <nav aria-label="Site"><ul><li><a href="/" aria-current="page">Firsthand Stories</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/app/">Firsthand app</a></li><li><a href="/privacy/">Privacy</a></li></ul></nav>
