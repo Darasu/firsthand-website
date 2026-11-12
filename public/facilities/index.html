@@ -17,32 +17,71 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400&amp;family=Playfair+Display:ital,wght@1,500&amp;display=swap">
 <link rel="stylesheet" href="/site.css">
 <style>
+  /* For Communities (#233): Apple-style bands, each a change of ground marking one idea; photos and screens show what the words say */
+  :root { --band-paper: #f1ece3; --band-ink: #1c1a17; --band-ink-fg: #f3efe8; --band-ink-muted: #b9b0a4; }
+  @media (prefers-color-scheme: dark) { :root { --band-paper: #18161a; --band-ink: #000000; } }
+  /* No glass sheet here: the bands run the full width instead */
+  main { background: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
   .h1sub { font-size: 1.2rem; color: var(--text); margin: 0 0 8px; max-width: 640px; }
+  .hero-shot { margin: 32px 0 8px; }
+  .hero-shot img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--line); box-shadow: 0 30px 70px rgba(60,40,20,.18); }
+  /* A band runs the full width: its ground painted past the column without widening the page */
+  .band { position: relative; padding-block: 72px; margin-block: 40px; background: var(--bg-band); box-shadow: 0 0 0 100vmax var(--bg-band); clip-path: inset(0 -100vmax); }
+  .band.paper { --bg-band: var(--band-paper); }
+  .band.ink { --bg-band: var(--band-ink); color: var(--band-ink-fg); }
+  .band.ink .serif-line, .band.ink .muted { color: var(--band-ink-muted); }
+  .eyebrow { margin: 0 0 6px; color: var(--accent); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+  .band h2 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.05; margin: 0 0 10px; }
+  /* Why: alternating picture and words */
+  .why { display: grid; gap: 56px; margin-top: 40px; }
+  .why-row { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 760px) { .why-row { grid-template-columns: 1fr 1fr; } .why-row:nth-child(even) .why-pic { order: 2; } }
+  .why-pic { position: relative; }
+  .why-pic img { display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 24px 50px rgba(60,40,20,.18); }
+  .why-pic .print { border: 10px solid #fbf8f3; border-radius: 4px; transform: rotate(-2deg); }
+  .why-pic .phone { max-width: 260px; margin: 0 auto; box-shadow: none; filter: drop-shadow(0 24px 40px rgba(0,0,0,.3)); border-radius: 0; }
+  .why-row h3 { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.8rem; line-height: 1.15; margin: 0 0 10px; }
+  .why-row p { margin: 0; color: var(--text); font-size: 1.08rem; max-width: 46ch; }
+  .why-pic .barcrop { aspect-ratio: 2.4; object-fit: cover; object-position: top; }
+  .why-row .quote { margin-top: 14px; font-family: Fraunces, Georgia, serif; font-style: italic; color: var(--muted); }
   .ways { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); list-style: none; padding: 0; }
   .ways h3 { margin: 0 0 6px; font-size: 1.2rem; }
   .ways p { margin: 0; color: var(--text); }
-  .points { padding-left: 1.2em; color: var(--text); }
-  .points li { margin-bottom: 8px; }
-  .shots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); list-style: none; padding: 0; }
-  .shots img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 10px; }
-  .shots img.phone { max-width: 200px; margin: 0 auto 10px; border: 0; }
-  .shots h3 { margin: 0 0 4px; font-size: 1.05rem; } .shots p { margin: 0; color: var(--text); font-size: .95rem; }
-  /* Screenshots on the paper, light only (#233) */
-  .callouts { margin: 8px 0 24px; }
-  .callouts .frame { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(60,40,20,.18); background: #fff; }
-  .callouts img { display: block; width: 100%; height: auto; }
-  .pin { position: absolute; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; font: 700 15px/30px -apple-system, system-ui, sans-serif; text-align: center; box-shadow: 0 0 0 4px rgba(255,255,255,.85), 0 4px 12px rgba(0,0,0,.25); }
-  .legend { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 8px 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-  .legend li { display: flex; gap: 10px; align-items: baseline; color: var(--text); }
-  .legend .n { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; line-height: 24px; text-align: center; }
-  .appshots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: 8px 0 20px; }
-  .appshots figure { margin: 0; } .appshots img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(60,40,20,.14); }
-  .appshots figcaption { font-size: .9rem; color: var(--muted); margin-top: 8px; }
-  @media (max-width: 520px) { .pin { width: 22px; height: 22px; font-size: 12px; line-height: 22px; } }
-  /* The interview site's Paper appearance (#ecebe8 and #f5f4f1) laid over the app's white, as a multiply tint (#233) */
-  .callouts .frame::after, .paper::after { content: ""; position: absolute; inset: 0; background: #f2efe9; mix-blend-mode: multiply; pointer-events: none; border-radius: inherit; }
+  /* How the app works: the Timeline, its callouts lighting up one by one */
+  .callouts { margin: 32px 0 0; display: grid; gap: 24px; }
+  .callouts .frame { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 40px 90px rgba(0,0,0,.5); background: #fff; }
+  .callouts img { display: block; width: 100%; height: auto; transition: filter .5s ease; }
+  .callouts .frame.focus img { filter: brightness(.55) saturate(.8); }
+  .spot { position: absolute; width: 34%; aspect-ratio: 1.6; transform: translate(-50%, -50%); border-radius: 14px; pointer-events: none; opacity: 0;
+          background-image: var(--shot); background-size: var(--bgw) auto; box-shadow: 0 0 0 3px var(--accent), 0 18px 40px rgba(0,0,0,.45); transition: opacity .4s ease, left .5s ease, top .5s ease; }
+  .frame.focus .spot { opacity: 1; }
+  .pin { position: absolute; z-index: 2; transform: translate(-50%, -50%) scale(.3); opacity: 0; width: 32px; height: 32px; border-radius: 50%; border: 0; padding: 0; cursor: pointer;
+         background: var(--accent); color: #fff; font: 700 15px/32px -apple-system, system-ui, sans-serif; text-align: center;
+         box-shadow: 0 0 0 4px rgba(255,255,255,.9), 0 4px 12px rgba(0,0,0,.3); transition: transform .45s cubic-bezier(.2,1.4,.4,1), opacity .3s ease; }
+  .frame.shown .pin { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  .pin.on { transform: translate(-50%, -50%) scale(1.25) !important; }
+  .pin.on::after { content: ""; position: absolute; inset: -8px; border-radius: 50%; border: 2px solid var(--accent); animation: ring 1.6s ease-out infinite; }
+  @keyframes ring { from { opacity: .9; transform: scale(.8); } to { opacity: 0; transform: scale(1.8); } }
+  .legend { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .legend button { all: unset; box-sizing: border-box; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; width: 100%; padding: 10px 12px; min-height: 44px; border-radius: 12px; color: var(--band-ink-muted); transition: background .3s ease, color .3s ease; }
+  .legend button:focus-visible { outline: 2px solid var(--accent); }
+  .legend button.on { background: rgba(255,255,255,.08); color: var(--band-ink-fg); }
+  .legend b { display: block; color: inherit; } .legend small { display: block; font-size: .85rem; opacity: .85; }
+  .legend .n { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; line-height: 26px; text-align: center; }
+  .appshots { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: 48px 0 0; }
+  .appshots figure { margin: 0; } .appshots img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 20px 44px rgba(0,0,0,.4); }
+  .appshots figcaption { font-size: .92rem; color: var(--band-ink-muted); margin-top: 10px; }
+  /* The interview site's Paper appearance laid over the app's white, as a multiply tint */
+  .callouts .frame::after, .paper::after { content: ""; position: absolute; inset: 0; background: #f2efe9; mix-blend-mode: multiply; pointer-events: none; border-radius: inherit; z-index: 1; }
   .paper { position: relative; display: block; border-radius: 14px; }
-  .pin { z-index: 1; }
+  /* What residents and families receive */
+  .receive { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); list-style: none; padding: 0; margin: 32px 0 0; }
+  .receive li { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 10px; align-content: start; }
+  .receive img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .receive h3 { margin: 4px 0 0; font-size: 1.1rem; } .receive p { margin: 0; color: var(--text); font-size: .95rem; }
+  .receive .wide { grid-column: 1 / -1; } @media (min-width: 760px) { .receive .wide { grid-template-columns: 1.4fr 1fr; align-items: center; gap: 24px; } }
+  @media (max-width: 520px) { .pin { width: 24px; height: 24px; font-size: 12px; line-height: 24px; } .band { padding-block: 48px; } }
+  @media (prefers-reduced-motion: reduce) { .pin, .spot, .callouts img { transition: none; } .pin.on::after { animation: none; } }
 </style>
 </head>
 <body>
@@ -59,74 +98,63 @@
     <a class="button" href="mailto:sales@firsthandstories.app?subject=Firsthand%20Stories%20for%20our%20community">Request a Conversation</a>
     <a class="button secondary" href="tel:+17044128761">Call or Text (704) 412-8761</a>
   </div>
+  <figure class="hero-shot"><img src="/images/app/sponsor-bar.jpg" width="1600" height="950" alt="A resident's story page with Maple Grove Senior Living's own logo and links in the bar across the top"></figure>
 
-  <section aria-labelledby="why">
-    <h2 id="why" class="serif">Why communities do it.</h2>
-    <ul class="points">
-      <li><strong>Residents feel known.</strong> An hour spent telling your life to someone who listens is one of the best hours of a week.</li>
-      <li><strong>Families stay close.</strong> Children and grandchildren hear the stories, in the resident&rsquo;s own voice, on any phone.</li>
-      <li><strong>Staff know who they care for.</strong> A story page tells a new caregiver more than a chart can.</li>
-      <li><strong>A program people talk about.</strong> Life-story events bring families in and set your community apart.</li>
-    </ul>
+  <section class="band paper" aria-labelledby="why">
+    <p class="eyebrow">Why communities do it</p>
+    <h2 id="why" class="serif">Stories that bring people closer.</h2>
+    <div class="why">
+      <div class="why-row"><div class="why-pic"><img class="print" src="/images/gano-waltjune_2-lg.jpg" width="967" height="1000" loading="lazy" alt="An old photograph of a young couple"></div>
+        <div><h3>Residents feel known.</h3><p>An hour spent telling your life to someone who really listens is one of the best hours of a week. Residents choose the stories and the photos; they hear themselves taken seriously.</p></div></div>
+      <div class="why-row"><div class="why-pic"><img class="phone" src="/images/page-phone.png" width="340" height="700" loading="lazy" alt="A story page on a phone, playing a chapter beside its photo"></div>
+        <div><h3>Families stay close.</h3><p>Children and grandchildren hear the stories in the resident&rsquo;s own voice, chapter by chapter, beside the photos, on any phone. No app to install, nothing to sign up for.</p></div></div>
+      <div class="why-row"><div class="why-pic"><span class="paper"><img src="/images/app/interview-light.jpg" width="750" height="1000" loading="lazy" alt="A finished interview in the app: chapters with photos and the transcript"></span></div>
+        <div><h3>Staff know who they care for.</h3><p>A story page tells a new caregiver more than a chart can: where someone grew up, what they did for a living, who they loved. Better conversations start on day one.</p></div></div>
+      <div class="why-row"><div class="why-pic"><img class="barcrop" src="/images/app/sponsor-bar.jpg" width="1600" height="950" loading="lazy" alt="The story page's top bar showing the community's own logo, Resident Stories, and its Lifestyle, Dining and Contact links"></div>
+        <div><h3>Your name on every story.</h3><p>Each story page carries your community&rsquo;s logo and links in its top bar. Families share them with friends, and every share is a warm introduction to you.</p></div></div>
+    </div>
   </section>
 
   <section aria-labelledby="ways">
-    <h2 id="ways" class="serif">Two ways to run it.</h2>
+    <p class="eyebrow">Two ways to run it</p>
+    <h2 id="ways" class="serif">Your team, or ours.</h2>
     <ul class="ways">
-      <li class="card"><h3>Your team records</h3><p>We set your activities or life-enrichment staff up with the Firsthand app on an iPad and a pair of small microphones, train them in an afternoon, and support them as they go. Your community owns the program and the recordings.</p></li>
+      <li class="card"><h3>Your team records</h3><p>We set your activities or life-enrichment staff up with the Firsthand app and a pair of small microphones, train them in an afternoon, and support them as they go. Your community owns the program and the recordings.</p></li>
       <li class="card"><h3>We record for you</h3><p>We come to your community on a schedule, sit down with residents one by one, scan their photos and deliver each story ready to share. Nothing for your staff to learn.</p></li>
     </ul>
   </section>
 
-  <section aria-labelledby="how">
+  <section class="band ink" aria-labelledby="how">
+    <p class="eyebrow">The Firsthand app</p>
     <h2 id="how" class="serif">How the app works.</h2>
-    <p class="sub serif-line">Everything your team needs on one iPad.</p>
-    <figure class="callouts">
-      <div class="frame"><img src="/images/app/timeline-light.jpg" width="1400" height="1050" loading="lazy"
-        alt="The Firsthand app on an iPad in landscape: an interview's chapters with photos and transcript on the left, and each microphone's waveform on its own lane on the right"><span class="pin" style="left:33%;top:17%">1</span><span class="pin" style="left:31.5%;top:28%">2</span><span class="pin" style="left:34%;top:41%">3</span><span class="pin" style="left:86%;top:16%">4</span><span class="pin" style="left:86%;top:38%">5</span><span class="pin" style="left:84%;top:90%">6</span></div>
-      <ol class="legend"><li><span class="n">1</span>Sections and stories, as in your question list</li><li><span class="n">2</span>Every question its own chapter, with its photos</li><li><span class="n">3</span>The transcript by speaker, written on the iPad</li><li><span class="n">4</span>Chapters marked along the timeline</li><li><span class="n">5</span>Two microphones, two tracks: each voice on its own lane</li><li><span class="n">6</span>Play, skip back or ahead, change the speed</li></ol>
-    </figure>
-    <div class="appshots">
-      <figure><span class="paper"><img src="/images/app/template-light.jpg" width="750" height="1000" loading="lazy" alt="A question list grouped into Early Life, Young Adulthood, Work, Family and Reflections"></span><figcaption>Your questions, grouped into stories. Skip, reorder or add your own.</figcaption></figure>
-      <figure><span class="paper"><img src="/images/app/interview-light.jpg" width="750" height="1000" loading="lazy" alt="A finished interview: chapters with their photos and the transcript beneath each"></span><figcaption>Every answer a chapter, with photos and transcript.</figcaption></figure>
-      <figure><span class="paper"><img src="/images/app/home-light.jpg" width="750" height="1000" loading="lazy" alt="The home screen: templates to start an interview, and the recorded interviews"></span><figcaption>Start an interview in one tap.</figcaption></figure>
+    <p class="sub serif-line">Everything your team needs on one iPad, Mac, or iPhone.</p>
+    <div class="callouts">
+      <div class="frame" id="tl" style="--shot:url(/images/app/timeline-light.jpg)"><img src="/images/app/timeline-light.jpg" width="1400" height="1050" loading="lazy"
+        alt="The Firsthand app on an iPad in landscape: an interview's chapters with photos and transcript on the left, and each microphone's waveform on its own lane on the right"><span class="spot" aria-hidden="true"></span><button class="pin" type="button" data-i="0" style="left:33%;top:17%" aria-label="Sections and stories">1</button><button class="pin" type="button" data-i="1" style="left:31.5%;top:28%" aria-label="A chapter for every question">2</button><button class="pin" type="button" data-i="2" style="left:34%;top:41%" aria-label="The transcript, by speaker">3</button><button class="pin" type="button" data-i="3" style="left:86%;top:16%" aria-label="Chapters on the timeline">4</button><button class="pin" type="button" data-i="4" style="left:86%;top:38%" aria-label="Two microphones, two tracks">5</button><button class="pin" type="button" data-i="5" style="left:84%;top:90%" aria-label="Play, skip and change speed">6</button></div>
+      <ol class="legend" id="legend"><li><button type="button" data-i="0"><span class="n">1</span><span><b>Sections and stories</b><small>Laid out like your question list.</small></span></button></li><li><button type="button" data-i="1"><span class="n">2</span><span><b>A chapter for every question</b><small>With the photos that go with it.</small></span></button></li><li><button type="button" data-i="2"><span class="n">3</span><span><b>The transcript, by speaker</b><small>Written out on the iPad itself.</small></span></button></li><li><button type="button" data-i="3"><span class="n">4</span><span><b>Chapters on the timeline</b><small>Jump to any answer in a tap.</small></span></button></li><li><button type="button" data-i="4"><span class="n">5</span><span><b>Two microphones, two tracks</b><small>Each voice on its own lane, clear even in a busy room.</small></span></button></li><li><button type="button" data-i="5"><span class="n">6</span><span><b>Play, skip and change speed</b><small>Review a session before it is shared.</small></span></button></li></ol>
     </div>
-    <ul class="points">
-      <li><strong>One tap per question.</strong> The interviewer taps each question as they ask it, so every answer becomes its own chapter. No editing afterwards.</li>
-      <li><strong>Two voices, two tracks.</strong> Small clip-on microphones record the interviewer and the resident separately, so the resident&rsquo;s voice stays clear even in a busy room. The iPad&rsquo;s own mic works too.</li>
-      <li><strong>Pause and pick up later.</strong> Stop when the resident tires and resume another day; it all joins into one story.</li>
-      <li><strong>Transcripts on the iPad.</strong> Every word is written out on the device itself, with long pauses and filler words tidied automatically.</li>
-      <li><strong>Publish in one step.</strong> A private story page for the family, plus audio, a video slideshow and a printable booklet.</li>
-      <li><strong>Private by default.</strong> Recordings stay on your iPads and your own iCloud until someone chooses to publish one.</li>
+    <div class="appshots">
+      <figure><span class="paper"><img src="/images/app/template-light.jpg" width="750" height="1000" loading="lazy" alt="A question list grouped into Early Life, Young Adulthood, Work, Family and Reflections"></span><figcaption>Your questions, grouped into stories. Skip, reorder or add your own; families can send theirs ahead of time.</figcaption></figure>
+      <figure><span class="paper"><img src="/images/app/interview-light.jpg" width="750" height="1000" loading="lazy" alt="A finished interview: chapters with their photos and the transcript beneath each"></span><figcaption>One tap per question as it&rsquo;s asked, so every answer is its own chapter. Pause when a resident tires and pick up another day.</figcaption></figure>
+      <figure><span class="paper"><img src="/images/app/home-light.jpg" width="750" height="1000" loading="lazy" alt="The home screen: templates to start an interview, and the recorded interviews"></span><figcaption>Start an interview in one tap. Transcripts are written on the device, with long pauses and filler words tidied.</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="receive">
+    <p class="eyebrow">What residents and families receive</p>
+    <h2 id="receive" class="serif">A life story to keep.</h2>
+    <ul class="receive">
+      <li class="wide"><img src="/images/page-desktop.png" width="1158" height="600" loading="lazy" alt="A story page's opening: an old photo, the storyteller's name, a short summary of their life story, and a Begin Listening button"><div><h3>A private story page</h3><p>Their life story in their own voice, a chapter for every question, their photos scanned and set beside the moments they belong to. Shared only with the people they choose.</p></div></li>
+      <li><img src="/images/keep-audio.png" width="631" height="349" loading="lazy" alt=""><h3>Audio</h3><p>Every chapter, in the resident&rsquo;s own voice. Plays anywhere.</p></li>
+      <li><img src="/images/keep-video.png" width="633" height="349" loading="lazy" alt=""><h3>Video slideshow</h3><p>Their voice over their photos, for family gatherings.</p></li>
+      <li><img src="/images/keep-booklet.png" width="630" height="349" loading="lazy" alt=""><h3>Transcript and booklet</h3><p>Every word in print beside every photo, and a hardcover book if they&rsquo;d like one.</p></li>
     </ul>
   </section>
 
-  <section aria-labelledby="what">
-    <h2 id="what" class="serif">What each resident gets.</h2>
-    <ul class="points">
-      <li>Their life story, recorded in their own voice, with a chapter for every question.</li>
-      <li>Their photos scanned and set right beside the moments they belong to.</li>
-      <li>A private page that plays on any phone, shared only with the people they choose.</li>
-      <li>A full transcript, and a printed book if they&rsquo;d like one.</li>
-      <li>Questions shared ahead of time, so family can add their own.</li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="see">
-    <h2 id="see" class="serif">What families receive.</h2>
-    <img src="/images/page-desktop.png" width="1158" height="600" loading="lazy" style="display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin-bottom:16px"
-         alt="A story page's opening: an old photo, the storyteller's name, a short summary of their life story, and a Begin Listening button">
-    <ul class="shots">
-      <li class="card"><img class="phone" src="/images/page-phone.png" width="340" height="700" loading="lazy" alt="A story page on a phone, playing a chapter beside its photo"><h3>On any phone</h3><p>Chapters play beside the photos they belong to. Nothing to install.</p></li>
-      <li class="card"><img src="/images/keep-audio.png" width="631" height="349" loading="lazy" alt=""><h3>Audio</h3><p>Every chapter, in the resident&rsquo;s own voice.</p></li>
-      <li class="card"><img src="/images/keep-video.png" width="633" height="349" loading="lazy" alt=""><h3>Video slideshow</h3><p>Their voice over their photos, for family gatherings.</p></li>
-      <li class="card"><img src="/images/keep-booklet.png" width="630" height="349" loading="lazy" alt=""><h3>Printable booklet</h3><p>Every word in print, beside every photo.</p></li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="private">
-    <h2 id="private" class="serif">Private by design.</h2>
-    <p>Recordings stay on your community&rsquo;s devices until a resident or their family chooses to share them. We work with your team on consent and on who can see each story.</p>
+  <section class="band paper" aria-labelledby="private">
+    <p class="eyebrow">Private by design</p>
+    <h2 id="private" class="serif">Their story, their choice.</h2>
+    <p class="muted" style="max-width:60ch">Recordings stay on your community&rsquo;s devices and your own iCloud until a resident or their family chooses to share them. We work with your team on consent and on who can see each story.</p>
   </section>
 
   <section class="closing" aria-labelledby="start">
@@ -143,6 +171,34 @@
     <p>© 2026 Firsthand Stories</p>
   </footer>
 </main>
+<script>
+// How the App Works (#233): the callouts appear one by one when the screen scrolls in, then step through the features
+// on their own (a spotlight magnifies each); a tap on a pin or the list jumps there and stops the tour.
+(() => {
+  const frame = document.getElementById('tl'), pins = [...frame.querySelectorAll('.pin')], items = [...document.querySelectorAll('#legend button')], spot = frame.querySelector('.spot');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = -1, timer = 0;
+  const show = n => {
+    i = n; pins.forEach((p, k) => p.classList.toggle('on', k === n)); items.forEach((b, k) => { b.classList.toggle('on', k === n); b.setAttribute('aria-current', k === n ? 'true' : 'false'); });
+    const p = pins[n]; if (!p) return;
+    const x = parseFloat(p.style.left), y = parseFloat(p.style.top), w = frame.clientWidth;
+    // The spotlight shows the picture twice the size, centred on the pin
+    spot.style.left = x + '%'; spot.style.top = y + '%';
+    spot.style.setProperty('--bgw', (w * 2) + 'px');
+    const sw = spot.offsetWidth, sh = spot.offsetHeight;
+    spot.style.backgroundPosition = `${-(x / 100 * w * 2 - sw / 2)}px ${-(y / 100 * frame.clientHeight * 2 - sh / 2)}px`;
+    frame.classList.add('focus');
+  };
+  const tour = () => { clearInterval(timer); if (!still) timer = setInterval(() => show((i + 1) % pins.length), 3200); };
+  const pick = n => { clearInterval(timer); show(n); };
+  pins.forEach((p, k) => p.addEventListener('click', () => pick(k)));
+  items.forEach((b, k) => { b.addEventListener('click', () => pick(k)); b.addEventListener('mouseenter', () => pick(k)); });
+  frame.addEventListener('mouseleave', () => { frame.classList.remove('focus'); });
+  const start = () => { frame.classList.add('shown'); pins.forEach((p, k) => p.style.transitionDelay = still ? '0s' : (k * 0.15) + 's'); setTimeout(() => { pins.forEach(p => p.style.transitionDelay = ''); show(0); tour(); }, still ? 0 : 1200); };
+  if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); start(); } }, { threshold: .4 }); io.observe(frame); } else start();
+  addEventListener('resize', () => i >= 0 && show(i));
+})();
+</script>
 <script src="/site.js" defer></script>
 </body>
 </html>
