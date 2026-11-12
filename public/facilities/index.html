@@ -90,7 +90,10 @@
   .why-row.reveal .why-pic { transform: translateX(-40px); transition: transform 1s cubic-bezier(.2,.8,.2,1); }
   .why-row.reveal:nth-child(even) .why-pic { transform: translateX(40px); }
   .why-row.reveal.in .why-pic { transform: none; }
-  strong { font-weight: 650; font-size: 1.07em; color: var(--text-strong, inherit); }
+  /* Bold takeaways: a little larger, in a deep coral so they stand apart from the text around them */
+  :root { --strong: #a8432a; } @media (prefers-color-scheme: dark) { :root { --strong: #f6a184; } }
+  strong { font-weight: 650; font-size: 1.07em; color: var(--strong); }
+  .band.ink strong { color: #f6a184; }
   h1, h2, h3, p, small { text-wrap: pretty; } h1, h2 { text-wrap: balance; }
   @media (prefers-reduced-motion: reduce) { .pin, .glow, .legend button { transition: none; } .pin.on::after { animation: none; } [data-drift] { transform: none !important; } }
 </style>
@@ -109,7 +112,7 @@
     <a class="button" href="mailto:sales@firsthandstories.app?subject=Firsthand%20Stories%20for%20our%20community">Request a Conversation</a>
     <a class="button secondary" href="tel:+17044128761">Call or Text (704) 412-8761</a>
   </div>
-  <figure class="hero-shot rise"><img data-drift="hero" src="/images/app/sponsor-bar.jpg" width="1600" height="950" alt="A resident's story page with Maple Grove Senior Living's own logo and links in the bar across the top, and an old photo of him at his cider press"></figure>
+  <figure class="hero-shot rise"><img data-drift="hero" src="/images/app/sponsor-bar.jpg" width="1600" height="950" alt="A resident's story page with Maple Grove Senior Living's own logo and links in the bar across the top, and an old photo of his grandfather with a horse and buggy"></figure>
 
   <section class="band paper" aria-labelledby="why">
     <p class="eyebrow">Why communities do it</p>
