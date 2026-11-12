@@ -146,3 +146,37 @@ main a:not(.button):hover { text-decoration-thickness: 2px; }
 
 /* The page you are on, marked in the top bar (#233) */
 .topbar nav a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+
+/* Bands (#233, shared by #234): Apple-style full-width bands, each a change of ground marking one idea; picture-and-words rows; scroll motion.
+   A page opts in with <body class="bands">, which also drops the glass sheet (the bands run the full width instead) and the margin photos. */
+  :root { --band-paper: #f1ece3; --band-ink: #1c1a17; --band-ink-fg: #f3efe8; --band-ink-muted: #b9b0a4; }
+  @media (prefers-color-scheme: dark) { :root { --band-paper: #18161a; --band-ink: #000000; } }
+  body.bands .margin-photos { display: none; }
+  body.bands main { margin-top: 0; padding: 16px 16px 80px; background: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+  .h1sub { font-size: 1.2rem; color: var(--text); margin: 0 0 8px; max-width: 640px; }
+  .band { position: relative; padding-block: 72px; margin-block: 40px; background: var(--bg-band); box-shadow: 0 0 0 100vmax var(--bg-band); clip-path: inset(0 -100vmax); }
+  .band.paper { --bg-band: var(--band-paper); }
+  .band.ink { --bg-band: var(--band-ink); color: var(--band-ink-fg); }
+  .band.ink .serif-line, .band.ink .muted { color: var(--band-ink-muted); }
+  .eyebrow { margin: 0 0 6px; color: var(--accent); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+  .band h2 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.05; margin: 0 0 10px; }
+  .why { display: grid; gap: 56px; margin-top: 40px; }
+  .why-row { display: grid; gap: 28px; align-items: center; }
+  @media (min-width: 760px) { .why-row { grid-template-columns: 1fr 1fr; } .why-row:nth-child(even) .why-pic { order: 2; } }
+  .why-pic { position: relative; }
+  .why-pic img { display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 24px 50px rgba(60,40,20,.18); }
+  .why-pic .print { border: 10px solid #fbf8f3; border-radius: 4px; transform: rotate(-2deg); }
+  .why-pic .phone { max-width: 260px; margin: 0 auto; box-shadow: none; filter: drop-shadow(0 24px 40px rgba(0,0,0,.3)); border-radius: 0; }
+  .why-row h3 { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.8rem; line-height: 1.15; margin: 0 0 10px; }
+  .why-row p { margin: 0; color: var(--text); font-size: 1.08rem; max-width: 46ch; }
+  [data-drift] { will-change: transform; }
+  .why-row.reveal .why-pic { transform: translateX(-40px); transition: transform 1s cubic-bezier(.2,.8,.2,1); }
+  .why-row.reveal:nth-child(even) .why-pic { transform: translateX(40px); }
+  .why-row.reveal.in .why-pic { transform: none; }
+  h1, h2, h3, p, small { text-wrap: pretty; } h1, h2 { text-wrap: balance; }
+  .band.ink .card { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14); color: var(--band-ink-fg); }
+  .band.ink .card p, .band.ink .card li, .band.ink .card .line { color: var(--band-ink-muted); }
+  .band.ink a:not(.button) { color: #f6a184; }
+  .band .grid > .card, .band .plans > .card { box-shadow: none; }
+  .closing p { text-wrap: balance; }
+  @media (max-width: 520px) { .band { padding-block: 48px; } }

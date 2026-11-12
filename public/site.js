@@ -66,3 +66,28 @@
       badge.hidden = false; clearTimeout(hide); hide = setTimeout(() => badge.hidden = true, 4000);
     });
   })();
+
+  // Motion as you scroll (#233, shared by #234): the opening screenshot grows into place, pictures drift a little against the page
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const els = [...document.querySelectorAll('[data-drift]')], why = [...document.querySelectorAll('.why-row')];
+  why.forEach(r => r.classList.add('reveal'));
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -12% 0px' });
+  why.forEach(r => io.observe(r));
+  let queued = false;
+  const frame = () => {
+    queued = false; const vh = innerHeight;
+    for (const el of els) {
+      const r = el.getBoundingClientRect(); if (r.bottom < -100 || r.top > vh + 100) continue;
+      const t = ((r.top + r.height / 2) - vh / 2) / vh;          // -1 above the middle of the window … 1 below
+      // The opening screenshot rises a little slower than the page, so the story page seems to sit behind it
+      if (el.dataset.drift === 'hero') { el.style.transform = `translateY(${Math.max(0, -r.top + vh * .25) * -0.08}px) scale(${1 + Math.min(.04, Math.max(0, (vh * .25 - r.top) / vh) * .06)})`; }
+      else { const amt = parseFloat(el.dataset.drift); el.style.transform = `translateY(${t * amt * 6}px) rotate(${el.classList.contains('print') ? -2 + t * 2 : 0}deg)`; }
+    }
+  };
+  addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(frame); } }, { passive: true });
+  addEventListener('resize', frame); frame();
+})();
+
+  // Seasonal links leave the top bar on their own (#234): <li data-until="2027-01-01"> hides from that day
+  document.querySelectorAll('[data-until]').forEach(e => { if (new Date() >= new Date(e.dataset.until + 'T00:00:00')) e.hidden = true; });
