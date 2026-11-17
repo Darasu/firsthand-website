@@ -4,3 +4,6 @@
 /christmas /holidays/ 301
 /facilities/ /communities/ 301
 /facilities /communities/ 301
+# The community flier's QR code and printed address (Nov 17, 2026): the For Communities page, served at /c so Web Analytics counts flier visits on their own
+/c /communities/ 200
+/c/ /communities/ 200
